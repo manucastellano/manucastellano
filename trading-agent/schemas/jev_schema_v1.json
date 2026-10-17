@@ -1,0 +1,85 @@
+{
+  "version": "v1",
+  "authored": "2026-10-17",
+  "notes": "Wording only. Shape (names, types, labels) is fixed in src/agent/jev_schema.py. All finalists ship unverified and unapproved; the loop will not trade them until an operator flips both flags after checking docs/research.",
+  "questions": {
+    "regime": {
+      "instructions": "Classify the current market regime for this instrument from the snapshot (returns, realized volatility, spread, depth, funding, open-interest change).",
+      "criteria": {
+        "trending": "Persistent same-sign returns over 1h and 24h with orderly spreads and moderate volatility.",
+        "mean_reverting": "Returns oscillate around a level; short-horizon moves tend to reverse; volatility is moderate.",
+        "high_vol": "Realized volatility well above its 24h norm, wide or jumpy spreads, but books still functioning.",
+        "crisis": "Disorderly market: extreme volatility, very wide spreads, thin or one-sided depth, or extreme funding/open-interest moves."
+      }
+    },
+    "direction": {
+      "instructions": "Over roughly the next hour, which direction is the snapshot evidence for? Choose neutral unless the evidence is clear after trading costs of about 10 basis points round trip.",
+      "criteria": {
+        "long": "Evidence favors price rising by more than trading costs.",
+        "short": "Evidence favors price falling by more than trading costs.",
+        "neutral": "No edge after costs, or the evidence conflicts."
+      }
+    },
+    "toxic_flow": {
+      "instructions": "Is order flow likely toxic right now, meaning a new taker order would probably be adversely selected (informed flow, spoofing-like depth, or a book that is being swept)?",
+      "criteria": {
+        "true": "Signs of informed or predatory flow: one-sided sweeps, depth vanishing, spread jumping with volume spike.",
+        "false": "Flow looks balanced and the book looks stable."
+      }
+    },
+    "setup_quality": {
+      "instructions": "Rate how clean the trading setup is for this instrument right now, given its thesis and the snapshot.",
+      "criteria": {
+        "0": "No setup: noise, conflicting signals, or conditions that contradict the thesis.",
+        "1": "Weak: one supporting signal, others neutral or conflicting.",
+        "2": "Good: several signals agree with the thesis and costs are small relative to the expected move.",
+        "3": "Excellent: strong agreement across trend, flow and volatility with tight spread and deep book."
+      }
+    },
+    "risk_state": {
+      "instructions": "Given drawdown, daily P&L, inventory and current volatility in the snapshot, how should risk be treated?",
+      "criteria": {
+        "safe": "Drawdown and daily loss small, inventory modest, volatility normal.",
+        "near_limit": "Drawdown, daily loss or inventory meaningfully elevated, or volatility rising fast.",
+        "reduce": "Conditions argue for cutting exposure now."
+      }
+    }
+  },
+  "finalists": {
+    "BTC-PERP": {
+      "thesis": "Liquid regime anchor, not a valuation-disconnect trade. Mid-October 2026: price near 81-83k after a hot CPI print, spot ETF flows mixed, funding near neutral, open interest flat; FOMC on Oct 27-28 is the scheduled volatility event.",
+      "bear_case": "Hawkish Fed or rate-hike repricing, persistent ETF outflows, oil and yields rising together.",
+      "invalidation": "Directional theses are void around the FOMC window if realized volatility exceeds twice its 24h norm; treat as high_vol and stand aside.",
+      "verified": false,
+      "approved": false
+    },
+    "HYPE-PERP": {
+      "thesis": "Fee-funded buybacks: reportedly most trading fees and now USDC reserve yield fund open-market HYPE purchases via the Assistance Fund; the Oct 6 team unlock was reportedly placed OTC rather than sold on books.",
+      "bear_case": "Buybacks are pro-cyclical with volume; monthly team unlocks continue (next reportedly Nov 6); perp-DEX competition and regulatory risk; a widely known thesis, so likely priced in.",
+      "invalidation": "Weekly fees fall more than 40% from the trailing 4-week average, or Assistance Fund purchases fall below unlocked supply reaching the market.",
+      "verified": false,
+      "approved": false
+    },
+    "ENA-PERP": {
+      "thesis": "Overhang removal: the remaining investor allocation reportedly unlocked in one event on Oct 5, 2026; a governance-approved fee switch routes most net revenue to ENA buybacks once USDe supply reaches 7.5B.",
+      "bear_case": "USDe supply reportedly about 4.3-5.0B, far from the trigger, and shrinks when funding is neutral or negative as it is now; buybacks do not burn; another unlock reportedly Nov 1.",
+      "invalidation": "USDe supply falls for 3 straight weeks, or perp funding stays negative for 2 weeks.",
+      "verified": false,
+      "approved": false
+    },
+    "PUMP-PERP": {
+      "thesis": "Hard value accrual: 50% of net platform revenue is reportedly committed to buy-and-burn through April 2027 after a large April 2026 burn; price reportedly near lows while revenue continues.",
+      "bear_case": "Revenue depends on memecoin speculation, which is cyclical and fading in risk-off; competition from other launchpads; legal and reputational risk; revenue figures come from low-reliability aggregator pages.",
+      "invalidation": "Weekly revenue down more than 50% from its 4-week average, or the buyback contract stops executing.",
+      "verified": false,
+      "approved": false
+    },
+    "SOL-PERP": {
+      "thesis": "Catalyst watch: staking ETF filings (Morgan Stanley, Grayscale reported) and the Alpenglow consensus upgrade (reported finality cut to about 150ms).",
+      "bear_case": "Neither catalyst has a confirmed date; ETF inflows reported small; catalysts may be priced in; alt beta in a BTC-dominance regime near 60%.",
+      "invalidation": "Catalyst dates slip past year-end, or SOL/BTC makes a new 90-day low.",
+      "verified": false,
+      "approved": false
+    }
+  }
+}
