@@ -23,7 +23,7 @@ publicado en **TikTok, YouTube Shorts e Instagram Reels**, sin mostrar la cara.
 - [ ] Elegir nombre del canal ([01-estrategia.md](01-estrategia.md)) y reservarlo en las 3 plataformas, con el mismo @.
 - [ ] Definir la voz: tu voz grabada o voz de IA ([03-produccion-con-ia.md](03-produccion-con-ia.md)).
 - [ ] Crear el personaje en Google Flow y generar el banco de clips ([06-personaje.md](06-personaje.md)).
-- [ ] Producir los primeros 10 videos de la semana "L-1" del [calendario](05-calendario.md).
+- [ ] Producir los 10 videos de la previa (vie 13 a mié 18 nov) del [calendario](05-calendario.md).
 - [ ] Dejar listas las plantillas de [04-guias-dia-de-salida.md](04-guias-dia-de-salida.md) para el día de la salida.
 
 ## Avisos (leer antes de publicar)
