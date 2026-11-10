@@ -14,6 +14,9 @@ publicado en **TikTok, YouTube Shorts e Instagram Reels**, sin mostrar la cara.
 | [05-calendario.md](05-calendario.md) | Calendario con fechas reales: preparación, previa, salida (jue 19/11) y 2 semanas después |
 | [06-personaje.md](06-personaje.md) | Personaje animado 3D para Google Flow: ficha, imagen de referencia y banco de 18 clips |
 | [07-reglas-rockstar.md](07-reglas-rockstar.md) | Qué permite y qué prohíbe Rockstar/Take-Two + checklist antes de publicar |
+| [08-flow-paso-a-paso.md](08-flow-paso-a-paso.md) | Paso a paso en Google Flow: proyecto, imagen de referencia, ingrediente, banco de clips, control de calidad |
+| [09-guiones-previa.md](09-guiones-previa.md) | Los 10 guiones de la previa (13–18 nov) con voz, clips en pantalla y textos para cada plataforma |
+| [09-guiones-voz.txt](09-guiones-voz.txt) | Solo el texto de la voz de los 10 guiones, para grabar o pegar en la voz de IA |
 | [herramientas/](herramientas/) | Scripts para pasar a vertical, subtitular y sacar clips (ffmpeg + Whisper) |
 
 ## Checklist de esta semana
