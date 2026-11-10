@@ -56,6 +56,9 @@ Tips de grabación con tu voz: celular a 15 cm, en un placard o habitación con 
 - **Antes de la salida:** trailers oficiales de Rockstar, siempre con tu comentario, zoom, flechas y análisis encima.
   No subas el trailer sin modificar.
 - **Después de la salida:** tu propia captura del juego (PS5/Xbox tienen grabación integrada; también una capturadora).
+  **Antes de grabar, bajá a cero la música y la radio en los ajustes de audio del juego**: es la causa más común de
+  reclamos de derechos de autor ([07-reglas-rockstar.md](07-reglas-rockstar.md)).
+- **Sin spoilers:** no subas finales, cinemáticas sueltas ni diálogos clave de la historia.
 - **Nunca:** filtraciones ni clips de otros creadores.
 - Guardá una carpeta de "clips comodín" (autos, ciudad, atardecer) para rellenar.
 

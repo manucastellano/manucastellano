@@ -4,7 +4,11 @@ Objetivo: **ser de los primeros en publicar guías útiles y con números reales
 depende del juego queda listo antes: estructura, guion, plantilla de edición, títulos. El día de la salida solo
 jugás, medís y completás.
 
-## Plan del día de la salida (y los 3 siguientes)
+> **Reglas para estas guías** ([07-reglas-rockstar.md](07-reglas-rockstar.md)): solo métodos legítimos, **nunca
+> glitches ni exploits**. Las guías de misiones explican cómo hacerlas, sin contar la historia. Radio y música del juego
+> en cero al grabar.
+
+## Plan del día de la salida: jueves 19 de noviembre (y los 3 siguientes)
 
 | Momento | Qué hacer |
 |---|---|
@@ -30,6 +34,8 @@ Te paso una tabla con métodos para ganar plata en GTA VI que medí yo mismo (ti
 3. Señalá si alguna medición parece rara o tiene pocas pruebas (sugerí repetirla).
 4. Proponé 3 videos cortos a partir de esto, con gancho y guion de 30 s.
 No agregues métodos ni números que no estén en la tabla.
+Si algún método parece depender de un glitch o exploit, marcalo y dejalo afuera de los videos.
+Los guiones no pueden contar nada de la historia (sin spoilers).
 [tabla]
 ```
 

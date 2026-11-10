@@ -2,6 +2,7 @@
 
 > `[COMPLETAR]` = dato del juego que tenés que verificar en una fuente oficial antes de grabar.
 > No inventes datos: un dato falso en este nicho te hace perder credibilidad en los comentarios.
+> Sin spoilers de la historia y sin glitches ni exploits ([07-reglas-rockstar.md](07-reglas-rockstar.md)).
 
 ## Estructura de cada video (30–45 s)
 

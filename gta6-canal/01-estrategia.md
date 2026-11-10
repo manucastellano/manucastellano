@@ -66,5 +66,8 @@ pero **sin marca de agua** de otra app (exportá el archivo limpio desde tu edit
 
 ## De audiencia a ingresos (después, no ahora)
 
-En orden: guía PDF a cambio del email → monetización de cada plataforma (cada una tiene requisitos, verificalos) →
-vender herramientas (idea 04) a esa misma audiencia.
+En orden: guía PDF **gratis** a cambio del email → monetización con los anuncios de cada plataforma (cada una tiene
+requisitos, verificalos) → vender herramientas (idea 04) a esa misma audiencia.
+
+Según la política de Rockstar ([07-reglas-rockstar.md](07-reglas-rockstar.md)) el material del juego no se puede usar
+comercialmente: la guía PDF no se vende y no lleva capturas del juego, y nada pago se promociona con imágenes del juego.
