@@ -12,6 +12,7 @@ publicado en **TikTok, YouTube Shorts e Instagram Reels**, sin mostrar la cara.
 | [03-produccion-con-ia.md](03-produccion-con-ia.md) | Flujo de producción: guion → voz → clips → edición → subtítulos → miniatura, con los prompts |
 | [04-guias-dia-de-salida.md](04-guias-dia-de-salida.md) | Plantillas de guías para completar y publicar primero cuando salga el juego |
 | [05-calendario.md](05-calendario.md) | Calendario de 4 semanas (40 videos), relativo a la fecha de salida |
+| [06-personaje.md](06-personaje.md) | Personaje animado 3D para Google Flow: ficha, imagen de referencia y banco de 18 clips |
 | [herramientas/](herramientas/) | Scripts para pasar a vertical, subtitular y sacar clips (ffmpeg + Whisper) |
 
 ## Checklist de esta semana
@@ -20,6 +21,7 @@ publicado en **TikTok, YouTube Shorts e Instagram Reels**, sin mostrar la cara.
 - [ ] **Leer la política de videos de Rockstar/Take-Two** sobre monetizar contenido del juego (ver avisos abajo).
 - [ ] Elegir nombre del canal ([01-estrategia.md](01-estrategia.md)) y reservarlo en las 3 plataformas, con el mismo @.
 - [ ] Definir la voz: tu voz grabada o voz de IA ([03-produccion-con-ia.md](03-produccion-con-ia.md)).
+- [ ] Crear el personaje en Google Flow y generar el banco de clips ([06-personaje.md](06-personaje.md)).
 - [ ] Producir los primeros 10 videos de la semana "L-1" del [calendario](05-calendario.md).
 - [ ] Dejar listas las plantillas de [04-guias-dia-de-salida.md](04-guias-dia-de-salida.md) para el día de la salida.
 
