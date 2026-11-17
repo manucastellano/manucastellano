@@ -19,7 +19,7 @@ Las frases entre `[corchetes]` son indicaciones, no se leen.
 
 ## 00 — Intro
 <!-- titulo: GTA VI · Todo lo que tenés que saber -->
-<!-- planos: T1:3-5.5 T1:12-14.5 T1:30-32.5 T1:39-41.5 T2:6-8.5 T2:36-38.5 T2:153-155.5 T1:18-20.5 -->
+<!-- planos: T1:3-5.5 T1:12-14.5 T1:30-32.5 T1:40-41.8 T2:6-8.5 T2:36-38.5 T2:153-155.5 T1:19-21 -->
 
 El diecinueve de noviembre de dos mil veintiséis sale Grand Theft Auto seis. Pasaron más de trece años desde GTA cinco, hubo dos postergaciones, y salieron dos trailers que dieron la vuelta al mundo. Y ahora, a días de la salida, hay una sola pregunta: ¿qué es exactamente lo que vamos a jugar?
 
@@ -29,7 +29,7 @@ Todo lo que vas a escuchar sale de material oficial de Rockstar: los trailers y 
 
 ## 01 — Trece años de espera
 <!-- titulo: 01 · Trece años de espera -->
-<!-- planos: T1:3-5.5 T1:30-32.5 T1:45-47.5 T1:63-65.5 T1:66-68.5 T2:141-143.5 T2:36-38.5 T1:27-29.5 T2:120-122.5 T2:144-149 -->
+<!-- planos: T1:3-5.5 T1:30-32.5 T1:63-65.5 T1:66-68.5 T2:142-143.5 T2:36-38.5 T1:27.5-29 T2:120-122.5 T2:144-145.4 T2:147.5-149 -->
 
 Para entender por qué GTA seis es tan grande, hay que volver a dos mil trece. Ese año salió GTA cinco, y se convirtió en uno de los juegos más vendidos de la historia. Salió en PlayStation tres y Xbox trescientos sesenta. Después llegó a PlayStation cuatro, Xbox One y PC. Y años más tarde, a PlayStation cinco y Xbox Series. Tres generaciones de consolas jugando el mismo juego.
 
@@ -45,7 +45,7 @@ Así que sí: la espera fue larguísima. Y ahora, por fin, se termina.
 
 ## 02 — Volver a Vice City
 <!-- titulo: 02 · Volver a Vice City -->
-<!-- planos: T1:39-41.5 T1:30-32.5 T1:3-5.5 T1:12-14.5 T1:27-29.5 T1:33-35.5 T2:45-47.5 T2:99-101.5 T1:45-47.5 T2:36-38.5 -->
+<!-- planos: T1:40-41.8 T1:30-32.5 T1:3-5.5 T1:12-14.5 T1:27.5-29 T1:33-35.5 T2:45-47.5 T2:99-101.5 T2:36-38.5 -->
 
 Antes de meternos en los trailers, hay que hablar del lugar. Porque Vice City no es una ciudad nueva para la saga.
 
@@ -59,7 +59,7 @@ Y acá va una opinión: elegir Vice City para el regreso tiene mucho sentido. Es
 
 ## 03 — El primer trailer
 <!-- titulo: 03 · El primer trailer -->
-<!-- planos: T1:3-5.5 T1:6-8.5 T1:9-11.5 T1:12-14.5 T1:18-20.5 T1:27-29.5 T1:30-32.5 T1:33-35.5 T1:39-41.5 T1:42-44.5 T1:51-53.5 T1:63-65.5 T1:66-68.5 T1:60-62.5 T1:69-71.5 T2:87-89.5 -->
+<!-- planos: T1:3-5.5 T1:6-8.5 T1:9-11.5 T1:12-14.5 T1:19-21 T1:27.5-29 T1:30-32.5 T1:33-35.5 T1:40-41.8 T1:42.5-44 T1:52-53.8 T1:63-65.5 T1:66-68.5 T1:60-62.5 T1:69-71.5 T2:87-89.5 -->
 
 El primer trailer arranca con una imagen que ya es parte de la historia de la saga: una autopista sobre el agua, al atardecer, con la ciudad de fondo.
 
@@ -75,7 +75,7 @@ El trailer termina volviendo a Lucía, ahora acompañada por Jason. Él maneja, 
 
 ## 04 — El segundo trailer
 <!-- titulo: 04 · El segundo trailer -->
-<!-- planos: T2:6-8.5 T2:9-11.5 T2:12-14.5 T2:21-23.5 T2:27-29.5 T2:30-32.5 T2:33-35.5 T2:42-44.5 T2:45-47.5 T2:57-59.5 T2:60-62.5 T2:63-65.5 T2:66-68.5 T2:75-77.5 T2:84-86.5 T2:90-92.5 T2:96-98.5 T2:99-101.5 T2:117-119.5 T2:144-149 -->
+<!-- planos: T2:6-8.5 T2:9-11.5 T2:12-14.5 T2:21-23.5 T2:27-29.5 T2:30-32.5 T2:33-35.5 T2:42-44.5 T2:45-47.5 T2:57-59.5 T2:60-62.5 T2:63-65.5 T2:66-68.5 T2:75-77.5 T2:84-86.5 T2:90-92.5 T2:96-98.5 T2:99-101.5 T2:117-119.5 T2:144-145.4 T2:147.5-149 -->
 
 El segundo trailer se publicó en mayo de dos mil veinticinco, y cambia el foco. Si el primero era de Lucía, este arranca con Jason.
 
@@ -91,7 +91,7 @@ En este trailer también aparecieron varios personajes secundarios, que Rockstar
 
 ## 05 — Lucía y Jason
 <!-- titulo: 05 · Lucía y Jason -->
-<!-- planos: T1:6-8.5 T1:9-11.5 T2:57-59.5 T2:60-62.5 T2:63-65.5 T2:66-68.5 T2:18-20.5 T2:24-26.5 T2:27-29.5 T2:87-89.5 T2:114-116.5 T1:60-62.5 T2:81-83.5 -->
+<!-- planos: T1:6-8.5 T1:9-11.5 T2:57-59.5 T2:60-62.5 T2:63-65.5 T2:66-68.5 T2:18-20.5 T2:24-26.5 T2:27-29.5 T2:87-89.5 T2:114-116.5 T1:60-62.5 T2:81.5-83.5 -->
 
 Lucía Caminos. Según la presentación oficial de Rockstar, su padre le enseñó a pelear desde muy chica, y desde entonces la vida no le dio respiro. Defender a su familia la terminó llevando a la penitenciaría de Leonida, y salió de ahí más por suerte que por otra cosa. Ahora, dice Rockstar, aprendió la lección: de acá en adelante, solo movimientos inteligentes.
 
@@ -105,7 +105,7 @@ Y acá va otra opinión: el formato de dos protagonistas que además son pareja 
 
 ## 06 — Los personajes secundarios
 <!-- titulo: 06 · Los personajes secundarios -->
-<!-- planos: T2:9-11.5 T2:15-17.5 T2:102-104.5 T2:105-107.5 T2:81-83.5 T2:21-23.5 T2:129-131.5 T2:150-152.5 T2:135-137.5 T2:108-110.5 T2:87-89.5 T1:51-53.5 T1:54-56.5 -->
+<!-- planos: T2:9-11.5 T2:15-17.5 T2:102-104 T2:105-107.5 T2:81.5-83.5 T2:21-23.5 T2:129.6-131.5 T2:150-152.5 T2:135-137.5 T2:108-110.5 T2:87-89.5 T1:52-53.8 -->
 
 Rockstar presentó en su web a varios personajes que rodean a Lucía y Jason. Te los resumo, y te recomiendo leer las descripciones completas en la página oficial, porque están escritas con el humor típico de la saga.
 
@@ -127,7 +127,7 @@ Fijate en algo: casi todos estos personajes tienen que ver con la música, las r
 
 ## 07 — Leonida
 <!-- titulo: 07 · Leonida, el estado de GTA VI -->
-<!-- planos: T1:3-5.5 T1:12-14.5 T1:30-32.5 T1:39-41.5 T2:6-8.5 T2:21-23.5 T1:18-20.5 T2:138-140.5 T1:69-71.5 T2:36-38.5 T2:153-155.5 T1:45-47.5 T2:45-47.5 -->
+<!-- planos: T1:3-5.5 T1:12-14.5 T1:30-32.5 T1:40-41.8 T2:6-8.5 T2:21-23.5 T1:19-21 T2:138-140.5 T1:69-71.5 T2:36-38.5 T2:153-155.5 T2:45-47.5 -->
 
 GTA seis no transcurre solo en una ciudad, sino en un estado entero: Leonida, la versión de Rockstar de Florida. Y en su página oficial, Rockstar presentó varias zonas.
 
@@ -153,7 +153,7 @@ Lo que todavía no se sabe con precisión es el tamaño real del mapa. Hay mucho
 
 ## 08 — La vida en Leonida
 <!-- titulo: 08 · La vida en Leonida -->
-<!-- planos: T2:39-41.5 T2:33-35.5 T1:27-29.5 T1:42-44.5 T1:63-65.5 T1:48-50.5 T2:90-92.5 T2:96-98.5 T2:99-101.5 T2:84-86.5 T2:141-143.5 T2:144-149 T2:129-131.5 T2:138-140.5 T1:54-56.5 -->
+<!-- planos: T2:39-41.5 T2:33-35.5 T1:27.5-29 T1:42.5-44 T1:63-65.5 T1:48-50 T2:90-92.5 T2:96-98.5 T2:99-101.5 T2:84-86.5 T2:142-143.5 T2:144-145.4 T2:147.5-149 T2:129.6-131.5 T2:138-140.5 -->
 
 Más allá de la historia, lo que más llama la atención de los trailers es lo vivo que se ve el mundo. Te cuento lo que se ve, y después te doy mi interpretación.
 
@@ -165,7 +165,7 @@ Ahora la interpretación, y esto es opinión: todo indica que Rockstar quiere qu
 
 ## 09 — Lo que todavía no sabemos
 <!-- titulo: 09 · Lo confirmado y lo que falta -->
-<!-- planos: T2:36-38.5 T1:66-68.5 T2:129-131.5 T2:33-35.5 T1:30-32.5 T2:120-122.5 T2:153-155.5 -->
+<!-- planos: T2:36-38.5 T1:66-68.5 T2:129.6-131.5 T2:33-35.5 T1:30-32.5 T2:120-122.5 T2:153-155.5 -->
 
 Vamos a separar lo confirmado de lo que no.
 
@@ -181,7 +181,7 @@ Mi recomendación: desconfiá de cualquier video que te dé cifras exactas de pr
 
 ## 10 — Por qué importa tanto
 <!-- titulo: 10 · Por qué importa tanto -->
-<!-- planos: T1:30-32.5 T1:39-41.5 T2:6-8.5 T1:12-14.5 T2:117-119.5 T2:144-149 T1:33-35.5 T2:153-155.5 -->
+<!-- planos: T1:30-32.5 T1:40-41.8 T2:6-8.5 T1:12-14.5 T2:117-119.5 T2:144-145.4 T2:147.5-149 T1:33-35.5 T2:153-155.5 -->
 
 ¿Por qué un videojuego genera tanta expectativa? Te doy tres razones, y esto ya es análisis mío.
 
@@ -211,7 +211,7 @@ Y seis: tomátelo con calma. Es un juego para disfrutar durante meses. No hace f
 
 ## 12 — Cierre
 <!-- titulo: GTA VI · 19 de noviembre de 2026 -->
-<!-- planos: T1:3-5.5 T1:39-41.5 T2:6-8.5 T2:153-155.5 -->
+<!-- planos: T1:3-5.5 T1:40-41.8 T2:6-8.5 T2:153-155.5 -->
 
 Y eso es todo lo que se sabe de GTA seis antes de su salida. Después de trece años, Leonida está a punto de abrirse.
 

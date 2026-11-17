@@ -100,6 +100,7 @@ def main():
     ap.add_argument("--teleprompter", action="store_true")
     ap.add_argument("--alto", type=int, default=1080)
     ap.add_argument("--solo", help="renderizar solo estas secciones, ej. 00,01")
+    ap.add_argument("--crf", default="21", help="calidad final (más alto = archivo más liviano)")
     a = ap.parse_args()
 
     H = a.alto; W = H * 16 // 9
@@ -205,7 +206,7 @@ def main():
     # fundido de entrada y salida
     filtros.append(f"[{ult}]fade=in:st=0:d=0.8,fade=out:st={total-1.2:.3f}:d=1.2[vout]")
     sh(["ffmpeg", "-y", *entradas, "-filter_complex", ";".join(filtros), "-map", "[vout]", "-map", "1:a",
-        "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-c:a", "aac", "-b:a", "192k",
+        "-c:v", "libx264", "-preset", "medium", "-crf", a.crf, "-c:a", "aac", "-b:a", "192k",
         "-movflags", "+faststart", "-t", f"{total:.3f}", a.salida])
 
     # capítulos para la descripción de YouTube
