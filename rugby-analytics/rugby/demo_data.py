@@ -142,6 +142,8 @@ def generar_partido(local="Club Azul", visita="Club Rojo", nivel_local=0.0, nive
                 else:
                     add(t, a, "ruck", None, "ok", x, y)
     df = pd.DataFrame(ev)
+    # tiempo "de video" simulado: 2' de previa y 12' de entretiempo
+    df["video_seg"] = (120 + df["minuto"] * 60 + np.where(df["periodo"] == 2, 720, 0)).round(1)
     if nombre:
         df.insert(0, "partido", nombre)
     return df

@@ -29,6 +29,35 @@ Se abre en el navegador. En la barra lateral elegís:
 | **Subir archivo(s)** | Analizar tus partidos (CSV o Excel; podés subir varios a la vez) |
 | **Etiquetado en vivo** | Cargar el partido con botones mientras lo mirás y descargar el CSV |
 
+## 🎬 Flujo de trabajo con videos MP4 (recomendado)
+
+1. Abrí **[`etiquetador.html`](etiquetador.html)** con doble clic (Chrome, Edge o Safari). No necesita
+   instalación ni internet, y **el video no se sube a ningún lado**: se reproduce desde tu computadora.
+2. **🎬 Abrir video MP4**, escribí los nombres de los equipos y elegí hacia dónde ataca tu equipo en el 1º tiempo.
+3. Pausá en el kick-off de cada tiempo y tocá **Marcar inicio 1º / 2º tiempo** (así el minuto de juego es exacto).
+4. Etiquetá con el teclado mientras mirás. Cada evento guarda el **segundo exacto del video**:
+
+   | Tecla | Evento | Tecla | Evento | Tecla | Evento |
+   |---|---|---|---|---|---|
+   | `1` / `2` | Equipo A / B | `T` / `Y` | Tackle ✓ / ✗ | `C` | Portación |
+   | `R` / `E` | Ruck ✓ / ✗ | `L` / `K` | Line ✓ / ✗ | `S` / `D` | Scrum ✓ / ✗ |
+   | `Q` | Quiebre | `O` | Offload | `X` | Patada |
+   | `Z` | Entrada 22 | `P` | Penal cometido | `J` | Tarjeta |
+   | `U` | Pérdida | `I` | Recuperación | `G` | TRY |
+   | `V` / `N` | Conversión ✓ / ✗ | `F` / `H` | Penal palos ✓ / ✗ | `M` / `B` | Drop ✓ / ✗ |
+   | `Espacio` | Play/pausa | `←` `→` | ±3 s (`Shift` ±10 s) | `⌫` | Deshacer |
+
+   Opcional: **clic en la cancha** para marcar la posición (como se ve en la imagen; se convierte sola
+   según el equipo y el tiempo), y escribir jugador, motivo del penal o metros.
+5. **⬇️ Descargar CSV** y subilo a la app (`streamlit run app.py` → *Subir archivo(s)*).
+6. **Revisar clips**: en el etiquetador filtrá (por ejemplo *tackle* + *fallo* + tu equipo) y tocá
+   **▶️ Reproducir clips**: ves todas esas jugadas seguidas, con segundos antes y después configurables.
+   Con **📂 Abrir CSV** podés retomar un partido o revisarlo otro día.
+
+> 💡 Se guarda automáticamente en el navegador cada vez que cargás un evento, pero descargá el CSV al
+> terminar (es tu respaldo real). Para un partido completo, etiquetar todo lleva varias horas:
+> empezá por lo que más te importa (tackles, formaciones, penales, entradas a 22, puntos).
+
 ## 📊 Qué muestra
 
 | Pestaña | Contenido |
@@ -41,6 +70,7 @@ Se abre en el navegador. En la barra lateral elegís:
 | 🚩 Disciplina | Penales por motivo, por minuto y por zona; tarjetas |
 | 👤 Jugadores | Tabla individual, top tackleadores y portadores |
 | 📈 Momentum | Evolución del marcador, dominio por tramos de 5', 1º vs 2º tiempo |
+| 🎬 Para revisar | Errores propios y daño recibido con el **tiempo exacto del video** de cada jugada |
 | 📅 Temporada | (con 2+ partidos) G-E-P, tendencias y qué métricas se asocian con ganar |
 
 ## 📝 Cómo cargar un partido (formato CSV)
@@ -60,6 +90,7 @@ Una fila por acción. Descargá la plantilla: [`data/plantilla_partido.csv`](dat
 | `detalle` | Opcional | `offside` | Motivo del penal, color de tarjeta, etc. |
 | `periodo` | Opcional | `2` | Si falta, se deduce del minuto |
 | `partido` | Opcional | `Fecha 3 vs Halcones` | Si falta, se usa el nombre del archivo |
+| `video_seg` | Opcional | `1834.5` | Segundo del video (lo completa el etiquetador) |
 
 > 💡 **Coordenadas**: `x` se mide siempre desde el in-goal del equipo que hace la acción.
 > Así los dos equipos "atacan hacia la derecha" y no hace falta invertir nada en el entretiempo.
@@ -100,8 +131,21 @@ Son **reglas simples y transparentes** (archivo [`rugby/insights.py`](rugby/insi
 - Más posesión estimada y derrota → posesión sin profundidad.
 - Penales en campo propio, tarjetas, line/scrum poco confiables, balance de pelotas…
 
-⚠️ Los umbrales (85% tackle, 85% line, 10 penales, etc.) son **referencias orientativas, no
-estándares oficiales**. Ajustalos al nivel de tu competencia en *⚙️ Umbrales* (barra lateral).
+En la barra lateral elegís el **nivel de competencia** (por defecto *Alto rendimiento*):
+
+| Umbral | Alto rendimiento | Amateur / formativo |
+|---|---|---|
+| Efectividad de tackle mínima | 88% | 80% |
+| Line propio ganado | 88% | 80% |
+| Scrum propio ganado | 90% | 80% |
+| Retención de ruck | 95% | 88% |
+| Pateo a los palos | 75% | 60% |
+| Penales máximos | 10 | 13 |
+
+⚠️ Estos valores son **puntos de partida orientativos que elegí yo**, no estándares oficiales ni
+promedios publicados de ninguna competencia. Lo mejor en alto rendimiento es calibrarlos con
+**el promedio de tus propios partidos** (pestaña *Temporada*) o con datos de referencia de tu liga,
+y ajustarlos en *⚙️ Umbrales*.
 Las conclusiones son un punto de partida: confirmalas siempre con el video.
 
 ### Limitaciones (para interpretar bien los números)
@@ -118,6 +162,7 @@ Las conclusiones son un punto de partida: confirmalas siempre con el video.
 ```
 rugby-analytics/
 ├── app.py               # App web (Streamlit)
+├── etiquetador.html     # Etiquetador de video MP4 (abrir con doble clic)
 ├── rugby/
 │   ├── schema.py        # Formato de datos, validación y alias
 │   ├── metrics.py       # Métricas por equipo, jugador, período y temporada
@@ -145,4 +190,12 @@ for c in insights.generar(df):
 - Exportar un informe PDF del partido.
 - Etiquetar haciendo clic directamente sobre la cancha.
 - Importar datos de proveedores (si tenés acceso a feeds de eventos).
-- Sincronizar cada evento con el minuto del video para revisar jugadas.
+- Detección automática asistida por visión por computadora (ver nota abajo).
+
+### ¿Y detectar los eventos automáticamente desde el video?
+
+Es posible en teoría, pero **no es algo que pueda prometer que funcione bien** con videos de
+transmisión: requiere detectar jugadores y pelota con cámaras que se mueven y hacen zoom,
+y luego entrenar modelos para reconocer tackles, rucks, etc. con miles de ejemplos etiquetados.
+Los CSV que generes con el etiquetador son justamente esos ejemplos: si en el futuro querés
+intentar automatizarlo, ya vas a tener los datos para entrenar.

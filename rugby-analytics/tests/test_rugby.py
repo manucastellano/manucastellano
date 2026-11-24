@@ -75,5 +75,25 @@ class TestDemo(unittest.TestCase):
         self.assertEqual(len(M.tendencia_temporada(t, "Club Azul")), 3)
 
 
+class TestRevisar(unittest.TestCase):
+    def test_momentos(self):
+        df = _df([
+            {"minuto": 1, "equipo": "A", "evento": "tackle", "resultado": "fallo", "x": 10, "video_seg": 125},
+            {"minuto": 2, "equipo": "A", "evento": "tackle", "resultado": "ok"},
+            {"minuto": 3, "equipo": "B", "evento": "quiebre", "x": 85, "video_seg": 3725},
+            {"minuto": 4, "equipo": "B", "evento": "penal_cometido"},
+        ])
+        r = M.momentos_para_revisar(df, "A")
+        self.assertEqual(list(r["categoría"]), ["Tackle errado", "Quiebre sufrido"])
+        self.assertEqual(list(r["Video"]), ["2:05", "1:02:05"])
+        self.assertEqual(list(r["Zona"]), ["propio 22", "propio 22"])  # quiebre rival en su x=85 = mi 22
+
+
+class TestNiveles(unittest.TestCase):
+    def test_alto_rendimiento_mas_exigente(self):
+        a, b = insights.NIVELES["Alto rendimiento"], insights.NIVELES["Amateur / formativo"]
+        self.assertTrue(all(a[k] >= b[k] for k in ("tackle", "line", "scrum", "ruck", "pateo")))
+
+
 if __name__ == "__main__":
     unittest.main()

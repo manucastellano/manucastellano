@@ -196,3 +196,57 @@ def tendencia_temporada(df: pd.DataFrame, equipo: str) -> pd.DataFrame:
         r["partido"] = p
         filas.append(r)
     return pd.DataFrame(filas)
+
+
+# (evento, resultado, de quién) -> categoría. "propio" = errores del equipo; "rival" = lo que le hicieron.
+_REVISAR = [
+    ("tackle", "fallo", "propio", "Tackle errado"),
+    ("penal_cometido", None, "propio", "Penal cometido"),
+    ("tarjeta", None, "propio", "Tarjeta"),
+    ("line", "fallo", "propio", "Line perdido"),
+    ("scrum", "fallo", "propio", "Scrum perdido"),
+    ("ruck", "fallo", "propio", "Ruck perdido"),
+    ("perdida", None, "propio", "Pérdida"),
+    ("quiebre", None, "rival", "Quiebre sufrido"),
+    ("try", None, "rival", "Try recibido"),
+]
+
+
+def _mmss(s) -> str:
+    if pd.isna(s):
+        return "—"
+    s = int(s)
+    h, m, x = s // 3600, s % 3600 // 60, s % 60
+    return f"{h}:{m:02d}:{x:02d}" if h else f"{m}:{x:02d}"
+
+
+def momentos_para_revisar(df: pd.DataFrame, equipo: str) -> pd.DataFrame:
+    """Lista de jugadas a revisar en video para un equipo: sus errores y lo que le hizo daño el rival."""
+    riv = rival(df, equipo)
+    partes = []
+    for ev, res, quien, cat in _REVISAR:
+        eq = equipo if quien == "propio" else riv
+        m = (df["equipo"] == eq) & (df["evento"] == ev)
+        if res:
+            m &= df["resultado"] == res
+        d = df[m].copy()
+        d["categoría"] = cat
+        partes.append(d)
+    if not partes:
+        return pd.DataFrame()
+    r = pd.concat(partes).sort_values("minuto")
+    if r.empty:
+        return pd.DataFrame()
+    # coordenadas siempre desde la perspectiva del equipo analizado
+    x_eq = np.where(r["equipo"] == equipo, r["x"], 100 - r["x"])
+    zona = pd.Series(x_eq, index=r.index).map(lambda x: "—" if pd.isna(x) else ("propio 22" if x < 22 else "campo propio" if x < 50
+                                                        else "campo rival" if x < 78 else "22 rival"))
+    return pd.DataFrame({
+        "Video": r["video_seg"].map(_mmss),
+        "Min": r["minuto"].round(0).astype(int).astype(str) + "'",
+        "categoría": r["categoría"],
+        "Equipo": r["equipo"],
+        "Jugador": r["jugador"].fillna("—"),
+        "Zona": zona,
+        "Detalle": r["detalle"].fillna(""),
+    })

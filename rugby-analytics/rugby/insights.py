@@ -12,15 +12,23 @@ import pandas as pd
 
 from . import metrics as M
 
-UMBRALES_DEFECTO = {
-    "tackle": 85.0,        # % efectividad de tackle
-    "line": 85.0,          # % line propio ganado
-    "scrum": 85.0,         # % scrum propio ganado
-    "ruck": 90.0,          # % retención en ruck
-    "pateo": 70.0,         # % efectividad a palos
-    "penales": 10,         # penales cometidos en el partido
-    "caida_tackle": 8.0,   # caída (puntos %) de efectividad de tackle entre tiempos
+# ⚠️ Valores ORIENTATIVOS elegidos como punto de partida, no publicados por ningún organismo.
+# Lo ideal es recalibrarlos con el promedio de tus propios partidos (ver "Temporada").
+NIVELES = {
+    "Alto rendimiento": {
+        "tackle": 88.0,        # % efectividad de tackle
+        "line": 88.0,          # % line propio ganado
+        "scrum": 90.0,         # % scrum propio ganado
+        "ruck": 95.0,          # % retención en ruck
+        "pateo": 75.0,         # % efectividad a palos
+        "penales": 10,         # penales cometidos en el partido
+        "caida_tackle": 6.0,   # caída (puntos %) de efectividad de tackle entre tiempos
+    },
+    "Amateur / formativo": {
+        "tackle": 80.0, "line": 80.0, "scrum": 80.0, "ruck": 88.0, "pateo": 60.0, "penales": 13, "caida_tackle": 10.0,
+    },
 }
+UMBRALES_DEFECTO = NIVELES["Alto rendimiento"]
 
 
 @dataclass

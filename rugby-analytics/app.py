@@ -5,6 +5,7 @@ Ejecutar:  streamlit run app.py
 from __future__ import annotations
 
 import io
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -65,15 +66,29 @@ with st.sidebar:
     else:
         raw = st.session_state.etiquetado if len(st.session_state.etiquetado) else None
 
+    nivel = st.selectbox("Nivel de competencia", list(insights.NIVELES), index=0,
+                         help="Cambia los umbrales de referencia de las conclusiones automáticas.")
     with st.expander("⚙️ Umbrales de las conclusiones"):
-        st.caption("Referencias orientativas: ajustalas al nivel de tu competencia.")
-        U = insights.UMBRALES_DEFECTO.copy()
-        U["tackle"] = st.slider("Efectividad de tackle mínima %", 70, 98, int(U["tackle"]))
-        U["line"] = st.slider("Line ganado mínimo %", 60, 98, int(U["line"]))
-        U["scrum"] = st.slider("Scrum ganado mínimo %", 60, 98, int(U["scrum"]))
-        U["ruck"] = st.slider("Retención de ruck mínima %", 70, 99, int(U["ruck"]))
-        U["pateo"] = st.slider("Pateo a palos mínimo %", 40, 95, int(U["pateo"]))
-        U["penales"] = st.slider("Penales máximos aceptables", 4, 20, int(U["penales"]))
+        st.caption("Valores orientativos de partida, no estándares oficiales. Lo ideal es calibrarlos "
+                   "con el promedio de tus propios partidos (pestaña Temporada).")
+        U = insights.NIVELES[nivel].copy()
+        k = nivel  # al cambiar de nivel, los sliders vuelven a sus valores por defecto
+        U["tackle"] = st.slider("Efectividad de tackle mínima %", 70, 98, int(U["tackle"]), key=f"u_tk_{k}")
+        U["line"] = st.slider("Line ganado mínimo %", 60, 98, int(U["line"]), key=f"u_ln_{k}")
+        U["scrum"] = st.slider("Scrum ganado mínimo %", 60, 98, int(U["scrum"]), key=f"u_sc_{k}")
+        U["ruck"] = st.slider("Retención de ruck mínima %", 70, 99, int(U["ruck"]), key=f"u_rk_{k}")
+        U["pateo"] = st.slider("Pateo a palos mínimo %", 40, 95, int(U["pateo"]), key=f"u_pt_{k}")
+        U["penales"] = st.slider("Penales máximos aceptables", 4, 20, int(U["penales"]), key=f"u_pn_{k}")
+
+    st.divider()
+    st.markdown("**🎬 ¿Tenés el partido en video (MP4)?**")
+    st.caption("Descargá el etiquetador, abrilo con doble clic en Chrome/Edge, cargá el video y etiquetá "
+               "con el teclado. El video no se sube a ningún lado. Después subí el CSV acá.")
+    try:
+        with open(Path(__file__).parent / "etiquetador.html", "rb") as fh:
+            st.download_button("⬇️ Descargar etiquetador de video", fh.read(), "etiquetador.html", "text/html")
+    except OSError:
+        st.caption("(No encontré etiquetador.html junto a app.py)")
 
 # ---------------------------------------------------------------- etiquetado en vivo
 def pantalla_etiquetado():
@@ -178,7 +193,7 @@ st.markdown(f"<h2 style='text-align:center;margin-bottom:0'>"
             f"<p style='text-align:center;color:gray'>{partido_sel} · {len(df)} eventos</p>", unsafe_allow_html=True)
 
 tab_names = ["📋 Resumen", "🗺️ Territorio", "⚔️ Ataque", "🛡️ Defensa", "🧱 Formaciones", "🚩 Disciplina",
-             "👤 Jugadores", "📈 Momentum"]
+             "👤 Jugadores", "📈 Momentum", "🎬 Para revisar"]
 if vista_temporada:
     tab_names.append("📅 Temporada")
 tabs = st.tabs(tab_names)
@@ -380,8 +395,34 @@ with tabs[7]:
         st.dataframe(fmt_tabla(pp.set_index(["equipo", "periodo"])[cols].T), width="stretch")
 
 # ---------------------------------------------------------------- 9. temporada
+# ---------------------------------------------------------------- 9. momentos para revisar
+with tabs[8]:
+    st.subheader("🎬 Momentos para revisar en video")
+    eq_r = st.radio("Analizar a", eqs, horizontal=True, key="eqr")
+    riv_r = M.rival(df, eq_r)
+    rev = M.momentos_para_revisar(df, eq_r)
+    if rev.empty:
+        st.success("No hay errores registrados para revisar.")
+    else:
+        cats = list(dict.fromkeys(rev["categoría"]))
+        sel = st.multiselect("Categorías", cats, default=cats)
+        rv = rev[rev["categoría"].isin(sel)]
+        c = st.columns(min(len(cats), 6) or 1)
+        for i, (cat, n) in enumerate(rev["categoría"].value_counts().items()):
+            c[i % len(c)].metric(cat, int(n))
+        tiene_video = rv["Video"].ne("—").any()
+        st.dataframe(rv, hide_index=True, width="stretch", height=380)
+        st.download_button("⬇️ Descargar lista (CSV)", rv.to_csv(index=False).encode("utf-8"),
+                           f"revisar_{eq_r}.csv", "text/csv")
+        if tiene_video:
+            st.caption("La columna **Video** es el tiempo exacto del archivo MP4. En el etiquetador, abrí el video y el "
+                       "CSV y usá *Revisar clips* con los mismos filtros para verlos seguidos.")
+        else:
+            st.caption("Estos datos no tienen `video_seg`. Si etiquetás con *etiquetador.html*, acá vas a ver el "
+                       "tiempo exacto del video de cada jugada.")
+
 if vista_temporada:
-    with tabs[8]:
+    with tabs[9]:
         todos = sorted(set(datos["equipo"]), key=lambda e: -(datos["equipo"] == e).sum())
         eq_t = st.selectbox("Equipo a seguir", todos)
         tt = M.tendencia_temporada(datos, eq_t)

@@ -1,7 +1,8 @@
 """Formato de datos: un evento por fila.
 
 Columnas obligatorias: minuto, equipo, evento
-Columnas opcionales:  periodo, jugador, resultado, x, y, metros, detalle, partido
+Columnas opcionales:  periodo, jugador, resultado, x, y, metros, detalle, partido,
+                      video_seg (segundo del video donde ocurre; lo genera etiquetador.html)
 
 Coordenadas (opcionales):
   x = metros desde el in-goal PROPIO del equipo que realiza la acción
@@ -50,7 +51,7 @@ _FALLO = {"fallo", "falla", "errado", "perdido", "no", "0", "false", "missed", "
 
 OBLIGATORIAS = ["minuto", "equipo", "evento"]
 COLUMNAS = ["partido", "minuto", "periodo", "equipo", "jugador", "evento",
-            "resultado", "x", "y", "metros", "detalle"]
+            "resultado", "x", "y", "metros", "detalle", "video_seg"]
 
 
 class ErrorDatos(ValueError):
@@ -94,7 +95,7 @@ def normalizar(df: pd.DataFrame, partido: str | None = None) -> tuple[pd.DataFra
     df["periodo"] = pd.to_numeric(df["periodo"], errors="coerce")
     df["periodo"] = df["periodo"].fillna((df["minuto"] > 40).astype(int) + 1).astype(int)
 
-    for c in ["x", "y", "metros"]:
+    for c in ["x", "y", "metros", "video_seg"]:
         df[c] = pd.to_numeric(df[c], errors="coerce")
     df["x"] = df["x"].clip(0, 100)
     df["y"] = df["y"].clip(0, 70)

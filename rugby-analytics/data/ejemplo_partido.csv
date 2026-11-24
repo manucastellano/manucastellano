@@ -1,508 +1,508 @@
-partido,minuto,periodo,equipo,jugador,evento,resultado,x,y,metros,detalle
-Demo Azul vs Rojo,0.0,1,Club Azul,Uriarte (10),patada,,50.0,35.0,40.0,salida
-Demo Azul vs Rojo,0.0,1,Club Rojo,Benítez (7),portacion,,50.0,30.9,1.5,
-Demo Azul vs Rojo,0.0,1,Club Azul,Navarro (1),tackle,ok,49.3,39.1,,
-Demo Azul vs Rojo,0.3,1,Club Rojo,,ruck,ok,51.5,30.9,,
-Demo Azul vs Rojo,0.3,1,Club Rojo,Acosta (9),portacion,,51.5,47.2,4.1,
-Demo Azul vs Rojo,0.3,1,Club Azul,Ortiz (12),tackle,ok,46.4,22.8,,
-Demo Azul vs Rojo,0.6,1,Club Rojo,Cabrera (10),patada,,55.6,47.2,36.0,
-Demo Azul vs Rojo,1.1,1,Club Azul,,scrum,fallo,8.4,23.6,,
-Demo Azul vs Rojo,1.6,1,Club Rojo,Benítez (7),line,ok,91.6,0.0,,
-Demo Azul vs Rojo,2.2,1,Club Rojo,Zárate (14),portacion,,91.6,2.0,6.9,
-Demo Azul vs Rojo,2.2,1,Club Azul,Navarro (1),tackle,ok,4.9,68.0,,
-Demo Azul vs Rojo,2.6,1,Club Rojo,,ruck,ok,98.6,2.0,,
-Demo Azul vs Rojo,2.6,1,Club Rojo,Luna (2),portacion,,98.6,2.0,4.1,
-Demo Azul vs Rojo,2.6,1,Club Azul,Sosa (7),tackle,ok,0.0,68.0,,
-Demo Azul vs Rojo,2.8,1,Club Rojo,Escobar (12),try,ok,100.0,6.7,,
-Demo Azul vs Rojo,3.3,1,Club Rojo,Cabrera (10),conversion,ok,100.0,6.7,,
-Demo Azul vs Rojo,3.9,1,Club Azul,Navarro (1),line,ok,50.0,0.0,,
-Demo Azul vs Rojo,4.4,1,Club Azul,Ortiz (12),portacion,,50.0,2.0,4.1,
-Demo Azul vs Rojo,4.4,1,Club Rojo,Zárate (14),tackle,ok,47.9,68.0,,
-Demo Azul vs Rojo,4.6,1,Club Azul,,ruck,ok,54.1,2.0,,
-Demo Azul vs Rojo,4.6,1,Club Azul,Bustos (15),portacion,,54.1,2.0,3.5,
-Demo Azul vs Rojo,4.6,1,Club Rojo,Domínguez (15),tackle,ok,44.2,68.0,,
-Demo Azul vs Rojo,5.0,1,Club Azul,,ruck,ok,57.6,2.0,,
-Demo Azul vs Rojo,5.0,1,Club Azul,Godoy (9),portacion,,57.6,2.0,3.8,
-Demo Azul vs Rojo,5.0,1,Club Rojo,Ledesma (4),tackle,ok,40.5,68.0,,
-Demo Azul vs Rojo,5.4,1,Club Azul,,ruck,ok,61.3,2.0,,
-Demo Azul vs Rojo,5.4,1,Club Azul,Escobar (3),portacion,,61.3,9.3,19.5,
-Demo Azul vs Rojo,5.4,1,Club Rojo,Navarro (8),tackle,fallo,28.9,60.7,,
-Demo Azul vs Rojo,5.4,1,Club Azul,Escobar (3),entrada_22,,80.8,9.3,,
-Demo Azul vs Rojo,5.8,1,Club Azul,,ruck,ok,80.8,9.3,,
-Demo Azul vs Rojo,5.8,1,Club Azul,Ortiz (12),portacion,,80.8,2.0,1.7,
-Demo Azul vs Rojo,5.8,1,Club Rojo,Luna (2),tackle,ok,18.3,68.0,,
-Demo Azul vs Rojo,6.2,1,Club Azul,,ruck,ok,82.5,2.0,,
-Demo Azul vs Rojo,6.2,1,Club Azul,Ortiz (12),portacion,,82.5,2.0,2.9,
-Demo Azul vs Rojo,6.2,1,Club Rojo,Bustos (6),tackle,ok,16.0,68.0,,
-Demo Azul vs Rojo,6.4,1,Club Azul,,ruck,ok,85.4,2.0,,
-Demo Azul vs Rojo,6.4,1,Club Azul,Uriarte (10),portacion,,85.4,2.0,1.5,
-Demo Azul vs Rojo,6.4,1,Club Rojo,Ledesma (4),tackle,ok,13.8,68.0,,
-Demo Azul vs Rojo,6.6,1,Club Azul,,ruck,ok,86.9,2.0,,
-Demo Azul vs Rojo,6.6,1,Club Azul,Acosta (13),portacion,,86.9,8.8,1.5,
-Demo Azul vs Rojo,6.6,1,Club Rojo,Ríos (1),tackle,ok,12.4,61.2,,
-Demo Azul vs Rojo,7.0,1,Club Azul,,ruck,ok,88.4,8.8,,
-Demo Azul vs Rojo,7.0,1,Club Azul,Duarte (14),portacion,,88.4,16.0,2.8,
-Demo Azul vs Rojo,7.0,1,Club Rojo,Giménez (11),tackle,ok,10.2,54.0,,
-Demo Azul vs Rojo,7.2,1,Club Rojo,Ríos (1),penal_cometido,,8.8,54.0,,scrum
-Demo Azul vs Rojo,7.9,1,Club Azul,Uriarte (10),penal_palos,ok,91.2,16.0,,
-Demo Azul vs Rojo,9.0,1,Club Rojo,Cabrera (10),portacion,,50.0,12.8,4.9,
-Demo Azul vs Rojo,9.0,1,Club Azul,Uriarte (10),tackle,ok,47.6,57.2,,
-Demo Azul vs Rojo,9.3,1,Club Azul,Uriarte (10),penal_cometido,,45.1,57.2,,no soltar
-Demo Azul vs Rojo,9.7,1,Club Rojo,Navarro (8),line,ok,69.9,0.0,,
-Demo Azul vs Rojo,9.7,1,Club Rojo,Giménez (11),portacion,,69.9,2.0,3.1,
-Demo Azul vs Rojo,9.7,1,Club Azul,Torres (11),tackle,ok,28.5,68.0,,
-Demo Azul vs Rojo,10.1,1,Club Rojo,,ruck,ok,73.1,2.0,,
-Demo Azul vs Rojo,10.1,1,Club Rojo,Cabrera (10),portacion,,73.1,2.0,3.7,
-Demo Azul vs Rojo,10.1,1,Club Azul,Acosta (13),tackle,ok,25.1,68.0,,
-Demo Azul vs Rojo,10.5,1,Club Rojo,,ruck,ok,76.8,2.0,,
-Demo Azul vs Rojo,10.5,1,Club Rojo,Escobar (12),portacion,,76.8,2.0,3.3,
-Demo Azul vs Rojo,10.5,1,Club Azul,Domínguez (8),tackle,ok,21.6,68.0,,
-Demo Azul vs Rojo,10.5,1,Club Rojo,Escobar (12),entrada_22,,80.1,2.0,,
-Demo Azul vs Rojo,10.9,1,Club Rojo,,ruck,ok,80.1,2.0,,
-Demo Azul vs Rojo,10.9,1,Club Rojo,Navarro (8),portacion,,80.1,2.0,4.3,
-Demo Azul vs Rojo,10.9,1,Club Azul,Luna (4),tackle,ok,17.7,68.0,,
-Demo Azul vs Rojo,11.2,1,Club Rojo,,ruck,ok,84.5,2.0,,
-Demo Azul vs Rojo,11.2,1,Club Rojo,Bustos (6),portacion,,84.5,2.0,6.2,
-Demo Azul vs Rojo,11.2,1,Club Azul,Aguirre (5),tackle,ok,12.4,68.0,,
-Demo Azul vs Rojo,11.4,1,Club Azul,Bustos (15),penal_cometido,,9.3,68.0,,offside
-Demo Azul vs Rojo,11.9,1,Club Rojo,Cabrera (10),penal_palos,fallo,90.7,2.0,,
-Demo Azul vs Rojo,13.1,1,Club Azul,Navarro (1),line,ok,50.0,0.0,,
-Demo Azul vs Rojo,13.6,1,Club Azul,Ortiz (12),portacion,,50.0,2.0,7.5,
-Demo Azul vs Rojo,13.6,1,Club Rojo,Zárate (14),tackle,ok,46.3,68.0,,
-Demo Azul vs Rojo,13.9,1,Club Rojo,Bustos (6),penal_cometido,,42.5,68.0,,line
-Demo Azul vs Rojo,14.4,1,Club Azul,Uriarte (10),penal_palos,fallo,57.5,2.0,,
-Demo Azul vs Rojo,15.9,1,Club Rojo,Benítez (7),line,ok,50.0,0.0,,
-Demo Azul vs Rojo,16.4,1,Club Rojo,Zárate (14),portacion,,50.0,18.8,2.8,
-Demo Azul vs Rojo,16.4,1,Club Azul,Sosa (7),tackle,ok,48.6,51.2,,
-Demo Azul vs Rojo,16.7,1,Club Rojo,,ruck,ok,52.8,18.8,,
-Demo Azul vs Rojo,16.7,1,Club Rojo,Luna (2),portacion,,52.8,18.1,1.5,
-Demo Azul vs Rojo,16.7,1,Club Azul,Luna (4),tackle,ok,46.5,51.9,,
-Demo Azul vs Rojo,17.0,1,Club Rojo,,ruck,ok,54.3,18.1,,
-Demo Azul vs Rojo,17.0,1,Club Rojo,Ríos (1),portacion,,54.3,2.0,7.9,
-Demo Azul vs Rojo,17.0,1,Club Azul,Duarte (14),tackle,fallo,41.8,68.0,,
-Demo Azul vs Rojo,17.2,1,Club Rojo,,ruck,ok,62.2,2.0,,
-Demo Azul vs Rojo,17.2,1,Club Rojo,Cabrera (10),portacion,,62.2,10.6,6.9,
-Demo Azul vs Rojo,17.2,1,Club Azul,Navarro (1),tackle,ok,34.4,59.4,,
-Demo Azul vs Rojo,17.5,1,Club Rojo,,ruck,ok,69.1,10.6,,
-Demo Azul vs Rojo,17.5,1,Club Rojo,Ledesma (4),portacion,,69.1,2.0,2.1,
-Demo Azul vs Rojo,17.5,1,Club Azul,Domínguez (8),tackle,ok,29.9,68.0,,
-Demo Azul vs Rojo,17.7,1,Club Rojo,,ruck,ok,71.2,2.0,,
-Demo Azul vs Rojo,17.7,1,Club Rojo,Cabrera (10),portacion,,71.2,2.0,6.9,
-Demo Azul vs Rojo,17.7,1,Club Azul,Ortiz (12),tackle,ok,25.3,68.0,,
-Demo Azul vs Rojo,17.7,1,Club Rojo,Cabrera (10),entrada_22,,78.1,2.0,,
-Demo Azul vs Rojo,17.9,1,Club Rojo,,ruck,ok,78.1,2.0,,
-Demo Azul vs Rojo,17.9,1,Club Rojo,Ledesma (4),portacion,,78.1,2.0,6.8,
-Demo Azul vs Rojo,17.9,1,Club Azul,Godoy (9),tackle,ok,18.5,68.0,,
-Demo Azul vs Rojo,18.2,1,Club Rojo,Domínguez (15),patada,,84.9,2.0,41.7,
-Demo Azul vs Rojo,18.9,1,Club Azul,Escobar (3),line,ok,5.0,0.0,,
-Demo Azul vs Rojo,19.2,1,Club Azul,Torres (11),portacion,,5.0,6.0,0.4,
-Demo Azul vs Rojo,19.2,1,Club Rojo,Cabrera (10),tackle,ok,94.8,64.0,,
-Demo Azul vs Rojo,19.4,1,Club Azul,,ruck,ok,5.4,6.0,,
-Demo Azul vs Rojo,19.4,1,Club Azul,Duarte (14),portacion,,5.4,2.0,11.4,
-Demo Azul vs Rojo,19.4,1,Club Rojo,Ríos (1),tackle,ok,89.0,68.0,,
-Demo Azul vs Rojo,19.7,1,Club Azul,,ruck,ok,16.7,2.0,,
-Demo Azul vs Rojo,19.7,1,Club Azul,Bustos (15),portacion,,16.7,2.0,6.1,
-Demo Azul vs Rojo,19.7,1,Club Rojo,Zárate (14),tackle,ok,80.2,68.0,,
-Demo Azul vs Rojo,20.0,1,Club Azul,Bustos (15),patada,,22.8,2.0,43.9,
-Demo Azul vs Rojo,20.8,1,Club Rojo,Luna (2),portacion,,33.3,34.3,5.1,
-Demo Azul vs Rojo,20.8,1,Club Azul,Luna (4),tackle,ok,64.2,35.7,,
-Demo Azul vs Rojo,21.1,1,Club Rojo,,ruck,ok,38.4,34.3,,
-Demo Azul vs Rojo,21.1,1,Club Rojo,Zárate (14),portacion,,38.4,37.1,4.8,
-Demo Azul vs Rojo,21.1,1,Club Azul,Uriarte (10),tackle,fallo,59.2,32.9,,
-Demo Azul vs Rojo,21.1,1,Club Rojo,Zárate (14),quiebre,,41.3,37.1,,
-Demo Azul vs Rojo,21.3,1,Club Rojo,,ruck,ok,43.2,37.1,,
-Demo Azul vs Rojo,21.3,1,Club Rojo,Benítez (7),portacion,,43.2,21.2,2.2,
-Demo Azul vs Rojo,21.3,1,Club Azul,Luna (4),tackle,ok,55.7,48.8,,
-Demo Azul vs Rojo,21.6,1,Club Rojo,,ruck,ok,45.4,21.2,,
-Demo Azul vs Rojo,21.6,1,Club Rojo,Ledesma (4),portacion,,45.4,36.6,3.3,
-Demo Azul vs Rojo,21.6,1,Club Azul,Domínguez (8),tackle,ok,52.9,33.4,,
-Demo Azul vs Rojo,22.0,1,Club Rojo,,ruck,ok,48.7,36.6,,
-Demo Azul vs Rojo,22.0,1,Club Rojo,Escobar (12),portacion,,48.7,14.8,0.8,
-Demo Azul vs Rojo,22.0,1,Club Azul,Castro (6),tackle,ok,50.9,55.2,,
-Demo Azul vs Rojo,22.4,1,Club Rojo,,ruck,ok,49.5,14.8,,
-Demo Azul vs Rojo,22.4,1,Club Rojo,Escobar (12),portacion,,49.5,13.0,6.8,
-Demo Azul vs Rojo,22.4,1,Club Azul,Acosta (13),tackle,ok,47.1,57.0,,
-Demo Azul vs Rojo,22.6,1,Club Rojo,,ruck,ok,56.3,13.0,,
-Demo Azul vs Rojo,22.6,1,Club Rojo,Herrera (13),portacion,,56.3,22.9,1.0,
-Demo Azul vs Rojo,22.6,1,Club Azul,Navarro (1),tackle,ok,43.2,47.1,,
-Demo Azul vs Rojo,23.0,1,Club Rojo,,ruck,ok,57.3,22.9,,
-Demo Azul vs Rojo,23.0,1,Club Rojo,Giménez (11),portacion,,57.3,4.1,0.4,
-Demo Azul vs Rojo,23.0,1,Club Azul,Sosa (7),tackle,ok,42.5,65.9,,
-Demo Azul vs Rojo,23.4,1,Club Rojo,,ruck,ok,57.7,4.1,,
-Demo Azul vs Rojo,23.4,1,Club Rojo,Domínguez (15),portacion,,57.7,15.8,1.3,
-Demo Azul vs Rojo,23.4,1,Club Azul,Castro (6),tackle,ok,41.7,54.2,,
-Demo Azul vs Rojo,23.6,1,Club Rojo,,ruck,ok,58.9,15.8,,
-Demo Azul vs Rojo,23.6,1,Club Rojo,Duarte (3),portacion,,58.9,5.4,8.3,
-Demo Azul vs Rojo,23.6,1,Club Azul,Duarte (14),tackle,ok,36.9,64.6,,
-Demo Azul vs Rojo,23.9,1,Club Rojo,,ruck,ok,67.3,5.4,,
-Demo Azul vs Rojo,23.9,1,Club Rojo,Giménez (11),portacion,,67.3,47.7,1.0,
-Demo Azul vs Rojo,23.9,1,Club Azul,Escobar (3),tackle,ok,32.2,22.3,,
-Demo Azul vs Rojo,24.3,1,Club Rojo,,ruck,ok,68.3,47.7,,
-Demo Azul vs Rojo,24.3,1,Club Rojo,Benítez (7),portacion,,68.3,20.5,3.8,
-Demo Azul vs Rojo,24.3,1,Club Azul,Aguirre (5),tackle,ok,29.8,49.5,,
-Demo Azul vs Rojo,24.6,1,Club Azul,Castro (6),penal_cometido,,27.9,49.5,,scrum
-Demo Azul vs Rojo,25.1,1,Club Rojo,,entrada_22,,85.8,5.0,,
-Demo Azul vs Rojo,25.1,1,Club Rojo,Benítez (7),line,ok,85.8,0.0,,
-Demo Azul vs Rojo,25.1,1,Club Rojo,Duarte (3),portacion,,85.8,2.0,2.5,
-Demo Azul vs Rojo,25.1,1,Club Azul,Ortiz (12),tackle,ok,13.0,68.0,,
-Demo Azul vs Rojo,25.3,1,Club Rojo,,ruck,ok,88.3,2.0,,
-Demo Azul vs Rojo,25.3,1,Club Rojo,Bustos (6),portacion,,88.3,2.0,1.0,
-Demo Azul vs Rojo,25.3,1,Club Azul,Luna (4),tackle,ok,11.2,68.0,,
-Demo Azul vs Rojo,25.6,1,Club Rojo,,ruck,ok,89.3,2.0,,
-Demo Azul vs Rojo,25.6,1,Club Rojo,Cabrera (10),portacion,,89.3,2.0,3.1,
-Demo Azul vs Rojo,25.6,1,Club Azul,Castro (6),tackle,ok,9.2,68.0,,
-Demo Azul vs Rojo,25.8,1,Club Rojo,,ruck,ok,92.3,2.0,,
-Demo Azul vs Rojo,25.8,1,Club Rojo,Ledesma (4),portacion,,92.3,2.0,2.9,
-Demo Azul vs Rojo,25.8,1,Club Azul,Luna (4),tackle,ok,6.2,68.0,,
-Demo Azul vs Rojo,26.0,1,Club Azul,Luna (4),penal_cometido,,4.8,68.0,,ruck - manos
-Demo Azul vs Rojo,26.4,1,Club Rojo,Cabrera (10),penal_palos,ok,95.2,2.0,,
-Demo Azul vs Rojo,27.6,1,Club Azul,Sosa (7),portacion,,50.0,2.0,3.8,
-Demo Azul vs Rojo,27.6,1,Club Rojo,Giménez (11),tackle,ok,48.1,68.0,,
-Demo Azul vs Rojo,27.9,1,Club Rojo,Navarro (8),penal_cometido,,46.2,68.0,,scrum
-Demo Azul vs Rojo,28.5,1,Club Azul,,entrada_22,,78.1,5.0,,
-Demo Azul vs Rojo,28.5,1,Club Azul,Escobar (3),line,fallo,78.1,0.0,,
-Demo Azul vs Rojo,28.5,1,Club Rojo,Duarte (3),line,fallo,21.9,0.0,,
-Demo Azul vs Rojo,28.9,1,Club Azul,Bustos (15),portacion,,78.1,41.3,2.6,
-Demo Azul vs Rojo,28.9,1,Club Rojo,Herrera (13),tackle,ok,20.6,28.7,,
-Demo Azul vs Rojo,29.3,1,Club Azul,,ruck,ok,80.7,41.3,,
-Demo Azul vs Rojo,29.3,1,Club Azul,Godoy (9),portacion,,80.7,50.5,2.7,
-Demo Azul vs Rojo,29.3,1,Club Rojo,Duarte (3),tackle,ok,17.9,19.5,,
-Demo Azul vs Rojo,29.5,1,Club Azul,,ruck,ok,83.5,50.5,,
-Demo Azul vs Rojo,29.5,1,Club Azul,Duarte (14),portacion,,83.5,42.0,13.8,
-Demo Azul vs Rojo,29.5,1,Club Rojo,Herrera (13),tackle,fallo,9.6,28.0,,
-Demo Azul vs Rojo,29.5,1,Club Azul,Duarte (14),quiebre,,91.8,42.0,,
-Demo Azul vs Rojo,29.5,1,Club Azul,Duarte (14),offload,,97.3,42.0,,
-Demo Azul vs Rojo,29.9,1,Club Azul,,ruck,ok,97.3,42.0,,
-Demo Azul vs Rojo,29.9,1,Club Azul,Duarte (14),portacion,,97.3,41.7,2.8,
-Demo Azul vs Rojo,29.9,1,Club Rojo,Duarte (3),tackle,ok,1.3,28.3,,
-Demo Azul vs Rojo,30.2,1,Club Azul,Aguirre (5),try,ok,100.0,55.3,,
-Demo Azul vs Rojo,30.7,1,Club Azul,Uriarte (10),conversion,ok,100.0,55.3,,
-Demo Azul vs Rojo,31.5,1,Club Rojo,Escobar (12),portacion,,50.0,35.0,8.8,
-Demo Azul vs Rojo,31.5,1,Club Azul,Bustos (15),tackle,ok,45.6,35.0,,
-Demo Azul vs Rojo,31.8,1,Club Rojo,,ruck,ok,58.8,35.0,,
-Demo Azul vs Rojo,31.8,1,Club Rojo,Herrera (13),portacion,,58.8,59.1,2.2,
-Demo Azul vs Rojo,31.8,1,Club Azul,Uriarte (10),tackle,ok,40.1,10.9,,
-Demo Azul vs Rojo,32.2,1,Club Rojo,,ruck,ok,60.9,59.1,,
-Demo Azul vs Rojo,32.2,1,Club Rojo,Cabrera (10),portacion,,60.9,33.6,3.7,
-Demo Azul vs Rojo,32.2,1,Club Azul,Sosa (7),tackle,ok,37.2,36.4,,
-Demo Azul vs Rojo,32.4,1,Club Rojo,,ruck,fallo,64.6,33.6,,
-Demo Azul vs Rojo,32.4,1,Club Azul,Paz (2),recuperacion,,35.4,36.4,,
-Demo Azul vs Rojo,32.8,1,Club Azul,Navarro (1),line,fallo,35.4,0.0,,
-Demo Azul vs Rojo,33.2,1,Club Rojo,Torres (5),line,fallo,64.6,0.0,,
-Demo Azul vs Rojo,33.7,1,Club Azul,Navarro (1),line,ok,35.4,0.0,,
-Demo Azul vs Rojo,34.1,1,Club Azul,Godoy (9),portacion,,35.4,18.4,3.1,
-Demo Azul vs Rojo,34.1,1,Club Rojo,Navarro (8),tackle,ok,63.1,51.6,,
-Demo Azul vs Rojo,34.5,1,Club Azul,,ruck,ok,38.5,18.4,,
-Demo Azul vs Rojo,34.5,1,Club Azul,Luna (4),portacion,,38.5,2.0,4.5,
-Demo Azul vs Rojo,34.5,1,Club Rojo,Herrera (13),tackle,ok,59.3,68.0,,
-Demo Azul vs Rojo,34.9,1,Club Azul,,ruck,ok,43.0,2.0,,
-Demo Azul vs Rojo,34.9,1,Club Azul,Acosta (13),portacion,,43.0,13.6,2.2,
-Demo Azul vs Rojo,34.9,1,Club Rojo,Ledesma (4),tackle,ok,55.9,56.4,,
-Demo Azul vs Rojo,35.2,1,Club Azul,,ruck,ok,45.1,13.6,,
-Demo Azul vs Rojo,35.2,1,Club Azul,Acosta (13),portacion,,45.1,30.4,4.8,
-Demo Azul vs Rojo,35.2,1,Club Rojo,Ledesma (4),tackle,ok,52.5,39.6,,
-Demo Azul vs Rojo,35.4,1,Club Azul,,ruck,ok,49.9,30.4,,
-Demo Azul vs Rojo,35.4,1,Club Azul,Uriarte (10),portacion,,49.9,8.1,8.6,
-Demo Azul vs Rojo,35.4,1,Club Rojo,Ledesma (4),tackle,ok,45.8,61.9,,
-Demo Azul vs Rojo,35.6,1,Club Azul,,ruck,ok,58.5,8.1,,
-Demo Azul vs Rojo,35.6,1,Club Azul,Paz (2),portacion,,58.5,2.0,2.2,
-Demo Azul vs Rojo,35.6,1,Club Rojo,Domínguez (15),tackle,ok,40.4,68.0,,
-Demo Azul vs Rojo,35.8,1,Club Azul,,ruck,ok,60.6,2.0,,
-Demo Azul vs Rojo,35.8,1,Club Azul,Godoy (9),portacion,,60.6,2.0,3.5,
-Demo Azul vs Rojo,35.8,1,Club Rojo,Zárate (14),tackle,ok,37.6,68.0,,
-Demo Azul vs Rojo,36.0,1,Club Azul,,ruck,ok,64.1,2.0,,
-Demo Azul vs Rojo,36.0,1,Club Azul,Duarte (14),portacion,,64.1,2.0,0.3,
-Demo Azul vs Rojo,36.0,1,Club Rojo,Torres (5),tackle,ok,35.7,68.0,,
-Demo Azul vs Rojo,36.3,1,Club Azul,,ruck,fallo,64.4,2.0,,
-Demo Azul vs Rojo,36.3,1,Club Rojo,Bustos (6),recuperacion,,35.6,68.0,,
-Demo Azul vs Rojo,36.6,1,Club Rojo,Luna (2),line,ok,35.6,0.0,,
-Demo Azul vs Rojo,37.1,1,Club Rojo,Duarte (3),portacion,,35.6,8.5,2.5,
-Demo Azul vs Rojo,37.1,1,Club Azul,Luna (4),tackle,ok,63.2,61.5,,
-Demo Azul vs Rojo,37.3,1,Club Rojo,,ruck,ok,38.0,8.5,,
-Demo Azul vs Rojo,37.3,1,Club Rojo,Benítez (7),portacion,,38.0,2.0,2.4,
-Demo Azul vs Rojo,37.3,1,Club Azul,Escobar (3),tackle,ok,60.8,68.0,,
-Demo Azul vs Rojo,37.8,1,Club Rojo,Cabrera (10),patada,,40.5,2.0,42.8,
-Demo Azul vs Rojo,38.4,1,Club Azul,Paz (2),line,ok,16.7,0.0,,
-Demo Azul vs Rojo,38.6,1,Club Azul,Domínguez (8),portacion,,16.7,2.0,14.4,
-Demo Azul vs Rojo,38.6,1,Club Rojo,Domínguez (15),tackle,fallo,76.0,68.0,,
-Demo Azul vs Rojo,38.9,1,Club Azul,,ruck,ok,31.2,2.0,,
-Demo Azul vs Rojo,38.9,1,Club Azul,Godoy (9),portacion,,31.2,6.5,7.8,
-Demo Azul vs Rojo,38.9,1,Club Rojo,Bustos (6),tackle,fallo,64.9,63.5,,
-Demo Azul vs Rojo,39.4,1,Club Azul,,ruck,ok,39.0,6.5,,
-Demo Azul vs Rojo,39.4,1,Club Azul,Duarte (14),portacion,,39.0,2.0,4.2,
-Demo Azul vs Rojo,39.4,1,Club Rojo,Bustos (6),tackle,fallo,58.9,68.0,,
-Demo Azul vs Rojo,39.7,1,Club Azul,,ruck,ok,43.2,2.0,,
-Demo Azul vs Rojo,39.7,1,Club Azul,Escobar (3),portacion,,43.2,2.0,4.5,
-Demo Azul vs Rojo,39.7,1,Club Rojo,Ledesma (4),tackle,ok,54.6,68.0,,
-Demo Azul vs Rojo,40.1,2,Club Azul,,ruck,ok,47.7,2.0,,
-Demo Azul vs Rojo,40.1,2,Club Azul,Castro (6),portacion,,47.7,2.0,3.4,
-Demo Azul vs Rojo,40.1,2,Club Rojo,Duarte (3),tackle,ok,50.6,68.0,,
-Demo Azul vs Rojo,40.3,2,Club Azul,Castro (6),perdida,,51.0,2.0,,pase forward
-Demo Azul vs Rojo,40.8,2,Club Rojo,Bustos (6),portacion,,49.0,23.9,2.5,
-Demo Azul vs Rojo,40.8,2,Club Azul,Torres (11),tackle,ok,49.8,46.1,,
-Demo Azul vs Rojo,41.2,2,Club Rojo,Acosta (9),patada,,51.5,23.9,42.7,
-Demo Azul vs Rojo,40.0,1,Club Rojo,Ríos (1),line,fallo,50.0,0.0,,
-Demo Azul vs Rojo,40.4,2,Club Azul,Domínguez (8),portacion,,50.0,63.8,5.0,
-Demo Azul vs Rojo,40.4,2,Club Rojo,Torres (5),tackle,ok,47.5,6.2,,
-Demo Azul vs Rojo,40.6,2,Club Azul,,ruck,ok,55.0,63.8,,
-Demo Azul vs Rojo,40.6,2,Club Azul,Sosa (7),portacion,,55.0,55.1,3.4,
-Demo Azul vs Rojo,40.6,2,Club Rojo,Duarte (3),tackle,ok,43.3,14.9,,
-Demo Azul vs Rojo,40.8,2,Club Azul,,ruck,ok,58.4,55.1,,
-Demo Azul vs Rojo,40.8,2,Club Azul,Luna (4),portacion,,58.4,60.1,9.4,
-Demo Azul vs Rojo,40.8,2,Club Rojo,Navarro (8),tackle,fallo,36.9,9.9,,
-Demo Azul vs Rojo,40.8,2,Club Azul,Luna (4),quiebre,,64.0,60.1,,
-Demo Azul vs Rojo,40.8,2,Club Azul,Luna (4),offload,,67.8,60.1,,
-Demo Azul vs Rojo,41.0,2,Club Azul,Luna (4),perdida,,67.8,60.1,,pelota suelta
-Demo Azul vs Rojo,41.3,2,Club Rojo,Bustos (6),line,ok,32.2,0.0,,
-Demo Azul vs Rojo,41.5,2,Club Rojo,Acosta (9),portacion,,32.2,9.3,1.1,
-Demo Azul vs Rojo,41.5,2,Club Azul,Aguirre (5),tackle,ok,67.2,60.7,,
-Demo Azul vs Rojo,42.0,2,Club Rojo,,ruck,ok,33.4,9.3,,
-Demo Azul vs Rojo,42.0,2,Club Rojo,Luna (2),portacion,,33.4,3.7,4.1,
-Demo Azul vs Rojo,42.0,2,Club Azul,Godoy (9),tackle,fallo,64.6,66.3,,
-Demo Azul vs Rojo,42.4,2,Club Rojo,,ruck,ok,37.4,3.7,,
-Demo Azul vs Rojo,42.4,2,Club Rojo,Luna (2),portacion,,37.4,2.0,28.9,
-Demo Azul vs Rojo,42.4,2,Club Azul,Sosa (7),tackle,fallo,48.1,68.0,,
-Demo Azul vs Rojo,42.4,2,Club Rojo,Luna (2),quiebre,,54.8,2.0,,
-Demo Azul vs Rojo,42.5,2,Club Rojo,,ruck,ok,66.4,2.0,,
-Demo Azul vs Rojo,42.5,2,Club Rojo,Herrera (13),portacion,,66.4,2.0,10.1,
-Demo Azul vs Rojo,42.5,2,Club Azul,Aguirre (5),tackle,fallo,28.6,68.0,,
-Demo Azul vs Rojo,42.8,2,Club Azul,Luna (4),penal_cometido,,23.5,68.0,,line
-Demo Azul vs Rojo,43.3,2,Club Rojo,Cabrera (10),penal_palos,ok,76.5,2.0,,
-Demo Azul vs Rojo,44.5,2,Club Azul,Bustos (15),portacion,,50.0,59.7,1.7,
-Demo Azul vs Rojo,44.5,2,Club Rojo,Herrera (13),tackle,ok,49.2,10.3,,
-Demo Azul vs Rojo,44.6,2,Club Azul,,ruck,ok,51.7,59.7,,
-Demo Azul vs Rojo,44.6,2,Club Azul,Luna (4),portacion,,51.7,57.6,3.9,
-Demo Azul vs Rojo,44.6,2,Club Rojo,Domínguez (15),tackle,ok,46.4,12.4,,
-Demo Azul vs Rojo,44.8,2,Club Azul,,ruck,ok,55.5,57.6,,
-Demo Azul vs Rojo,44.8,2,Club Azul,Castro (6),portacion,,55.5,55.5,1.8,
-Demo Azul vs Rojo,44.8,2,Club Rojo,Ledesma (4),tackle,ok,43.6,14.5,,
-Demo Azul vs Rojo,45.2,2,Club Azul,,ruck,ok,57.3,55.5,,
-Demo Azul vs Rojo,45.2,2,Club Azul,Castro (6),portacion,,57.3,68.0,5.1,
-Demo Azul vs Rojo,45.2,2,Club Rojo,Domínguez (15),tackle,ok,40.1,2.0,,
-Demo Azul vs Rojo,45.5,2,Club Azul,,ruck,ok,62.4,68.0,,
-Demo Azul vs Rojo,45.5,2,Club Azul,Escobar (3),portacion,,62.4,50.3,2.7,
-Demo Azul vs Rojo,45.5,2,Club Rojo,Benítez (7),tackle,ok,36.3,19.7,,
-Demo Azul vs Rojo,45.7,2,Club Azul,,ruck,ok,65.1,50.3,,
-Demo Azul vs Rojo,45.7,2,Club Azul,Godoy (9),portacion,,65.1,34.8,8.5,
-Demo Azul vs Rojo,45.7,2,Club Rojo,Navarro (8),tackle,fallo,30.6,35.2,,
-Demo Azul vs Rojo,45.9,2,Club Azul,,ruck,ok,73.6,34.8,,
-Demo Azul vs Rojo,45.9,2,Club Azul,Torres (11),portacion,,73.6,61.6,2.6,
-Demo Azul vs Rojo,45.9,2,Club Rojo,Torres (5),tackle,ok,25.1,8.4,,
-Demo Azul vs Rojo,46.1,2,Club Azul,,ruck,ok,76.2,61.6,,
-Demo Azul vs Rojo,46.1,2,Club Azul,Domínguez (8),portacion,,76.2,68.0,3.1,
-Demo Azul vs Rojo,46.1,2,Club Rojo,Ríos (1),tackle,ok,22.3,2.0,,
-Demo Azul vs Rojo,46.1,2,Club Azul,Domínguez (8),entrada_22,,79.3,68.0,,
-Demo Azul vs Rojo,46.4,2,Club Azul,,ruck,ok,79.3,68.0,,
-Demo Azul vs Rojo,46.4,2,Club Azul,Torres (11),portacion,,79.3,52.0,10.1,
-Demo Azul vs Rojo,46.4,2,Club Rojo,Duarte (3),tackle,ok,15.7,18.0,,
-Demo Azul vs Rojo,46.7,2,Club Azul,,ruck,ok,89.4,52.0,,
-Demo Azul vs Rojo,46.7,2,Club Azul,Sosa (7),portacion,,89.4,57.3,8.2,
-Demo Azul vs Rojo,46.7,2,Club Rojo,Torres (5),tackle,fallo,6.5,12.7,,
-Demo Azul vs Rojo,46.9,2,Club Azul,Ortiz (12),try,ok,100.0,59.5,,
-Demo Azul vs Rojo,47.4,2,Club Azul,Uriarte (10),conversion,ok,100.0,59.5,,
-Demo Azul vs Rojo,48.0,2,Club Rojo,,scrum,ok,50.0,19.3,,
-Demo Azul vs Rojo,48.5,2,Club Rojo,Acosta (9),portacion,,50.0,27.2,2.0,
-Demo Azul vs Rojo,48.5,2,Club Azul,Domínguez (8),tackle,ok,49.0,42.8,,
-Demo Azul vs Rojo,48.8,2,Club Rojo,,ruck,ok,52.0,27.2,,
-Demo Azul vs Rojo,48.8,2,Club Rojo,Domínguez (15),portacion,,52.0,7.7,4.6,
-Demo Azul vs Rojo,48.8,2,Club Azul,Ortiz (12),tackle,ok,45.7,62.3,,
-Demo Azul vs Rojo,49.0,2,Club Rojo,,ruck,ok,56.6,7.7,,
-Demo Azul vs Rojo,49.0,2,Club Rojo,Bustos (6),portacion,,56.6,15.1,0.7,
-Demo Azul vs Rojo,49.0,2,Club Azul,Acosta (13),tackle,ok,43.1,54.9,,
-Demo Azul vs Rojo,49.3,2,Club Rojo,,ruck,ok,57.3,15.1,,
-Demo Azul vs Rojo,49.3,2,Club Rojo,Ledesma (4),portacion,,57.3,14.5,1.4,
-Demo Azul vs Rojo,49.3,2,Club Azul,Godoy (9),tackle,ok,42.0,55.5,,
-Demo Azul vs Rojo,49.8,2,Club Rojo,,ruck,ok,58.7,14.5,,
-Demo Azul vs Rojo,49.8,2,Club Rojo,Ríos (1),portacion,,58.7,11.0,1.5,
-Demo Azul vs Rojo,49.8,2,Club Azul,Castro (6),tackle,ok,40.6,59.0,,
-Demo Azul vs Rojo,50.1,2,Club Rojo,,ruck,ok,60.2,11.0,,
-Demo Azul vs Rojo,50.1,2,Club Rojo,Duarte (3),portacion,,60.2,33.2,2.4,
-Demo Azul vs Rojo,50.1,2,Club Azul,Torres (11),tackle,ok,38.6,36.8,,
-Demo Azul vs Rojo,50.5,2,Club Rojo,,ruck,ok,62.6,33.2,,
-Demo Azul vs Rojo,50.5,2,Club Rojo,Acosta (9),portacion,,62.6,16.6,2.2,
-Demo Azul vs Rojo,50.5,2,Club Azul,Escobar (3),tackle,ok,36.4,53.4,,
-Demo Azul vs Rojo,50.8,2,Club Rojo,Acosta (9),perdida,,64.7,16.6,,pelota suelta
-Demo Azul vs Rojo,51.3,2,Club Azul,Aguirre (5),line,ok,35.3,0.0,,
-Demo Azul vs Rojo,51.7,2,Club Azul,Navarro (1),portacion,,35.3,27.7,1.0,
-Demo Azul vs Rojo,51.7,2,Club Rojo,Acosta (9),tackle,ok,64.2,42.3,,
-Demo Azul vs Rojo,51.9,2,Club Azul,,ruck,ok,36.2,27.7,,
-Demo Azul vs Rojo,51.9,2,Club Azul,Sosa (7),portacion,,36.2,8.9,0.9,
-Demo Azul vs Rojo,51.9,2,Club Rojo,Domínguez (15),tackle,ok,63.3,61.1,,
-Demo Azul vs Rojo,52.1,2,Club Azul,,ruck,ok,37.2,8.9,,
-Demo Azul vs Rojo,52.1,2,Club Azul,Navarro (1),portacion,,37.2,6.1,2.6,
-Demo Azul vs Rojo,52.1,2,Club Rojo,Bustos (6),tackle,ok,61.5,63.9,,
-Demo Azul vs Rojo,52.4,2,Club Azul,,ruck,ok,39.8,6.1,,
-Demo Azul vs Rojo,52.4,2,Club Azul,Navarro (1),portacion,,39.8,2.0,3.2,
-Demo Azul vs Rojo,52.4,2,Club Rojo,Ríos (1),tackle,ok,58.6,68.0,,
-Demo Azul vs Rojo,52.7,2,Club Azul,,ruck,ok,43.0,2.0,,
-Demo Azul vs Rojo,52.7,2,Club Azul,Bustos (15),portacion,,43.0,2.0,4.6,
-Demo Azul vs Rojo,52.7,2,Club Rojo,Ríos (1),tackle,ok,54.7,68.0,,
-Demo Azul vs Rojo,52.9,2,Club Azul,Bustos (15),perdida,,47.6,2.0,,pelota suelta
-Demo Azul vs Rojo,53.5,2,Club Rojo,Benítez (7),line,ok,52.4,0.0,,
-Demo Azul vs Rojo,54.0,2,Club Rojo,Acosta (9),portacion,,52.4,2.0,4.8,
-Demo Azul vs Rojo,54.0,2,Club Azul,Acosta (13),tackle,fallo,45.2,68.0,,
-Demo Azul vs Rojo,54.0,2,Club Rojo,Acosta (9),quiebre,,55.3,2.0,,
-Demo Azul vs Rojo,54.3,2,Club Rojo,,ruck,ok,57.2,2.0,,
-Demo Azul vs Rojo,54.3,2,Club Rojo,Escobar (12),portacion,,57.2,2.0,1.7,
-Demo Azul vs Rojo,54.3,2,Club Azul,Sosa (7),tackle,ok,42.0,68.0,,
-Demo Azul vs Rojo,54.4,2,Club Rojo,,ruck,ok,58.9,2.0,,
-Demo Azul vs Rojo,54.4,2,Club Rojo,Navarro (8),portacion,,58.9,2.0,3.7,
-Demo Azul vs Rojo,54.4,2,Club Azul,Godoy (9),tackle,ok,39.2,68.0,,
-Demo Azul vs Rojo,54.6,2,Club Azul,Navarro (1),penal_cometido,,37.4,68.0,,offside
-Demo Azul vs Rojo,55.6,2,Club Rojo,Duarte (3),line,ok,76.4,0.0,,
-Demo Azul vs Rojo,55.6,2,Club Rojo,Escobar (12),portacion,,76.4,2.0,3.0,
-Demo Azul vs Rojo,55.6,2,Club Azul,Godoy (9),tackle,ok,22.0,68.0,,
-Demo Azul vs Rojo,55.6,2,Club Rojo,Escobar (12),entrada_22,,79.5,2.0,,
-Demo Azul vs Rojo,56.0,2,Club Rojo,,ruck,ok,79.5,2.0,,
-Demo Azul vs Rojo,56.0,2,Club Rojo,Duarte (3),portacion,,79.5,14.1,2.2,
-Demo Azul vs Rojo,56.0,2,Club Azul,Castro (6),tackle,ok,19.4,55.9,,
-Demo Azul vs Rojo,56.3,2,Club Rojo,,ruck,ok,81.7,14.1,,
-Demo Azul vs Rojo,56.3,2,Club Rojo,Zárate (14),portacion,,81.7,2.0,1.2,
-Demo Azul vs Rojo,56.3,2,Club Azul,Bustos (15),tackle,ok,17.7,68.0,,
-Demo Azul vs Rojo,56.5,2,Club Azul,Godoy (9),penal_cometido,,17.1,68.0,,scrum
-Demo Azul vs Rojo,57.3,2,Club Rojo,Cabrera (10),penal_palos,ok,82.9,2.0,,
-Demo Azul vs Rojo,58.6,2,Club Azul,Sosa (7),line,ok,50.0,0.0,,
-Demo Azul vs Rojo,58.8,2,Club Azul,Acosta (13),portacion,,50.0,15.7,4.6,
-Demo Azul vs Rojo,58.8,2,Club Rojo,Zárate (14),tackle,ok,47.7,54.3,,
-Demo Azul vs Rojo,59.1,2,Club Azul,,ruck,ok,54.6,15.7,,
-Demo Azul vs Rojo,59.1,2,Club Azul,Uriarte (10),portacion,,54.6,7.7,6.4,
-Demo Azul vs Rojo,59.1,2,Club Rojo,Zárate (14),tackle,ok,42.2,62.3,,
-Demo Azul vs Rojo,59.2,2,Club Azul,,ruck,ok,61.0,7.7,,
-Demo Azul vs Rojo,59.2,2,Club Azul,Domínguez (8),portacion,,61.0,2.0,1.3,
-Demo Azul vs Rojo,59.2,2,Club Rojo,Herrera (13),tackle,ok,38.4,68.0,,
-Demo Azul vs Rojo,59.6,2,Club Azul,,ruck,ok,62.2,2.0,,
-Demo Azul vs Rojo,59.6,2,Club Azul,Luna (4),portacion,,62.2,4.1,2.0,
-Demo Azul vs Rojo,59.6,2,Club Rojo,Ledesma (4),tackle,ok,36.8,65.9,,
-Demo Azul vs Rojo,59.8,2,Club Azul,,ruck,ok,64.2,4.1,,
-Demo Azul vs Rojo,59.8,2,Club Azul,Luna (4),portacion,,64.2,24.3,3.4,
-Demo Azul vs Rojo,59.8,2,Club Rojo,Torres (5),tackle,ok,34.1,45.7,,
-Demo Azul vs Rojo,60.2,2,Club Azul,,ruck,ok,67.6,24.3,,
-Demo Azul vs Rojo,60.2,2,Club Azul,Ortiz (12),portacion,,67.6,2.1,3.7,
-Demo Azul vs Rojo,60.2,2,Club Rojo,Herrera (13),tackle,ok,30.5,67.9,,
-Demo Azul vs Rojo,60.6,2,Club Azul,,ruck,ok,71.3,2.1,,
-Demo Azul vs Rojo,60.6,2,Club Azul,Torres (11),portacion,,71.3,2.0,6.7,
-Demo Azul vs Rojo,60.6,2,Club Rojo,Giménez (11),tackle,ok,25.4,68.0,,
-Demo Azul vs Rojo,60.8,2,Club Azul,,ruck,ok,78.0,2.0,,
-Demo Azul vs Rojo,60.8,2,Club Azul,Acosta (13),portacion,,78.0,16.8,7.7,
-Demo Azul vs Rojo,60.8,2,Club Rojo,Benítez (7),tackle,ok,18.1,53.2,,
-Demo Azul vs Rojo,60.8,2,Club Azul,Acosta (13),entrada_22,,85.7,16.8,,
-Demo Azul vs Rojo,61.1,2,Club Azul,,ruck,ok,85.7,16.8,,
-Demo Azul vs Rojo,61.1,2,Club Azul,Castro (6),portacion,,85.7,2.0,8.6,
-Demo Azul vs Rojo,61.1,2,Club Rojo,Acosta (9),tackle,ok,10.0,68.0,,
-Demo Azul vs Rojo,61.5,2,Club Azul,Godoy (9),try,ok,100.0,3.0,,
-Demo Azul vs Rojo,62.0,2,Club Azul,Uriarte (10),conversion,ok,100.0,3.0,,
-Demo Azul vs Rojo,62.9,2,Club Rojo,,scrum,ok,50.0,42.1,,
-Demo Azul vs Rojo,63.2,2,Club Rojo,Torres (5),portacion,,50.0,51.4,4.0,
-Demo Azul vs Rojo,63.2,2,Club Azul,Aguirre (5),tackle,ok,48.0,18.6,,
-Demo Azul vs Rojo,63.4,2,Club Rojo,,ruck,ok,54.0,51.4,,
-Demo Azul vs Rojo,63.4,2,Club Rojo,Zárate (14),portacion,,54.0,60.8,6.6,
-Demo Azul vs Rojo,63.4,2,Club Azul,Domínguez (8),tackle,ok,42.7,9.2,,
-Demo Azul vs Rojo,63.8,2,Club Rojo,Zárate (14),perdida,,60.6,60.8,,knock-on
-Demo Azul vs Rojo,64.3,2,Club Azul,Escobar (3),line,ok,39.4,0.0,,
-Demo Azul vs Rojo,64.9,2,Club Azul,Acosta (13),portacion,,39.4,2.0,3.9,
-Demo Azul vs Rojo,64.9,2,Club Rojo,Acosta (9),tackle,ok,58.7,68.0,,
-Demo Azul vs Rojo,65.3,2,Club Azul,Acosta (13),perdida,,43.3,2.0,,pelota suelta
-Demo Azul vs Rojo,65.9,2,Club Rojo,Giménez (11),portacion,,56.7,19.5,2.9,
-Demo Azul vs Rojo,65.9,2,Club Azul,Sosa (7),tackle,ok,41.8,50.5,,
-Demo Azul vs Rojo,66.4,2,Club Rojo,,ruck,ok,59.7,19.5,,
-Demo Azul vs Rojo,66.4,2,Club Rojo,Torres (5),portacion,,59.7,39.1,2.0,
-Demo Azul vs Rojo,66.4,2,Club Azul,Escobar (3),tackle,ok,39.4,30.9,,
-Demo Azul vs Rojo,66.7,2,Club Rojo,,ruck,ok,61.6,39.1,,
-Demo Azul vs Rojo,66.7,2,Club Rojo,Bustos (6),portacion,,61.6,29.9,1.5,
-Demo Azul vs Rojo,66.7,2,Club Azul,Castro (6),tackle,ok,37.6,40.1,,
-Demo Azul vs Rojo,67.1,2,Club Rojo,,ruck,ok,63.1,29.9,,
-Demo Azul vs Rojo,67.1,2,Club Rojo,Cabrera (10),portacion,,63.1,34.8,4.4,
-Demo Azul vs Rojo,67.1,2,Club Azul,Uriarte (10),tackle,ok,34.7,35.2,,
-Demo Azul vs Rojo,67.5,2,Club Rojo,,ruck,ok,67.5,34.8,,
-Demo Azul vs Rojo,67.5,2,Club Rojo,Zárate (14),portacion,,67.5,56.5,0.9,
-Demo Azul vs Rojo,67.5,2,Club Azul,Luna (4),tackle,ok,32.1,13.5,,
-Demo Azul vs Rojo,67.7,2,Club Rojo,,ruck,ok,68.4,56.5,,
-Demo Azul vs Rojo,67.7,2,Club Rojo,Escobar (12),portacion,,68.4,63.5,7.2,
-Demo Azul vs Rojo,67.7,2,Club Azul,Aguirre (5),tackle,ok,28.0,6.5,,
-Demo Azul vs Rojo,68.0,2,Club Rojo,,ruck,ok,75.6,63.5,,
-Demo Azul vs Rojo,68.0,2,Club Rojo,Acosta (9),portacion,,75.6,21.3,8.2,
-Demo Azul vs Rojo,68.0,2,Club Azul,Aguirre (5),tackle,fallo,20.4,48.7,,
-Demo Azul vs Rojo,68.0,2,Club Rojo,Acosta (9),entrada_22,,83.7,21.3,,
-Demo Azul vs Rojo,68.2,2,Club Rojo,,ruck,ok,83.7,21.3,,
-Demo Azul vs Rojo,68.2,2,Club Rojo,Giménez (11),portacion,,83.7,37.7,2.1,
-Demo Azul vs Rojo,68.2,2,Club Azul,Navarro (1),tackle,ok,15.2,32.3,,
-Demo Azul vs Rojo,68.6,2,Club Rojo,,ruck,ok,85.8,37.7,,
-Demo Azul vs Rojo,68.6,2,Club Rojo,Navarro (8),portacion,,85.8,30.9,6.7,
-Demo Azul vs Rojo,68.6,2,Club Azul,Paz (2),tackle,ok,10.9,39.1,,
-Demo Azul vs Rojo,68.9,2,Club Rojo,,ruck,ok,92.5,30.9,,
-Demo Azul vs Rojo,68.9,2,Club Rojo,Navarro (8),portacion,,92.5,50.2,3.2,
-Demo Azul vs Rojo,68.9,2,Club Azul,Bustos (15),tackle,ok,5.9,19.8,,
-Demo Azul vs Rojo,69.1,2,Club Rojo,Giménez (11),try,ok,100.0,38.8,,
-Demo Azul vs Rojo,69.6,2,Club Rojo,Cabrera (10),conversion,ok,100.0,38.8,,
-Demo Azul vs Rojo,70.7,2,Club Azul,Navarro (1),line,ok,50.0,0.0,,
-Demo Azul vs Rojo,71.2,2,Club Azul,Ortiz (12),portacion,,50.0,20.5,7.5,
-Demo Azul vs Rojo,71.2,2,Club Rojo,Ledesma (4),tackle,ok,46.2,49.5,,
-Demo Azul vs Rojo,71.4,2,Club Azul,,ruck,ok,57.5,20.5,,
-Demo Azul vs Rojo,71.4,2,Club Azul,Uriarte (10),portacion,,57.5,18.9,2.4,
-Demo Azul vs Rojo,71.4,2,Club Rojo,Ríos (1),tackle,ok,41.3,51.1,,
-Demo Azul vs Rojo,71.7,2,Club Azul,,ruck,ok,59.9,18.9,,
-Demo Azul vs Rojo,71.7,2,Club Azul,Escobar (3),portacion,,59.9,14.4,1.6,
-Demo Azul vs Rojo,71.7,2,Club Rojo,Zárate (14),tackle,ok,39.3,55.6,,
-Demo Azul vs Rojo,71.9,2,Club Azul,,ruck,ok,61.5,14.4,,
-Demo Azul vs Rojo,71.9,2,Club Azul,Godoy (9),portacion,,61.5,6.4,7.9,
-Demo Azul vs Rojo,71.9,2,Club Rojo,Luna (2),tackle,fallo,34.6,63.6,,
-Demo Azul vs Rojo,72.2,2,Club Azul,,ruck,ok,69.4,6.4,,
-Demo Azul vs Rojo,72.2,2,Club Azul,Duarte (14),portacion,,69.4,3.4,36.2,
-Demo Azul vs Rojo,72.2,2,Club Rojo,Ríos (1),tackle,fallo,12.5,66.6,,
-Demo Azul vs Rojo,72.2,2,Club Azul,Duarte (14),entrada_22,,100.0,3.4,,
-Demo Azul vs Rojo,72.5,2,Club Azul,Godoy (9),try,ok,100.0,3.0,,
-Demo Azul vs Rojo,73.0,2,Club Azul,Uriarte (10),conversion,ok,100.0,3.0,,
-Demo Azul vs Rojo,74.2,2,Club Rojo,Giménez (11),portacion,,50.0,4.2,3.7,
-Demo Azul vs Rojo,74.2,2,Club Azul,Castro (6),tackle,ok,48.1,65.8,,
-Demo Azul vs Rojo,74.5,2,Club Rojo,,ruck,ok,53.7,4.2,,
-Demo Azul vs Rojo,74.5,2,Club Rojo,Bustos (6),portacion,,53.7,17.6,7.6,
-Demo Azul vs Rojo,74.5,2,Club Azul,Navarro (1),tackle,ok,42.5,52.4,,
-Demo Azul vs Rojo,74.8,2,Club Rojo,,ruck,ok,61.4,17.6,,
-Demo Azul vs Rojo,74.8,2,Club Rojo,Bustos (6),portacion,,61.4,14.0,2.3,
-Demo Azul vs Rojo,74.8,2,Club Azul,Sosa (7),tackle,ok,37.5,56.0,,
-Demo Azul vs Rojo,75.0,2,Club Rojo,,ruck,ok,63.6,14.0,,
-Demo Azul vs Rojo,75.0,2,Club Rojo,Benítez (7),portacion,,63.6,23.2,12.6,
-Demo Azul vs Rojo,75.0,2,Club Azul,Godoy (9),tackle,fallo,30.1,46.8,,
-Demo Azul vs Rojo,75.4,2,Club Rojo,,ruck,ok,76.2,23.2,,
-Demo Azul vs Rojo,75.4,2,Club Rojo,Navarro (8),portacion,,76.2,21.2,0.8,
-Demo Azul vs Rojo,75.4,2,Club Azul,Uriarte (10),tackle,ok,23.4,48.8,,
-Demo Azul vs Rojo,75.6,2,Club Rojo,,ruck,fallo,77.0,21.2,,
-Demo Azul vs Rojo,75.6,2,Club Azul,Castro (6),recuperacion,,23.0,48.8,,
-Demo Azul vs Rojo,76.1,2,Club Azul,Ortiz (12),portacion,,23.0,47.6,0.1,
-Demo Azul vs Rojo,76.1,2,Club Rojo,Giménez (11),tackle,ok,77.0,22.4,,
-Demo Azul vs Rojo,76.3,2,Club Azul,,ruck,ok,23.1,47.6,,
-Demo Azul vs Rojo,76.3,2,Club Azul,Uriarte (10),portacion,,23.1,49.9,8.0,
-Demo Azul vs Rojo,76.3,2,Club Rojo,Acosta (9),tackle,ok,72.9,20.1,,
-Demo Azul vs Rojo,76.6,2,Club Azul,,ruck,ok,31.1,49.9,,
-Demo Azul vs Rojo,76.6,2,Club Azul,Acosta (13),portacion,,31.1,63.0,1.7,
-Demo Azul vs Rojo,76.6,2,Club Rojo,Ledesma (4),tackle,ok,68.0,7.0,,
-Demo Azul vs Rojo,76.8,2,Club Azul,,ruck,ok,32.8,63.0,,
-Demo Azul vs Rojo,76.8,2,Club Azul,Escobar (3),portacion,,32.8,68.0,1.6,
-Demo Azul vs Rojo,76.8,2,Club Rojo,Zárate (14),tackle,ok,66.4,2.0,,
-Demo Azul vs Rojo,77.0,2,Club Azul,,ruck,ok,34.4,68.0,,
-Demo Azul vs Rojo,77.0,2,Club Azul,Luna (4),portacion,,34.4,67.6,2.9,
-Demo Azul vs Rojo,77.0,2,Club Rojo,Cabrera (10),tackle,ok,64.1,2.4,,
-Demo Azul vs Rojo,77.3,2,Club Azul,,ruck,fallo,37.3,67.6,,
-Demo Azul vs Rojo,77.3,2,Club Rojo,Bustos (6),recuperacion,,62.7,2.4,,
-Demo Azul vs Rojo,77.6,2,Club Rojo,Duarte (3),line,ok,62.7,0.0,,
-Demo Azul vs Rojo,78.1,2,Club Rojo,Bustos (6),portacion,,62.7,2.0,0.9,
-Demo Azul vs Rojo,78.1,2,Club Azul,Domínguez (8),tackle,ok,36.9,68.0,,
-Demo Azul vs Rojo,78.4,2,Club Rojo,,ruck,fallo,63.5,2.0,,
-Demo Azul vs Rojo,78.4,2,Club Azul,Escobar (3),recuperacion,,36.5,68.0,,
-Demo Azul vs Rojo,78.7,2,Club Azul,Aguirre (5),portacion,,36.5,39.6,1.1,
-Demo Azul vs Rojo,78.7,2,Club Rojo,Herrera (13),tackle,ok,63.0,30.4,,
-Demo Azul vs Rojo,79.0,2,Club Azul,,ruck,ok,37.6,39.6,,
-Demo Azul vs Rojo,79.0,2,Club Azul,Escobar (3),portacion,,37.6,25.9,3.2,
-Demo Azul vs Rojo,79.0,2,Club Rojo,Escobar (12),tackle,ok,60.8,44.1,,
-Demo Azul vs Rojo,79.3,2,Club Rojo,Duarte (3),penal_cometido,,59.2,44.1,,ruck - manos
-Demo Azul vs Rojo,79.3,2,Club Rojo,Herrera (13),tarjeta,,59.2,44.1,,amarilla
-Demo Azul vs Rojo,80.0,2,Club Azul,Escobar (3),line,ok,56.1,0.0,,
-Demo Azul vs Rojo,80.0,2,Club Azul,Paz (2),portacion,,56.1,2.0,2.1,
-Demo Azul vs Rojo,80.0,2,Club Rojo,Giménez (11),tackle,ok,42.8,68.0,,
-Demo Azul vs Rojo,80.4,2,Club Azul,,ruck,ok,58.2,2.0,,
-Demo Azul vs Rojo,80.4,2,Club Azul,Navarro (1),portacion,,58.2,2.3,3.5,
-Demo Azul vs Rojo,80.4,2,Club Rojo,Escobar (12),tackle,ok,40.0,67.7,,
-Demo Azul vs Rojo,80.6,2,Club Azul,,ruck,ok,61.7,2.3,,
-Demo Azul vs Rojo,80.6,2,Club Azul,Bustos (15),portacion,,61.7,2.0,2.0,
-Demo Azul vs Rojo,80.6,2,Club Rojo,Luna (2),tackle,ok,37.3,68.0,,
-Demo Azul vs Rojo,81.0,2,Club Azul,Bustos (15),patada,,63.7,2.0,42.6,
+partido,minuto,periodo,equipo,jugador,evento,resultado,x,y,metros,detalle,video_seg
+Demo Azul vs Rojo,0.0,1,Club Azul,Uriarte (10),patada,,50.0,35.0,40.0,salida,120.0
+Demo Azul vs Rojo,0.0,1,Club Rojo,Benítez (7),portacion,,50.0,30.9,1.5,,120.0
+Demo Azul vs Rojo,0.0,1,Club Azul,Navarro (1),tackle,ok,49.3,39.1,,,120.0
+Demo Azul vs Rojo,0.3,1,Club Rojo,,ruck,ok,51.5,30.9,,,138.0
+Demo Azul vs Rojo,0.3,1,Club Rojo,Acosta (9),portacion,,51.5,47.2,4.1,,138.0
+Demo Azul vs Rojo,0.3,1,Club Azul,Ortiz (12),tackle,ok,46.4,22.8,,,138.0
+Demo Azul vs Rojo,0.6,1,Club Rojo,Cabrera (10),patada,,55.6,47.2,36.0,,156.0
+Demo Azul vs Rojo,1.1,1,Club Azul,,scrum,fallo,8.4,23.6,,,186.0
+Demo Azul vs Rojo,1.6,1,Club Rojo,Benítez (7),line,ok,91.6,0.0,,,216.0
+Demo Azul vs Rojo,2.2,1,Club Rojo,Zárate (14),portacion,,91.6,2.0,6.9,,252.0
+Demo Azul vs Rojo,2.2,1,Club Azul,Navarro (1),tackle,ok,4.9,68.0,,,252.0
+Demo Azul vs Rojo,2.6,1,Club Rojo,,ruck,ok,98.6,2.0,,,276.0
+Demo Azul vs Rojo,2.6,1,Club Rojo,Luna (2),portacion,,98.6,2.0,4.1,,276.0
+Demo Azul vs Rojo,2.6,1,Club Azul,Sosa (7),tackle,ok,0.0,68.0,,,276.0
+Demo Azul vs Rojo,2.8,1,Club Rojo,Escobar (12),try,ok,100.0,6.7,,,288.0
+Demo Azul vs Rojo,3.3,1,Club Rojo,Cabrera (10),conversion,ok,100.0,6.7,,,318.0
+Demo Azul vs Rojo,3.9,1,Club Azul,Navarro (1),line,ok,50.0,0.0,,,354.0
+Demo Azul vs Rojo,4.4,1,Club Azul,Ortiz (12),portacion,,50.0,2.0,4.1,,384.0
+Demo Azul vs Rojo,4.4,1,Club Rojo,Zárate (14),tackle,ok,47.9,68.0,,,384.0
+Demo Azul vs Rojo,4.6,1,Club Azul,,ruck,ok,54.1,2.0,,,396.0
+Demo Azul vs Rojo,4.6,1,Club Azul,Bustos (15),portacion,,54.1,2.0,3.5,,396.0
+Demo Azul vs Rojo,4.6,1,Club Rojo,Domínguez (15),tackle,ok,44.2,68.0,,,396.0
+Demo Azul vs Rojo,5.0,1,Club Azul,,ruck,ok,57.6,2.0,,,420.0
+Demo Azul vs Rojo,5.0,1,Club Azul,Godoy (9),portacion,,57.6,2.0,3.8,,420.0
+Demo Azul vs Rojo,5.0,1,Club Rojo,Ledesma (4),tackle,ok,40.5,68.0,,,420.0
+Demo Azul vs Rojo,5.4,1,Club Azul,,ruck,ok,61.3,2.0,,,444.0
+Demo Azul vs Rojo,5.4,1,Club Azul,Escobar (3),portacion,,61.3,9.3,19.5,,444.0
+Demo Azul vs Rojo,5.4,1,Club Rojo,Navarro (8),tackle,fallo,28.9,60.7,,,444.0
+Demo Azul vs Rojo,5.4,1,Club Azul,Escobar (3),entrada_22,,80.8,9.3,,,444.0
+Demo Azul vs Rojo,5.8,1,Club Azul,,ruck,ok,80.8,9.3,,,468.0
+Demo Azul vs Rojo,5.8,1,Club Azul,Ortiz (12),portacion,,80.8,2.0,1.7,,468.0
+Demo Azul vs Rojo,5.8,1,Club Rojo,Luna (2),tackle,ok,18.3,68.0,,,468.0
+Demo Azul vs Rojo,6.2,1,Club Azul,,ruck,ok,82.5,2.0,,,492.0
+Demo Azul vs Rojo,6.2,1,Club Azul,Ortiz (12),portacion,,82.5,2.0,2.9,,492.0
+Demo Azul vs Rojo,6.2,1,Club Rojo,Bustos (6),tackle,ok,16.0,68.0,,,492.0
+Demo Azul vs Rojo,6.4,1,Club Azul,,ruck,ok,85.4,2.0,,,504.0
+Demo Azul vs Rojo,6.4,1,Club Azul,Uriarte (10),portacion,,85.4,2.0,1.5,,504.0
+Demo Azul vs Rojo,6.4,1,Club Rojo,Ledesma (4),tackle,ok,13.8,68.0,,,504.0
+Demo Azul vs Rojo,6.6,1,Club Azul,,ruck,ok,86.9,2.0,,,516.0
+Demo Azul vs Rojo,6.6,1,Club Azul,Acosta (13),portacion,,86.9,8.8,1.5,,516.0
+Demo Azul vs Rojo,6.6,1,Club Rojo,Ríos (1),tackle,ok,12.4,61.2,,,516.0
+Demo Azul vs Rojo,7.0,1,Club Azul,,ruck,ok,88.4,8.8,,,540.0
+Demo Azul vs Rojo,7.0,1,Club Azul,Duarte (14),portacion,,88.4,16.0,2.8,,540.0
+Demo Azul vs Rojo,7.0,1,Club Rojo,Giménez (11),tackle,ok,10.2,54.0,,,540.0
+Demo Azul vs Rojo,7.2,1,Club Rojo,Ríos (1),penal_cometido,,8.8,54.0,,scrum,552.0
+Demo Azul vs Rojo,7.9,1,Club Azul,Uriarte (10),penal_palos,ok,91.2,16.0,,,594.0
+Demo Azul vs Rojo,9.0,1,Club Rojo,Cabrera (10),portacion,,50.0,12.8,4.9,,660.0
+Demo Azul vs Rojo,9.0,1,Club Azul,Uriarte (10),tackle,ok,47.6,57.2,,,660.0
+Demo Azul vs Rojo,9.3,1,Club Azul,Uriarte (10),penal_cometido,,45.1,57.2,,no soltar,678.0
+Demo Azul vs Rojo,9.7,1,Club Rojo,Navarro (8),line,ok,69.9,0.0,,,702.0
+Demo Azul vs Rojo,9.7,1,Club Rojo,Giménez (11),portacion,,69.9,2.0,3.1,,702.0
+Demo Azul vs Rojo,9.7,1,Club Azul,Torres (11),tackle,ok,28.5,68.0,,,702.0
+Demo Azul vs Rojo,10.1,1,Club Rojo,,ruck,ok,73.1,2.0,,,726.0
+Demo Azul vs Rojo,10.1,1,Club Rojo,Cabrera (10),portacion,,73.1,2.0,3.7,,726.0
+Demo Azul vs Rojo,10.1,1,Club Azul,Acosta (13),tackle,ok,25.1,68.0,,,726.0
+Demo Azul vs Rojo,10.5,1,Club Rojo,,ruck,ok,76.8,2.0,,,750.0
+Demo Azul vs Rojo,10.5,1,Club Rojo,Escobar (12),portacion,,76.8,2.0,3.3,,750.0
+Demo Azul vs Rojo,10.5,1,Club Azul,Domínguez (8),tackle,ok,21.6,68.0,,,750.0
+Demo Azul vs Rojo,10.5,1,Club Rojo,Escobar (12),entrada_22,,80.1,2.0,,,750.0
+Demo Azul vs Rojo,10.9,1,Club Rojo,,ruck,ok,80.1,2.0,,,774.0
+Demo Azul vs Rojo,10.9,1,Club Rojo,Navarro (8),portacion,,80.1,2.0,4.3,,774.0
+Demo Azul vs Rojo,10.9,1,Club Azul,Luna (4),tackle,ok,17.7,68.0,,,774.0
+Demo Azul vs Rojo,11.2,1,Club Rojo,,ruck,ok,84.5,2.0,,,792.0
+Demo Azul vs Rojo,11.2,1,Club Rojo,Bustos (6),portacion,,84.5,2.0,6.2,,792.0
+Demo Azul vs Rojo,11.2,1,Club Azul,Aguirre (5),tackle,ok,12.4,68.0,,,792.0
+Demo Azul vs Rojo,11.4,1,Club Azul,Bustos (15),penal_cometido,,9.3,68.0,,offside,804.0
+Demo Azul vs Rojo,11.9,1,Club Rojo,Cabrera (10),penal_palos,fallo,90.7,2.0,,,834.0
+Demo Azul vs Rojo,13.1,1,Club Azul,Navarro (1),line,ok,50.0,0.0,,,906.0
+Demo Azul vs Rojo,13.6,1,Club Azul,Ortiz (12),portacion,,50.0,2.0,7.5,,936.0
+Demo Azul vs Rojo,13.6,1,Club Rojo,Zárate (14),tackle,ok,46.3,68.0,,,936.0
+Demo Azul vs Rojo,13.9,1,Club Rojo,Bustos (6),penal_cometido,,42.5,68.0,,line,954.0
+Demo Azul vs Rojo,14.4,1,Club Azul,Uriarte (10),penal_palos,fallo,57.5,2.0,,,984.0
+Demo Azul vs Rojo,15.9,1,Club Rojo,Benítez (7),line,ok,50.0,0.0,,,1074.0
+Demo Azul vs Rojo,16.4,1,Club Rojo,Zárate (14),portacion,,50.0,18.8,2.8,,1104.0
+Demo Azul vs Rojo,16.4,1,Club Azul,Sosa (7),tackle,ok,48.6,51.2,,,1104.0
+Demo Azul vs Rojo,16.7,1,Club Rojo,,ruck,ok,52.8,18.8,,,1122.0
+Demo Azul vs Rojo,16.7,1,Club Rojo,Luna (2),portacion,,52.8,18.1,1.5,,1122.0
+Demo Azul vs Rojo,16.7,1,Club Azul,Luna (4),tackle,ok,46.5,51.9,,,1122.0
+Demo Azul vs Rojo,17.0,1,Club Rojo,,ruck,ok,54.3,18.1,,,1140.0
+Demo Azul vs Rojo,17.0,1,Club Rojo,Ríos (1),portacion,,54.3,2.0,7.9,,1140.0
+Demo Azul vs Rojo,17.0,1,Club Azul,Duarte (14),tackle,fallo,41.8,68.0,,,1140.0
+Demo Azul vs Rojo,17.2,1,Club Rojo,,ruck,ok,62.2,2.0,,,1152.0
+Demo Azul vs Rojo,17.2,1,Club Rojo,Cabrera (10),portacion,,62.2,10.6,6.9,,1152.0
+Demo Azul vs Rojo,17.2,1,Club Azul,Navarro (1),tackle,ok,34.4,59.4,,,1152.0
+Demo Azul vs Rojo,17.5,1,Club Rojo,,ruck,ok,69.1,10.6,,,1170.0
+Demo Azul vs Rojo,17.5,1,Club Rojo,Ledesma (4),portacion,,69.1,2.0,2.1,,1170.0
+Demo Azul vs Rojo,17.5,1,Club Azul,Domínguez (8),tackle,ok,29.9,68.0,,,1170.0
+Demo Azul vs Rojo,17.7,1,Club Rojo,,ruck,ok,71.2,2.0,,,1182.0
+Demo Azul vs Rojo,17.7,1,Club Rojo,Cabrera (10),portacion,,71.2,2.0,6.9,,1182.0
+Demo Azul vs Rojo,17.7,1,Club Azul,Ortiz (12),tackle,ok,25.3,68.0,,,1182.0
+Demo Azul vs Rojo,17.7,1,Club Rojo,Cabrera (10),entrada_22,,78.1,2.0,,,1182.0
+Demo Azul vs Rojo,17.9,1,Club Rojo,,ruck,ok,78.1,2.0,,,1194.0
+Demo Azul vs Rojo,17.9,1,Club Rojo,Ledesma (4),portacion,,78.1,2.0,6.8,,1194.0
+Demo Azul vs Rojo,17.9,1,Club Azul,Godoy (9),tackle,ok,18.5,68.0,,,1194.0
+Demo Azul vs Rojo,18.2,1,Club Rojo,Domínguez (15),patada,,84.9,2.0,41.7,,1212.0
+Demo Azul vs Rojo,18.9,1,Club Azul,Escobar (3),line,ok,5.0,0.0,,,1254.0
+Demo Azul vs Rojo,19.2,1,Club Azul,Torres (11),portacion,,5.0,6.0,0.4,,1272.0
+Demo Azul vs Rojo,19.2,1,Club Rojo,Cabrera (10),tackle,ok,94.8,64.0,,,1272.0
+Demo Azul vs Rojo,19.4,1,Club Azul,,ruck,ok,5.4,6.0,,,1284.0
+Demo Azul vs Rojo,19.4,1,Club Azul,Duarte (14),portacion,,5.4,2.0,11.4,,1284.0
+Demo Azul vs Rojo,19.4,1,Club Rojo,Ríos (1),tackle,ok,89.0,68.0,,,1284.0
+Demo Azul vs Rojo,19.7,1,Club Azul,,ruck,ok,16.7,2.0,,,1302.0
+Demo Azul vs Rojo,19.7,1,Club Azul,Bustos (15),portacion,,16.7,2.0,6.1,,1302.0
+Demo Azul vs Rojo,19.7,1,Club Rojo,Zárate (14),tackle,ok,80.2,68.0,,,1302.0
+Demo Azul vs Rojo,20.0,1,Club Azul,Bustos (15),patada,,22.8,2.0,43.9,,1320.0
+Demo Azul vs Rojo,20.8,1,Club Rojo,Luna (2),portacion,,33.3,34.3,5.1,,1368.0
+Demo Azul vs Rojo,20.8,1,Club Azul,Luna (4),tackle,ok,64.2,35.7,,,1368.0
+Demo Azul vs Rojo,21.1,1,Club Rojo,,ruck,ok,38.4,34.3,,,1386.0
+Demo Azul vs Rojo,21.1,1,Club Rojo,Zárate (14),portacion,,38.4,37.1,4.8,,1386.0
+Demo Azul vs Rojo,21.1,1,Club Azul,Uriarte (10),tackle,fallo,59.2,32.9,,,1386.0
+Demo Azul vs Rojo,21.1,1,Club Rojo,Zárate (14),quiebre,,41.3,37.1,,,1386.0
+Demo Azul vs Rojo,21.3,1,Club Rojo,,ruck,ok,43.2,37.1,,,1398.0
+Demo Azul vs Rojo,21.3,1,Club Rojo,Benítez (7),portacion,,43.2,21.2,2.2,,1398.0
+Demo Azul vs Rojo,21.3,1,Club Azul,Luna (4),tackle,ok,55.7,48.8,,,1398.0
+Demo Azul vs Rojo,21.6,1,Club Rojo,,ruck,ok,45.4,21.2,,,1416.0
+Demo Azul vs Rojo,21.6,1,Club Rojo,Ledesma (4),portacion,,45.4,36.6,3.3,,1416.0
+Demo Azul vs Rojo,21.6,1,Club Azul,Domínguez (8),tackle,ok,52.9,33.4,,,1416.0
+Demo Azul vs Rojo,22.0,1,Club Rojo,,ruck,ok,48.7,36.6,,,1440.0
+Demo Azul vs Rojo,22.0,1,Club Rojo,Escobar (12),portacion,,48.7,14.8,0.8,,1440.0
+Demo Azul vs Rojo,22.0,1,Club Azul,Castro (6),tackle,ok,50.9,55.2,,,1440.0
+Demo Azul vs Rojo,22.4,1,Club Rojo,,ruck,ok,49.5,14.8,,,1464.0
+Demo Azul vs Rojo,22.4,1,Club Rojo,Escobar (12),portacion,,49.5,13.0,6.8,,1464.0
+Demo Azul vs Rojo,22.4,1,Club Azul,Acosta (13),tackle,ok,47.1,57.0,,,1464.0
+Demo Azul vs Rojo,22.6,1,Club Rojo,,ruck,ok,56.3,13.0,,,1476.0
+Demo Azul vs Rojo,22.6,1,Club Rojo,Herrera (13),portacion,,56.3,22.9,1.0,,1476.0
+Demo Azul vs Rojo,22.6,1,Club Azul,Navarro (1),tackle,ok,43.2,47.1,,,1476.0
+Demo Azul vs Rojo,23.0,1,Club Rojo,,ruck,ok,57.3,22.9,,,1500.0
+Demo Azul vs Rojo,23.0,1,Club Rojo,Giménez (11),portacion,,57.3,4.1,0.4,,1500.0
+Demo Azul vs Rojo,23.0,1,Club Azul,Sosa (7),tackle,ok,42.5,65.9,,,1500.0
+Demo Azul vs Rojo,23.4,1,Club Rojo,,ruck,ok,57.7,4.1,,,1524.0
+Demo Azul vs Rojo,23.4,1,Club Rojo,Domínguez (15),portacion,,57.7,15.8,1.3,,1524.0
+Demo Azul vs Rojo,23.4,1,Club Azul,Castro (6),tackle,ok,41.7,54.2,,,1524.0
+Demo Azul vs Rojo,23.6,1,Club Rojo,,ruck,ok,58.9,15.8,,,1536.0
+Demo Azul vs Rojo,23.6,1,Club Rojo,Duarte (3),portacion,,58.9,5.4,8.3,,1536.0
+Demo Azul vs Rojo,23.6,1,Club Azul,Duarte (14),tackle,ok,36.9,64.6,,,1536.0
+Demo Azul vs Rojo,23.9,1,Club Rojo,,ruck,ok,67.3,5.4,,,1554.0
+Demo Azul vs Rojo,23.9,1,Club Rojo,Giménez (11),portacion,,67.3,47.7,1.0,,1554.0
+Demo Azul vs Rojo,23.9,1,Club Azul,Escobar (3),tackle,ok,32.2,22.3,,,1554.0
+Demo Azul vs Rojo,24.3,1,Club Rojo,,ruck,ok,68.3,47.7,,,1578.0
+Demo Azul vs Rojo,24.3,1,Club Rojo,Benítez (7),portacion,,68.3,20.5,3.8,,1578.0
+Demo Azul vs Rojo,24.3,1,Club Azul,Aguirre (5),tackle,ok,29.8,49.5,,,1578.0
+Demo Azul vs Rojo,24.6,1,Club Azul,Castro (6),penal_cometido,,27.9,49.5,,scrum,1596.0
+Demo Azul vs Rojo,25.1,1,Club Rojo,,entrada_22,,85.8,5.0,,,1626.0
+Demo Azul vs Rojo,25.1,1,Club Rojo,Benítez (7),line,ok,85.8,0.0,,,1626.0
+Demo Azul vs Rojo,25.1,1,Club Rojo,Duarte (3),portacion,,85.8,2.0,2.5,,1626.0
+Demo Azul vs Rojo,25.1,1,Club Azul,Ortiz (12),tackle,ok,13.0,68.0,,,1626.0
+Demo Azul vs Rojo,25.3,1,Club Rojo,,ruck,ok,88.3,2.0,,,1638.0
+Demo Azul vs Rojo,25.3,1,Club Rojo,Bustos (6),portacion,,88.3,2.0,1.0,,1638.0
+Demo Azul vs Rojo,25.3,1,Club Azul,Luna (4),tackle,ok,11.2,68.0,,,1638.0
+Demo Azul vs Rojo,25.6,1,Club Rojo,,ruck,ok,89.3,2.0,,,1656.0
+Demo Azul vs Rojo,25.6,1,Club Rojo,Cabrera (10),portacion,,89.3,2.0,3.1,,1656.0
+Demo Azul vs Rojo,25.6,1,Club Azul,Castro (6),tackle,ok,9.2,68.0,,,1656.0
+Demo Azul vs Rojo,25.8,1,Club Rojo,,ruck,ok,92.3,2.0,,,1668.0
+Demo Azul vs Rojo,25.8,1,Club Rojo,Ledesma (4),portacion,,92.3,2.0,2.9,,1668.0
+Demo Azul vs Rojo,25.8,1,Club Azul,Luna (4),tackle,ok,6.2,68.0,,,1668.0
+Demo Azul vs Rojo,26.0,1,Club Azul,Luna (4),penal_cometido,,4.8,68.0,,ruck - manos,1680.0
+Demo Azul vs Rojo,26.4,1,Club Rojo,Cabrera (10),penal_palos,ok,95.2,2.0,,,1704.0
+Demo Azul vs Rojo,27.6,1,Club Azul,Sosa (7),portacion,,50.0,2.0,3.8,,1776.0
+Demo Azul vs Rojo,27.6,1,Club Rojo,Giménez (11),tackle,ok,48.1,68.0,,,1776.0
+Demo Azul vs Rojo,27.9,1,Club Rojo,Navarro (8),penal_cometido,,46.2,68.0,,scrum,1794.0
+Demo Azul vs Rojo,28.5,1,Club Azul,,entrada_22,,78.1,5.0,,,1830.0
+Demo Azul vs Rojo,28.5,1,Club Azul,Escobar (3),line,fallo,78.1,0.0,,,1830.0
+Demo Azul vs Rojo,28.5,1,Club Rojo,Duarte (3),line,fallo,21.9,0.0,,,1830.0
+Demo Azul vs Rojo,28.9,1,Club Azul,Bustos (15),portacion,,78.1,41.3,2.6,,1854.0
+Demo Azul vs Rojo,28.9,1,Club Rojo,Herrera (13),tackle,ok,20.6,28.7,,,1854.0
+Demo Azul vs Rojo,29.3,1,Club Azul,,ruck,ok,80.7,41.3,,,1878.0
+Demo Azul vs Rojo,29.3,1,Club Azul,Godoy (9),portacion,,80.7,50.5,2.7,,1878.0
+Demo Azul vs Rojo,29.3,1,Club Rojo,Duarte (3),tackle,ok,17.9,19.5,,,1878.0
+Demo Azul vs Rojo,29.5,1,Club Azul,,ruck,ok,83.5,50.5,,,1890.0
+Demo Azul vs Rojo,29.5,1,Club Azul,Duarte (14),portacion,,83.5,42.0,13.8,,1890.0
+Demo Azul vs Rojo,29.5,1,Club Rojo,Herrera (13),tackle,fallo,9.6,28.0,,,1890.0
+Demo Azul vs Rojo,29.5,1,Club Azul,Duarte (14),quiebre,,91.8,42.0,,,1890.0
+Demo Azul vs Rojo,29.5,1,Club Azul,Duarte (14),offload,,97.3,42.0,,,1890.0
+Demo Azul vs Rojo,29.9,1,Club Azul,,ruck,ok,97.3,42.0,,,1914.0
+Demo Azul vs Rojo,29.9,1,Club Azul,Duarte (14),portacion,,97.3,41.7,2.8,,1914.0
+Demo Azul vs Rojo,29.9,1,Club Rojo,Duarte (3),tackle,ok,1.3,28.3,,,1914.0
+Demo Azul vs Rojo,30.2,1,Club Azul,Aguirre (5),try,ok,100.0,55.3,,,1932.0
+Demo Azul vs Rojo,30.7,1,Club Azul,Uriarte (10),conversion,ok,100.0,55.3,,,1962.0
+Demo Azul vs Rojo,31.5,1,Club Rojo,Escobar (12),portacion,,50.0,35.0,8.8,,2010.0
+Demo Azul vs Rojo,31.5,1,Club Azul,Bustos (15),tackle,ok,45.6,35.0,,,2010.0
+Demo Azul vs Rojo,31.8,1,Club Rojo,,ruck,ok,58.8,35.0,,,2028.0
+Demo Azul vs Rojo,31.8,1,Club Rojo,Herrera (13),portacion,,58.8,59.1,2.2,,2028.0
+Demo Azul vs Rojo,31.8,1,Club Azul,Uriarte (10),tackle,ok,40.1,10.9,,,2028.0
+Demo Azul vs Rojo,32.2,1,Club Rojo,,ruck,ok,60.9,59.1,,,2052.0
+Demo Azul vs Rojo,32.2,1,Club Rojo,Cabrera (10),portacion,,60.9,33.6,3.7,,2052.0
+Demo Azul vs Rojo,32.2,1,Club Azul,Sosa (7),tackle,ok,37.2,36.4,,,2052.0
+Demo Azul vs Rojo,32.4,1,Club Rojo,,ruck,fallo,64.6,33.6,,,2064.0
+Demo Azul vs Rojo,32.4,1,Club Azul,Paz (2),recuperacion,,35.4,36.4,,,2064.0
+Demo Azul vs Rojo,32.8,1,Club Azul,Navarro (1),line,fallo,35.4,0.0,,,2088.0
+Demo Azul vs Rojo,33.2,1,Club Rojo,Torres (5),line,fallo,64.6,0.0,,,2112.0
+Demo Azul vs Rojo,33.7,1,Club Azul,Navarro (1),line,ok,35.4,0.0,,,2142.0
+Demo Azul vs Rojo,34.1,1,Club Azul,Godoy (9),portacion,,35.4,18.4,3.1,,2166.0
+Demo Azul vs Rojo,34.1,1,Club Rojo,Navarro (8),tackle,ok,63.1,51.6,,,2166.0
+Demo Azul vs Rojo,34.5,1,Club Azul,,ruck,ok,38.5,18.4,,,2190.0
+Demo Azul vs Rojo,34.5,1,Club Azul,Luna (4),portacion,,38.5,2.0,4.5,,2190.0
+Demo Azul vs Rojo,34.5,1,Club Rojo,Herrera (13),tackle,ok,59.3,68.0,,,2190.0
+Demo Azul vs Rojo,34.9,1,Club Azul,,ruck,ok,43.0,2.0,,,2214.0
+Demo Azul vs Rojo,34.9,1,Club Azul,Acosta (13),portacion,,43.0,13.6,2.2,,2214.0
+Demo Azul vs Rojo,34.9,1,Club Rojo,Ledesma (4),tackle,ok,55.9,56.4,,,2214.0
+Demo Azul vs Rojo,35.2,1,Club Azul,,ruck,ok,45.1,13.6,,,2232.0
+Demo Azul vs Rojo,35.2,1,Club Azul,Acosta (13),portacion,,45.1,30.4,4.8,,2232.0
+Demo Azul vs Rojo,35.2,1,Club Rojo,Ledesma (4),tackle,ok,52.5,39.6,,,2232.0
+Demo Azul vs Rojo,35.4,1,Club Azul,,ruck,ok,49.9,30.4,,,2244.0
+Demo Azul vs Rojo,35.4,1,Club Azul,Uriarte (10),portacion,,49.9,8.1,8.6,,2244.0
+Demo Azul vs Rojo,35.4,1,Club Rojo,Ledesma (4),tackle,ok,45.8,61.9,,,2244.0
+Demo Azul vs Rojo,35.6,1,Club Azul,,ruck,ok,58.5,8.1,,,2256.0
+Demo Azul vs Rojo,35.6,1,Club Azul,Paz (2),portacion,,58.5,2.0,2.2,,2256.0
+Demo Azul vs Rojo,35.6,1,Club Rojo,Domínguez (15),tackle,ok,40.4,68.0,,,2256.0
+Demo Azul vs Rojo,35.8,1,Club Azul,,ruck,ok,60.6,2.0,,,2268.0
+Demo Azul vs Rojo,35.8,1,Club Azul,Godoy (9),portacion,,60.6,2.0,3.5,,2268.0
+Demo Azul vs Rojo,35.8,1,Club Rojo,Zárate (14),tackle,ok,37.6,68.0,,,2268.0
+Demo Azul vs Rojo,36.0,1,Club Azul,,ruck,ok,64.1,2.0,,,2280.0
+Demo Azul vs Rojo,36.0,1,Club Azul,Duarte (14),portacion,,64.1,2.0,0.3,,2280.0
+Demo Azul vs Rojo,36.0,1,Club Rojo,Torres (5),tackle,ok,35.7,68.0,,,2280.0
+Demo Azul vs Rojo,36.3,1,Club Azul,,ruck,fallo,64.4,2.0,,,2298.0
+Demo Azul vs Rojo,36.3,1,Club Rojo,Bustos (6),recuperacion,,35.6,68.0,,,2298.0
+Demo Azul vs Rojo,36.6,1,Club Rojo,Luna (2),line,ok,35.6,0.0,,,2316.0
+Demo Azul vs Rojo,37.1,1,Club Rojo,Duarte (3),portacion,,35.6,8.5,2.5,,2346.0
+Demo Azul vs Rojo,37.1,1,Club Azul,Luna (4),tackle,ok,63.2,61.5,,,2346.0
+Demo Azul vs Rojo,37.3,1,Club Rojo,,ruck,ok,38.0,8.5,,,2358.0
+Demo Azul vs Rojo,37.3,1,Club Rojo,Benítez (7),portacion,,38.0,2.0,2.4,,2358.0
+Demo Azul vs Rojo,37.3,1,Club Azul,Escobar (3),tackle,ok,60.8,68.0,,,2358.0
+Demo Azul vs Rojo,37.8,1,Club Rojo,Cabrera (10),patada,,40.5,2.0,42.8,,2388.0
+Demo Azul vs Rojo,38.4,1,Club Azul,Paz (2),line,ok,16.7,0.0,,,2424.0
+Demo Azul vs Rojo,38.6,1,Club Azul,Domínguez (8),portacion,,16.7,2.0,14.4,,2436.0
+Demo Azul vs Rojo,38.6,1,Club Rojo,Domínguez (15),tackle,fallo,76.0,68.0,,,2436.0
+Demo Azul vs Rojo,38.9,1,Club Azul,,ruck,ok,31.2,2.0,,,2454.0
+Demo Azul vs Rojo,38.9,1,Club Azul,Godoy (9),portacion,,31.2,6.5,7.8,,2454.0
+Demo Azul vs Rojo,38.9,1,Club Rojo,Bustos (6),tackle,fallo,64.9,63.5,,,2454.0
+Demo Azul vs Rojo,39.4,1,Club Azul,,ruck,ok,39.0,6.5,,,2484.0
+Demo Azul vs Rojo,39.4,1,Club Azul,Duarte (14),portacion,,39.0,2.0,4.2,,2484.0
+Demo Azul vs Rojo,39.4,1,Club Rojo,Bustos (6),tackle,fallo,58.9,68.0,,,2484.0
+Demo Azul vs Rojo,39.7,1,Club Azul,,ruck,ok,43.2,2.0,,,2502.0
+Demo Azul vs Rojo,39.7,1,Club Azul,Escobar (3),portacion,,43.2,2.0,4.5,,2502.0
+Demo Azul vs Rojo,39.7,1,Club Rojo,Ledesma (4),tackle,ok,54.6,68.0,,,2502.0
+Demo Azul vs Rojo,40.1,2,Club Azul,,ruck,ok,47.7,2.0,,,3246.0
+Demo Azul vs Rojo,40.1,2,Club Azul,Castro (6),portacion,,47.7,2.0,3.4,,3246.0
+Demo Azul vs Rojo,40.1,2,Club Rojo,Duarte (3),tackle,ok,50.6,68.0,,,3246.0
+Demo Azul vs Rojo,40.3,2,Club Azul,Castro (6),perdida,,51.0,2.0,,pase forward,3258.0
+Demo Azul vs Rojo,40.8,2,Club Rojo,Bustos (6),portacion,,49.0,23.9,2.5,,3288.0
+Demo Azul vs Rojo,40.8,2,Club Azul,Torres (11),tackle,ok,49.8,46.1,,,3288.0
+Demo Azul vs Rojo,41.2,2,Club Rojo,Acosta (9),patada,,51.5,23.9,42.7,,3312.0
+Demo Azul vs Rojo,40.0,1,Club Rojo,Ríos (1),line,fallo,50.0,0.0,,,2520.0
+Demo Azul vs Rojo,40.4,2,Club Azul,Domínguez (8),portacion,,50.0,63.8,5.0,,3264.0
+Demo Azul vs Rojo,40.4,2,Club Rojo,Torres (5),tackle,ok,47.5,6.2,,,3264.0
+Demo Azul vs Rojo,40.6,2,Club Azul,,ruck,ok,55.0,63.8,,,3276.0
+Demo Azul vs Rojo,40.6,2,Club Azul,Sosa (7),portacion,,55.0,55.1,3.4,,3276.0
+Demo Azul vs Rojo,40.6,2,Club Rojo,Duarte (3),tackle,ok,43.3,14.9,,,3276.0
+Demo Azul vs Rojo,40.8,2,Club Azul,,ruck,ok,58.4,55.1,,,3288.0
+Demo Azul vs Rojo,40.8,2,Club Azul,Luna (4),portacion,,58.4,60.1,9.4,,3288.0
+Demo Azul vs Rojo,40.8,2,Club Rojo,Navarro (8),tackle,fallo,36.9,9.9,,,3288.0
+Demo Azul vs Rojo,40.8,2,Club Azul,Luna (4),quiebre,,64.0,60.1,,,3288.0
+Demo Azul vs Rojo,40.8,2,Club Azul,Luna (4),offload,,67.8,60.1,,,3288.0
+Demo Azul vs Rojo,41.0,2,Club Azul,Luna (4),perdida,,67.8,60.1,,pelota suelta,3300.0
+Demo Azul vs Rojo,41.3,2,Club Rojo,Bustos (6),line,ok,32.2,0.0,,,3318.0
+Demo Azul vs Rojo,41.5,2,Club Rojo,Acosta (9),portacion,,32.2,9.3,1.1,,3330.0
+Demo Azul vs Rojo,41.5,2,Club Azul,Aguirre (5),tackle,ok,67.2,60.7,,,3330.0
+Demo Azul vs Rojo,42.0,2,Club Rojo,,ruck,ok,33.4,9.3,,,3360.0
+Demo Azul vs Rojo,42.0,2,Club Rojo,Luna (2),portacion,,33.4,3.7,4.1,,3360.0
+Demo Azul vs Rojo,42.0,2,Club Azul,Godoy (9),tackle,fallo,64.6,66.3,,,3360.0
+Demo Azul vs Rojo,42.4,2,Club Rojo,,ruck,ok,37.4,3.7,,,3384.0
+Demo Azul vs Rojo,42.4,2,Club Rojo,Luna (2),portacion,,37.4,2.0,28.9,,3384.0
+Demo Azul vs Rojo,42.4,2,Club Azul,Sosa (7),tackle,fallo,48.1,68.0,,,3384.0
+Demo Azul vs Rojo,42.4,2,Club Rojo,Luna (2),quiebre,,54.8,2.0,,,3384.0
+Demo Azul vs Rojo,42.5,2,Club Rojo,,ruck,ok,66.4,2.0,,,3390.0
+Demo Azul vs Rojo,42.5,2,Club Rojo,Herrera (13),portacion,,66.4,2.0,10.1,,3390.0
+Demo Azul vs Rojo,42.5,2,Club Azul,Aguirre (5),tackle,fallo,28.6,68.0,,,3390.0
+Demo Azul vs Rojo,42.8,2,Club Azul,Luna (4),penal_cometido,,23.5,68.0,,line,3408.0
+Demo Azul vs Rojo,43.3,2,Club Rojo,Cabrera (10),penal_palos,ok,76.5,2.0,,,3438.0
+Demo Azul vs Rojo,44.5,2,Club Azul,Bustos (15),portacion,,50.0,59.7,1.7,,3510.0
+Demo Azul vs Rojo,44.5,2,Club Rojo,Herrera (13),tackle,ok,49.2,10.3,,,3510.0
+Demo Azul vs Rojo,44.6,2,Club Azul,,ruck,ok,51.7,59.7,,,3516.0
+Demo Azul vs Rojo,44.6,2,Club Azul,Luna (4),portacion,,51.7,57.6,3.9,,3516.0
+Demo Azul vs Rojo,44.6,2,Club Rojo,Domínguez (15),tackle,ok,46.4,12.4,,,3516.0
+Demo Azul vs Rojo,44.8,2,Club Azul,,ruck,ok,55.5,57.6,,,3528.0
+Demo Azul vs Rojo,44.8,2,Club Azul,Castro (6),portacion,,55.5,55.5,1.8,,3528.0
+Demo Azul vs Rojo,44.8,2,Club Rojo,Ledesma (4),tackle,ok,43.6,14.5,,,3528.0
+Demo Azul vs Rojo,45.2,2,Club Azul,,ruck,ok,57.3,55.5,,,3552.0
+Demo Azul vs Rojo,45.2,2,Club Azul,Castro (6),portacion,,57.3,68.0,5.1,,3552.0
+Demo Azul vs Rojo,45.2,2,Club Rojo,Domínguez (15),tackle,ok,40.1,2.0,,,3552.0
+Demo Azul vs Rojo,45.5,2,Club Azul,,ruck,ok,62.4,68.0,,,3570.0
+Demo Azul vs Rojo,45.5,2,Club Azul,Escobar (3),portacion,,62.4,50.3,2.7,,3570.0
+Demo Azul vs Rojo,45.5,2,Club Rojo,Benítez (7),tackle,ok,36.3,19.7,,,3570.0
+Demo Azul vs Rojo,45.7,2,Club Azul,,ruck,ok,65.1,50.3,,,3582.0
+Demo Azul vs Rojo,45.7,2,Club Azul,Godoy (9),portacion,,65.1,34.8,8.5,,3582.0
+Demo Azul vs Rojo,45.7,2,Club Rojo,Navarro (8),tackle,fallo,30.6,35.2,,,3582.0
+Demo Azul vs Rojo,45.9,2,Club Azul,,ruck,ok,73.6,34.8,,,3594.0
+Demo Azul vs Rojo,45.9,2,Club Azul,Torres (11),portacion,,73.6,61.6,2.6,,3594.0
+Demo Azul vs Rojo,45.9,2,Club Rojo,Torres (5),tackle,ok,25.1,8.4,,,3594.0
+Demo Azul vs Rojo,46.1,2,Club Azul,,ruck,ok,76.2,61.6,,,3606.0
+Demo Azul vs Rojo,46.1,2,Club Azul,Domínguez (8),portacion,,76.2,68.0,3.1,,3606.0
+Demo Azul vs Rojo,46.1,2,Club Rojo,Ríos (1),tackle,ok,22.3,2.0,,,3606.0
+Demo Azul vs Rojo,46.1,2,Club Azul,Domínguez (8),entrada_22,,79.3,68.0,,,3606.0
+Demo Azul vs Rojo,46.4,2,Club Azul,,ruck,ok,79.3,68.0,,,3624.0
+Demo Azul vs Rojo,46.4,2,Club Azul,Torres (11),portacion,,79.3,52.0,10.1,,3624.0
+Demo Azul vs Rojo,46.4,2,Club Rojo,Duarte (3),tackle,ok,15.7,18.0,,,3624.0
+Demo Azul vs Rojo,46.7,2,Club Azul,,ruck,ok,89.4,52.0,,,3642.0
+Demo Azul vs Rojo,46.7,2,Club Azul,Sosa (7),portacion,,89.4,57.3,8.2,,3642.0
+Demo Azul vs Rojo,46.7,2,Club Rojo,Torres (5),tackle,fallo,6.5,12.7,,,3642.0
+Demo Azul vs Rojo,46.9,2,Club Azul,Ortiz (12),try,ok,100.0,59.5,,,3654.0
+Demo Azul vs Rojo,47.4,2,Club Azul,Uriarte (10),conversion,ok,100.0,59.5,,,3684.0
+Demo Azul vs Rojo,48.0,2,Club Rojo,,scrum,ok,50.0,19.3,,,3720.0
+Demo Azul vs Rojo,48.5,2,Club Rojo,Acosta (9),portacion,,50.0,27.2,2.0,,3750.0
+Demo Azul vs Rojo,48.5,2,Club Azul,Domínguez (8),tackle,ok,49.0,42.8,,,3750.0
+Demo Azul vs Rojo,48.8,2,Club Rojo,,ruck,ok,52.0,27.2,,,3768.0
+Demo Azul vs Rojo,48.8,2,Club Rojo,Domínguez (15),portacion,,52.0,7.7,4.6,,3768.0
+Demo Azul vs Rojo,48.8,2,Club Azul,Ortiz (12),tackle,ok,45.7,62.3,,,3768.0
+Demo Azul vs Rojo,49.0,2,Club Rojo,,ruck,ok,56.6,7.7,,,3780.0
+Demo Azul vs Rojo,49.0,2,Club Rojo,Bustos (6),portacion,,56.6,15.1,0.7,,3780.0
+Demo Azul vs Rojo,49.0,2,Club Azul,Acosta (13),tackle,ok,43.1,54.9,,,3780.0
+Demo Azul vs Rojo,49.3,2,Club Rojo,,ruck,ok,57.3,15.1,,,3798.0
+Demo Azul vs Rojo,49.3,2,Club Rojo,Ledesma (4),portacion,,57.3,14.5,1.4,,3798.0
+Demo Azul vs Rojo,49.3,2,Club Azul,Godoy (9),tackle,ok,42.0,55.5,,,3798.0
+Demo Azul vs Rojo,49.8,2,Club Rojo,,ruck,ok,58.7,14.5,,,3828.0
+Demo Azul vs Rojo,49.8,2,Club Rojo,Ríos (1),portacion,,58.7,11.0,1.5,,3828.0
+Demo Azul vs Rojo,49.8,2,Club Azul,Castro (6),tackle,ok,40.6,59.0,,,3828.0
+Demo Azul vs Rojo,50.1,2,Club Rojo,,ruck,ok,60.2,11.0,,,3846.0
+Demo Azul vs Rojo,50.1,2,Club Rojo,Duarte (3),portacion,,60.2,33.2,2.4,,3846.0
+Demo Azul vs Rojo,50.1,2,Club Azul,Torres (11),tackle,ok,38.6,36.8,,,3846.0
+Demo Azul vs Rojo,50.5,2,Club Rojo,,ruck,ok,62.6,33.2,,,3870.0
+Demo Azul vs Rojo,50.5,2,Club Rojo,Acosta (9),portacion,,62.6,16.6,2.2,,3870.0
+Demo Azul vs Rojo,50.5,2,Club Azul,Escobar (3),tackle,ok,36.4,53.4,,,3870.0
+Demo Azul vs Rojo,50.8,2,Club Rojo,Acosta (9),perdida,,64.7,16.6,,pelota suelta,3888.0
+Demo Azul vs Rojo,51.3,2,Club Azul,Aguirre (5),line,ok,35.3,0.0,,,3918.0
+Demo Azul vs Rojo,51.7,2,Club Azul,Navarro (1),portacion,,35.3,27.7,1.0,,3942.0
+Demo Azul vs Rojo,51.7,2,Club Rojo,Acosta (9),tackle,ok,64.2,42.3,,,3942.0
+Demo Azul vs Rojo,51.9,2,Club Azul,,ruck,ok,36.2,27.7,,,3954.0
+Demo Azul vs Rojo,51.9,2,Club Azul,Sosa (7),portacion,,36.2,8.9,0.9,,3954.0
+Demo Azul vs Rojo,51.9,2,Club Rojo,Domínguez (15),tackle,ok,63.3,61.1,,,3954.0
+Demo Azul vs Rojo,52.1,2,Club Azul,,ruck,ok,37.2,8.9,,,3966.0
+Demo Azul vs Rojo,52.1,2,Club Azul,Navarro (1),portacion,,37.2,6.1,2.6,,3966.0
+Demo Azul vs Rojo,52.1,2,Club Rojo,Bustos (6),tackle,ok,61.5,63.9,,,3966.0
+Demo Azul vs Rojo,52.4,2,Club Azul,,ruck,ok,39.8,6.1,,,3984.0
+Demo Azul vs Rojo,52.4,2,Club Azul,Navarro (1),portacion,,39.8,2.0,3.2,,3984.0
+Demo Azul vs Rojo,52.4,2,Club Rojo,Ríos (1),tackle,ok,58.6,68.0,,,3984.0
+Demo Azul vs Rojo,52.7,2,Club Azul,,ruck,ok,43.0,2.0,,,4002.0
+Demo Azul vs Rojo,52.7,2,Club Azul,Bustos (15),portacion,,43.0,2.0,4.6,,4002.0
+Demo Azul vs Rojo,52.7,2,Club Rojo,Ríos (1),tackle,ok,54.7,68.0,,,4002.0
+Demo Azul vs Rojo,52.9,2,Club Azul,Bustos (15),perdida,,47.6,2.0,,pelota suelta,4014.0
+Demo Azul vs Rojo,53.5,2,Club Rojo,Benítez (7),line,ok,52.4,0.0,,,4050.0
+Demo Azul vs Rojo,54.0,2,Club Rojo,Acosta (9),portacion,,52.4,2.0,4.8,,4080.0
+Demo Azul vs Rojo,54.0,2,Club Azul,Acosta (13),tackle,fallo,45.2,68.0,,,4080.0
+Demo Azul vs Rojo,54.0,2,Club Rojo,Acosta (9),quiebre,,55.3,2.0,,,4080.0
+Demo Azul vs Rojo,54.3,2,Club Rojo,,ruck,ok,57.2,2.0,,,4098.0
+Demo Azul vs Rojo,54.3,2,Club Rojo,Escobar (12),portacion,,57.2,2.0,1.7,,4098.0
+Demo Azul vs Rojo,54.3,2,Club Azul,Sosa (7),tackle,ok,42.0,68.0,,,4098.0
+Demo Azul vs Rojo,54.4,2,Club Rojo,,ruck,ok,58.9,2.0,,,4104.0
+Demo Azul vs Rojo,54.4,2,Club Rojo,Navarro (8),portacion,,58.9,2.0,3.7,,4104.0
+Demo Azul vs Rojo,54.4,2,Club Azul,Godoy (9),tackle,ok,39.2,68.0,,,4104.0
+Demo Azul vs Rojo,54.6,2,Club Azul,Navarro (1),penal_cometido,,37.4,68.0,,offside,4116.0
+Demo Azul vs Rojo,55.6,2,Club Rojo,Duarte (3),line,ok,76.4,0.0,,,4176.0
+Demo Azul vs Rojo,55.6,2,Club Rojo,Escobar (12),portacion,,76.4,2.0,3.0,,4176.0
+Demo Azul vs Rojo,55.6,2,Club Azul,Godoy (9),tackle,ok,22.0,68.0,,,4176.0
+Demo Azul vs Rojo,55.6,2,Club Rojo,Escobar (12),entrada_22,,79.5,2.0,,,4176.0
+Demo Azul vs Rojo,56.0,2,Club Rojo,,ruck,ok,79.5,2.0,,,4200.0
+Demo Azul vs Rojo,56.0,2,Club Rojo,Duarte (3),portacion,,79.5,14.1,2.2,,4200.0
+Demo Azul vs Rojo,56.0,2,Club Azul,Castro (6),tackle,ok,19.4,55.9,,,4200.0
+Demo Azul vs Rojo,56.3,2,Club Rojo,,ruck,ok,81.7,14.1,,,4218.0
+Demo Azul vs Rojo,56.3,2,Club Rojo,Zárate (14),portacion,,81.7,2.0,1.2,,4218.0
+Demo Azul vs Rojo,56.3,2,Club Azul,Bustos (15),tackle,ok,17.7,68.0,,,4218.0
+Demo Azul vs Rojo,56.5,2,Club Azul,Godoy (9),penal_cometido,,17.1,68.0,,scrum,4230.0
+Demo Azul vs Rojo,57.3,2,Club Rojo,Cabrera (10),penal_palos,ok,82.9,2.0,,,4278.0
+Demo Azul vs Rojo,58.6,2,Club Azul,Sosa (7),line,ok,50.0,0.0,,,4356.0
+Demo Azul vs Rojo,58.8,2,Club Azul,Acosta (13),portacion,,50.0,15.7,4.6,,4368.0
+Demo Azul vs Rojo,58.8,2,Club Rojo,Zárate (14),tackle,ok,47.7,54.3,,,4368.0
+Demo Azul vs Rojo,59.1,2,Club Azul,,ruck,ok,54.6,15.7,,,4386.0
+Demo Azul vs Rojo,59.1,2,Club Azul,Uriarte (10),portacion,,54.6,7.7,6.4,,4386.0
+Demo Azul vs Rojo,59.1,2,Club Rojo,Zárate (14),tackle,ok,42.2,62.3,,,4386.0
+Demo Azul vs Rojo,59.2,2,Club Azul,,ruck,ok,61.0,7.7,,,4392.0
+Demo Azul vs Rojo,59.2,2,Club Azul,Domínguez (8),portacion,,61.0,2.0,1.3,,4392.0
+Demo Azul vs Rojo,59.2,2,Club Rojo,Herrera (13),tackle,ok,38.4,68.0,,,4392.0
+Demo Azul vs Rojo,59.6,2,Club Azul,,ruck,ok,62.2,2.0,,,4416.0
+Demo Azul vs Rojo,59.6,2,Club Azul,Luna (4),portacion,,62.2,4.1,2.0,,4416.0
+Demo Azul vs Rojo,59.6,2,Club Rojo,Ledesma (4),tackle,ok,36.8,65.9,,,4416.0
+Demo Azul vs Rojo,59.8,2,Club Azul,,ruck,ok,64.2,4.1,,,4428.0
+Demo Azul vs Rojo,59.8,2,Club Azul,Luna (4),portacion,,64.2,24.3,3.4,,4428.0
+Demo Azul vs Rojo,59.8,2,Club Rojo,Torres (5),tackle,ok,34.1,45.7,,,4428.0
+Demo Azul vs Rojo,60.2,2,Club Azul,,ruck,ok,67.6,24.3,,,4452.0
+Demo Azul vs Rojo,60.2,2,Club Azul,Ortiz (12),portacion,,67.6,2.1,3.7,,4452.0
+Demo Azul vs Rojo,60.2,2,Club Rojo,Herrera (13),tackle,ok,30.5,67.9,,,4452.0
+Demo Azul vs Rojo,60.6,2,Club Azul,,ruck,ok,71.3,2.1,,,4476.0
+Demo Azul vs Rojo,60.6,2,Club Azul,Torres (11),portacion,,71.3,2.0,6.7,,4476.0
+Demo Azul vs Rojo,60.6,2,Club Rojo,Giménez (11),tackle,ok,25.4,68.0,,,4476.0
+Demo Azul vs Rojo,60.8,2,Club Azul,,ruck,ok,78.0,2.0,,,4488.0
+Demo Azul vs Rojo,60.8,2,Club Azul,Acosta (13),portacion,,78.0,16.8,7.7,,4488.0
+Demo Azul vs Rojo,60.8,2,Club Rojo,Benítez (7),tackle,ok,18.1,53.2,,,4488.0
+Demo Azul vs Rojo,60.8,2,Club Azul,Acosta (13),entrada_22,,85.7,16.8,,,4488.0
+Demo Azul vs Rojo,61.1,2,Club Azul,,ruck,ok,85.7,16.8,,,4506.0
+Demo Azul vs Rojo,61.1,2,Club Azul,Castro (6),portacion,,85.7,2.0,8.6,,4506.0
+Demo Azul vs Rojo,61.1,2,Club Rojo,Acosta (9),tackle,ok,10.0,68.0,,,4506.0
+Demo Azul vs Rojo,61.5,2,Club Azul,Godoy (9),try,ok,100.0,3.0,,,4530.0
+Demo Azul vs Rojo,62.0,2,Club Azul,Uriarte (10),conversion,ok,100.0,3.0,,,4560.0
+Demo Azul vs Rojo,62.9,2,Club Rojo,,scrum,ok,50.0,42.1,,,4614.0
+Demo Azul vs Rojo,63.2,2,Club Rojo,Torres (5),portacion,,50.0,51.4,4.0,,4632.0
+Demo Azul vs Rojo,63.2,2,Club Azul,Aguirre (5),tackle,ok,48.0,18.6,,,4632.0
+Demo Azul vs Rojo,63.4,2,Club Rojo,,ruck,ok,54.0,51.4,,,4644.0
+Demo Azul vs Rojo,63.4,2,Club Rojo,Zárate (14),portacion,,54.0,60.8,6.6,,4644.0
+Demo Azul vs Rojo,63.4,2,Club Azul,Domínguez (8),tackle,ok,42.7,9.2,,,4644.0
+Demo Azul vs Rojo,63.8,2,Club Rojo,Zárate (14),perdida,,60.6,60.8,,knock-on,4668.0
+Demo Azul vs Rojo,64.3,2,Club Azul,Escobar (3),line,ok,39.4,0.0,,,4698.0
+Demo Azul vs Rojo,64.9,2,Club Azul,Acosta (13),portacion,,39.4,2.0,3.9,,4734.0
+Demo Azul vs Rojo,64.9,2,Club Rojo,Acosta (9),tackle,ok,58.7,68.0,,,4734.0
+Demo Azul vs Rojo,65.3,2,Club Azul,Acosta (13),perdida,,43.3,2.0,,pelota suelta,4758.0
+Demo Azul vs Rojo,65.9,2,Club Rojo,Giménez (11),portacion,,56.7,19.5,2.9,,4794.0
+Demo Azul vs Rojo,65.9,2,Club Azul,Sosa (7),tackle,ok,41.8,50.5,,,4794.0
+Demo Azul vs Rojo,66.4,2,Club Rojo,,ruck,ok,59.7,19.5,,,4824.0
+Demo Azul vs Rojo,66.4,2,Club Rojo,Torres (5),portacion,,59.7,39.1,2.0,,4824.0
+Demo Azul vs Rojo,66.4,2,Club Azul,Escobar (3),tackle,ok,39.4,30.9,,,4824.0
+Demo Azul vs Rojo,66.7,2,Club Rojo,,ruck,ok,61.6,39.1,,,4842.0
+Demo Azul vs Rojo,66.7,2,Club Rojo,Bustos (6),portacion,,61.6,29.9,1.5,,4842.0
+Demo Azul vs Rojo,66.7,2,Club Azul,Castro (6),tackle,ok,37.6,40.1,,,4842.0
+Demo Azul vs Rojo,67.1,2,Club Rojo,,ruck,ok,63.1,29.9,,,4866.0
+Demo Azul vs Rojo,67.1,2,Club Rojo,Cabrera (10),portacion,,63.1,34.8,4.4,,4866.0
+Demo Azul vs Rojo,67.1,2,Club Azul,Uriarte (10),tackle,ok,34.7,35.2,,,4866.0
+Demo Azul vs Rojo,67.5,2,Club Rojo,,ruck,ok,67.5,34.8,,,4890.0
+Demo Azul vs Rojo,67.5,2,Club Rojo,Zárate (14),portacion,,67.5,56.5,0.9,,4890.0
+Demo Azul vs Rojo,67.5,2,Club Azul,Luna (4),tackle,ok,32.1,13.5,,,4890.0
+Demo Azul vs Rojo,67.7,2,Club Rojo,,ruck,ok,68.4,56.5,,,4902.0
+Demo Azul vs Rojo,67.7,2,Club Rojo,Escobar (12),portacion,,68.4,63.5,7.2,,4902.0
+Demo Azul vs Rojo,67.7,2,Club Azul,Aguirre (5),tackle,ok,28.0,6.5,,,4902.0
+Demo Azul vs Rojo,68.0,2,Club Rojo,,ruck,ok,75.6,63.5,,,4920.0
+Demo Azul vs Rojo,68.0,2,Club Rojo,Acosta (9),portacion,,75.6,21.3,8.2,,4920.0
+Demo Azul vs Rojo,68.0,2,Club Azul,Aguirre (5),tackle,fallo,20.4,48.7,,,4920.0
+Demo Azul vs Rojo,68.0,2,Club Rojo,Acosta (9),entrada_22,,83.7,21.3,,,4920.0
+Demo Azul vs Rojo,68.2,2,Club Rojo,,ruck,ok,83.7,21.3,,,4932.0
+Demo Azul vs Rojo,68.2,2,Club Rojo,Giménez (11),portacion,,83.7,37.7,2.1,,4932.0
+Demo Azul vs Rojo,68.2,2,Club Azul,Navarro (1),tackle,ok,15.2,32.3,,,4932.0
+Demo Azul vs Rojo,68.6,2,Club Rojo,,ruck,ok,85.8,37.7,,,4956.0
+Demo Azul vs Rojo,68.6,2,Club Rojo,Navarro (8),portacion,,85.8,30.9,6.7,,4956.0
+Demo Azul vs Rojo,68.6,2,Club Azul,Paz (2),tackle,ok,10.9,39.1,,,4956.0
+Demo Azul vs Rojo,68.9,2,Club Rojo,,ruck,ok,92.5,30.9,,,4974.0
+Demo Azul vs Rojo,68.9,2,Club Rojo,Navarro (8),portacion,,92.5,50.2,3.2,,4974.0
+Demo Azul vs Rojo,68.9,2,Club Azul,Bustos (15),tackle,ok,5.9,19.8,,,4974.0
+Demo Azul vs Rojo,69.1,2,Club Rojo,Giménez (11),try,ok,100.0,38.8,,,4986.0
+Demo Azul vs Rojo,69.6,2,Club Rojo,Cabrera (10),conversion,ok,100.0,38.8,,,5016.0
+Demo Azul vs Rojo,70.7,2,Club Azul,Navarro (1),line,ok,50.0,0.0,,,5082.0
+Demo Azul vs Rojo,71.2,2,Club Azul,Ortiz (12),portacion,,50.0,20.5,7.5,,5112.0
+Demo Azul vs Rojo,71.2,2,Club Rojo,Ledesma (4),tackle,ok,46.2,49.5,,,5112.0
+Demo Azul vs Rojo,71.4,2,Club Azul,,ruck,ok,57.5,20.5,,,5124.0
+Demo Azul vs Rojo,71.4,2,Club Azul,Uriarte (10),portacion,,57.5,18.9,2.4,,5124.0
+Demo Azul vs Rojo,71.4,2,Club Rojo,Ríos (1),tackle,ok,41.3,51.1,,,5124.0
+Demo Azul vs Rojo,71.7,2,Club Azul,,ruck,ok,59.9,18.9,,,5142.0
+Demo Azul vs Rojo,71.7,2,Club Azul,Escobar (3),portacion,,59.9,14.4,1.6,,5142.0
+Demo Azul vs Rojo,71.7,2,Club Rojo,Zárate (14),tackle,ok,39.3,55.6,,,5142.0
+Demo Azul vs Rojo,71.9,2,Club Azul,,ruck,ok,61.5,14.4,,,5154.0
+Demo Azul vs Rojo,71.9,2,Club Azul,Godoy (9),portacion,,61.5,6.4,7.9,,5154.0
+Demo Azul vs Rojo,71.9,2,Club Rojo,Luna (2),tackle,fallo,34.6,63.6,,,5154.0
+Demo Azul vs Rojo,72.2,2,Club Azul,,ruck,ok,69.4,6.4,,,5172.0
+Demo Azul vs Rojo,72.2,2,Club Azul,Duarte (14),portacion,,69.4,3.4,36.2,,5172.0
+Demo Azul vs Rojo,72.2,2,Club Rojo,Ríos (1),tackle,fallo,12.5,66.6,,,5172.0
+Demo Azul vs Rojo,72.2,2,Club Azul,Duarte (14),entrada_22,,100.0,3.4,,,5172.0
+Demo Azul vs Rojo,72.5,2,Club Azul,Godoy (9),try,ok,100.0,3.0,,,5190.0
+Demo Azul vs Rojo,73.0,2,Club Azul,Uriarte (10),conversion,ok,100.0,3.0,,,5220.0
+Demo Azul vs Rojo,74.2,2,Club Rojo,Giménez (11),portacion,,50.0,4.2,3.7,,5292.0
+Demo Azul vs Rojo,74.2,2,Club Azul,Castro (6),tackle,ok,48.1,65.8,,,5292.0
+Demo Azul vs Rojo,74.5,2,Club Rojo,,ruck,ok,53.7,4.2,,,5310.0
+Demo Azul vs Rojo,74.5,2,Club Rojo,Bustos (6),portacion,,53.7,17.6,7.6,,5310.0
+Demo Azul vs Rojo,74.5,2,Club Azul,Navarro (1),tackle,ok,42.5,52.4,,,5310.0
+Demo Azul vs Rojo,74.8,2,Club Rojo,,ruck,ok,61.4,17.6,,,5328.0
+Demo Azul vs Rojo,74.8,2,Club Rojo,Bustos (6),portacion,,61.4,14.0,2.3,,5328.0
+Demo Azul vs Rojo,74.8,2,Club Azul,Sosa (7),tackle,ok,37.5,56.0,,,5328.0
+Demo Azul vs Rojo,75.0,2,Club Rojo,,ruck,ok,63.6,14.0,,,5340.0
+Demo Azul vs Rojo,75.0,2,Club Rojo,Benítez (7),portacion,,63.6,23.2,12.6,,5340.0
+Demo Azul vs Rojo,75.0,2,Club Azul,Godoy (9),tackle,fallo,30.1,46.8,,,5340.0
+Demo Azul vs Rojo,75.4,2,Club Rojo,,ruck,ok,76.2,23.2,,,5364.0
+Demo Azul vs Rojo,75.4,2,Club Rojo,Navarro (8),portacion,,76.2,21.2,0.8,,5364.0
+Demo Azul vs Rojo,75.4,2,Club Azul,Uriarte (10),tackle,ok,23.4,48.8,,,5364.0
+Demo Azul vs Rojo,75.6,2,Club Rojo,,ruck,fallo,77.0,21.2,,,5376.0
+Demo Azul vs Rojo,75.6,2,Club Azul,Castro (6),recuperacion,,23.0,48.8,,,5376.0
+Demo Azul vs Rojo,76.1,2,Club Azul,Ortiz (12),portacion,,23.0,47.6,0.1,,5406.0
+Demo Azul vs Rojo,76.1,2,Club Rojo,Giménez (11),tackle,ok,77.0,22.4,,,5406.0
+Demo Azul vs Rojo,76.3,2,Club Azul,,ruck,ok,23.1,47.6,,,5418.0
+Demo Azul vs Rojo,76.3,2,Club Azul,Uriarte (10),portacion,,23.1,49.9,8.0,,5418.0
+Demo Azul vs Rojo,76.3,2,Club Rojo,Acosta (9),tackle,ok,72.9,20.1,,,5418.0
+Demo Azul vs Rojo,76.6,2,Club Azul,,ruck,ok,31.1,49.9,,,5436.0
+Demo Azul vs Rojo,76.6,2,Club Azul,Acosta (13),portacion,,31.1,63.0,1.7,,5436.0
+Demo Azul vs Rojo,76.6,2,Club Rojo,Ledesma (4),tackle,ok,68.0,7.0,,,5436.0
+Demo Azul vs Rojo,76.8,2,Club Azul,,ruck,ok,32.8,63.0,,,5448.0
+Demo Azul vs Rojo,76.8,2,Club Azul,Escobar (3),portacion,,32.8,68.0,1.6,,5448.0
+Demo Azul vs Rojo,76.8,2,Club Rojo,Zárate (14),tackle,ok,66.4,2.0,,,5448.0
+Demo Azul vs Rojo,77.0,2,Club Azul,,ruck,ok,34.4,68.0,,,5460.0
+Demo Azul vs Rojo,77.0,2,Club Azul,Luna (4),portacion,,34.4,67.6,2.9,,5460.0
+Demo Azul vs Rojo,77.0,2,Club Rojo,Cabrera (10),tackle,ok,64.1,2.4,,,5460.0
+Demo Azul vs Rojo,77.3,2,Club Azul,,ruck,fallo,37.3,67.6,,,5478.0
+Demo Azul vs Rojo,77.3,2,Club Rojo,Bustos (6),recuperacion,,62.7,2.4,,,5478.0
+Demo Azul vs Rojo,77.6,2,Club Rojo,Duarte (3),line,ok,62.7,0.0,,,5496.0
+Demo Azul vs Rojo,78.1,2,Club Rojo,Bustos (6),portacion,,62.7,2.0,0.9,,5526.0
+Demo Azul vs Rojo,78.1,2,Club Azul,Domínguez (8),tackle,ok,36.9,68.0,,,5526.0
+Demo Azul vs Rojo,78.4,2,Club Rojo,,ruck,fallo,63.5,2.0,,,5544.0
+Demo Azul vs Rojo,78.4,2,Club Azul,Escobar (3),recuperacion,,36.5,68.0,,,5544.0
+Demo Azul vs Rojo,78.7,2,Club Azul,Aguirre (5),portacion,,36.5,39.6,1.1,,5562.0
+Demo Azul vs Rojo,78.7,2,Club Rojo,Herrera (13),tackle,ok,63.0,30.4,,,5562.0
+Demo Azul vs Rojo,79.0,2,Club Azul,,ruck,ok,37.6,39.6,,,5580.0
+Demo Azul vs Rojo,79.0,2,Club Azul,Escobar (3),portacion,,37.6,25.9,3.2,,5580.0
+Demo Azul vs Rojo,79.0,2,Club Rojo,Escobar (12),tackle,ok,60.8,44.1,,,5580.0
+Demo Azul vs Rojo,79.3,2,Club Rojo,Duarte (3),penal_cometido,,59.2,44.1,,ruck - manos,5598.0
+Demo Azul vs Rojo,79.3,2,Club Rojo,Herrera (13),tarjeta,,59.2,44.1,,amarilla,5598.0
+Demo Azul vs Rojo,80.0,2,Club Azul,Escobar (3),line,ok,56.1,0.0,,,5640.0
+Demo Azul vs Rojo,80.0,2,Club Azul,Paz (2),portacion,,56.1,2.0,2.1,,5640.0
+Demo Azul vs Rojo,80.0,2,Club Rojo,Giménez (11),tackle,ok,42.8,68.0,,,5640.0
+Demo Azul vs Rojo,80.4,2,Club Azul,,ruck,ok,58.2,2.0,,,5664.0
+Demo Azul vs Rojo,80.4,2,Club Azul,Navarro (1),portacion,,58.2,2.3,3.5,,5664.0
+Demo Azul vs Rojo,80.4,2,Club Rojo,Escobar (12),tackle,ok,40.0,67.7,,,5664.0
+Demo Azul vs Rojo,80.6,2,Club Azul,,ruck,ok,61.7,2.3,,,5676.0
+Demo Azul vs Rojo,80.6,2,Club Azul,Bustos (15),portacion,,61.7,2.0,2.0,,5676.0
+Demo Azul vs Rojo,80.6,2,Club Rojo,Luna (2),tackle,ok,37.3,68.0,,,5676.0
+Demo Azul vs Rojo,81.0,2,Club Azul,Bustos (15),patada,,63.7,2.0,42.6,,5700.0

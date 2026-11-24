@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etiquetador de Rugby</title>
+<style>
+  :root {
+    --bg: #f4f6f4; --panel: #ffffff; --text: #1d241f; --muted: #66706a; --line: #d9dfda;
+    --accent: #2e7d32; --a: #1e88e5; --b: #e53935; --ok: #2e7d32; --bad: #c62828; --pasto: #2e7d32;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131714; --panel: #1c211d; --text: #e8ece9; --muted: #9aa49d; --line: #2f3731;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  header { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 18px; margin: 0 12px 0 0; }
+  input, select, button { font: inherit; color: inherit; }
+  input[type=text], input[type=number], select { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; }
+  button { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+  button:hover { border-color: var(--accent); }
+  button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  label.file { background: var(--accent); color: #fff; padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+  label.file input { display: none; }
+  main { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr); gap: 12px; padding: 12px 16px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  video { width: 100%; max-height: 58vh; background: #000; border-radius: 8px; display: block; }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 8px; }
+  .muted { color: var(--muted); font-size: 12px; }
+  .teams button { min-width: 120px; font-weight: 600; }
+  .teams button.sel-a { background: var(--a); color: #fff; border-color: var(--a); }
+  .teams button.sel-b { background: var(--b); color: #fff; border-color: var(--b); }
+  .grid-ev { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-top: 8px; }
+  .grid-ev button { text-align: left; padding: 6px 8px; font-size: 13px; }
+  .grid-ev kbd, .help kbd, .teams kbd { font: 11px ui-monospace, monospace; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; float: right; }
+  .ok { border-left: 4px solid var(--ok) !important; }
+  .bad { border-left: 4px solid var(--bad) !important; }
+  svg { width: 100%; height: auto; display: block; cursor: crosshair; border-radius: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th, td { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--bg); }
+  tr.playing { outline: 2px solid var(--accent); }
+  .tablewrap { max-height: 34vh; overflow: auto; margin-top: 8px; }
+  .pill { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; }
+  .status { font-weight: 600; }
+  #toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: #222; color: #fff; padding: 8px 14px; border-radius: 8px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  #toast.show { opacity: .92; }
+  details summary { cursor: pointer; font-weight: 600; }
+  .help { columns: 2; font-size: 12.5px; margin-top: 6px; }
+  .help div { break-inside: avoid; margin-bottom: 3px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏉 Etiquetador de video</h1>
+  <label class="file">🎬 Abrir video MP4<input type="file" id="fVideo" accept="video/*"></label>
+  <input type="text" id="tA" value="Mi Club" size="11" title="Equipo A">
+  <span class="muted">vs</span>
+  <input type="text" id="tB" value="Rival" size="11" title="Equipo B">
+  <input type="text" id="partido" placeholder="Nombre del partido" size="20">
+  <select id="dirA" title="Hacia dónde ataca el equipo A en el 1º tiempo (en la imagen)">
+    <option value="1">A ataca → en 1º T</option>
+    <option value="-1">A ataca ← en 1º T</option>
+  </select>
+  <span style="flex:1"></span>
+  <label class="file" style="background:#555">📂 Abrir CSV<input type="file" id="fCsv" accept=".csv"></label>
+  <button class="primary" id="btnCsv">⬇️ Descargar CSV</button>
+</header>
+
+<main>
+  <section>
+    <div class="card">
+      <video id="video" controls playsinline></video>
+      <div class="row">
+        <button data-skip="-10">⏪ 10s</button><button data-skip="-3">-3s</button>
+        <button id="btnPlay">⏯️</button>
+        <button data-skip="3">+3s</button><button data-skip="10">10s ⏩</button>
+        <select id="speed"><option>0.5</option><option selected>1</option><option>1.5</option><option>2</option><option>4</option></select>
+        <span class="muted">velocidad</span>
+        <span style="flex:1"></span>
+        <span class="status" id="clock">--:--</span>
+      </div>
+      <div class="row">
+        <button id="k1">🟢 Marcar inicio 1º tiempo</button>
+        <button id="k2">🟢 Marcar inicio 2º tiempo</button>
+        <span class="muted" id="kinfo">Marcá el kick-off de cada tiempo para que el minuto de juego sea exacto.</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <div class="row" style="margin-top:0">
+        <strong>Revisar clips</strong>
+        <select id="filEv"><option value="">Todos los eventos</option></select>
+        <select id="filEq"><option value="">Ambos equipos</option></select>
+        <select id="filRes"><option value="">Cualquier resultado</option><option value="ok">✓ ok</option><option value="fallo">✗ fallo</option></select>
+        <input type="text" id="filJug" placeholder="Jugador" size="8">
+        <span class="muted">antes</span><input type="number" id="pre" value="6" min="0" max="30" style="width:52px">
+        <span class="muted">después</span><input type="number" id="post" value="3" min="0" max="30" style="width:52px">
+        <button class="primary" id="btnPlaylist">▶️ Reproducir clips</button>
+        <button id="btnStop">⏹️</button>
+        <span class="muted" id="nfil"></span>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Video</th><th>Min</th><th>Equipo</th><th>Evento</th><th>Res.</th><th>Jugador</th><th>Detalle</th><th></th></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="row teams" style="margin-top:0">
+        <button id="selA" class="sel-a">A · Mi Club <kbd>1</kbd></button>
+        <button id="selB">B · Rival <kbd>2</kbd></button>
+      </div>
+      <div class="row">
+        <input type="text" id="jug" placeholder="Jugador / Nº (opcional)" size="14">
+        <input type="text" id="det" placeholder="Detalle (motivo penal…)" size="18">
+        <input type="number" id="met" placeholder="Metros" style="width:80px">
+      </div>
+      <div class="grid-ev" id="botones"></div>
+      <p class="muted" style="margin:8px 0 4px">Clic en la cancha = posición de la próxima acción (en la imagen del video).
+        Se convierte sola al sistema del equipo que hace la acción.</p>
+      <svg id="pitch" viewBox="-10 -4 120 78"></svg>
+      <div class="row"><span class="muted" id="posinfo">Sin posición marcada</span>
+        <button id="btnNoPos" style="margin-left:auto">Quitar posición</button></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <details>
+        <summary>⌨️ Atajos de teclado</summary>
+        <div class="help" id="help"></div>
+      </details>
+      <div class="row">
+        <button id="btnUndo">↩️ Deshacer último <kbd>⌫</kbd></button>
+        <button id="btnClear">🗑️ Borrar todo</button>
+        <span class="muted" id="nev"></span>
+      </div>
+      <p class="muted">Se guarda solo en este navegador cada vez que cargás un evento. Igual, descargá el CSV al terminar.</p>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const video = $("video");
+  const STORE = "rugbyTagger.v1";
+
+  // código, texto, resultado, tecla
+  const EVENTOS = [
+    ["tackle", "Tackle ✓", "ok", "t"], ["tackle", "Tackle ✗", "fallo", "y"], ["portacion", "Portación", "", "c"],
+    ["quiebre", "Quiebre", "", "q"], ["offload", "Offload", "", "o"], ["patada", "Patada", "", "x"],
+    ["ruck", "Ruck ✓", "ok", "r"], ["ruck", "Ruck perdido ✗", "fallo", "e"], ["entrada_22", "Entrada 22", "", "z"],
+    ["line", "Line ✓", "ok", "l"], ["line", "Line ✗", "fallo", "k"], ["recuperacion", "Recuperación", "", "i"],
+    ["scrum", "Scrum ✓", "ok", "s"], ["scrum", "Scrum ✗", "fallo", "d"], ["perdida", "Pérdida", "", "u"],
+    ["penal_cometido", "Penal cometido", "", "p"], ["tarjeta", "Tarjeta", "", "j"], ["try", "TRY", "ok", "g"],
+    ["conversion", "Conversión ✓", "ok", "v"], ["conversion", "Conversión ✗", "fallo", "n"], ["drop", "Drop ✓", "ok", "m"],
+    ["penal_palos", "Penal palos ✓", "ok", "f"], ["penal_palos", "Penal palos ✗", "fallo", "h"], ["drop", "Drop ✗", "fallo", "b"],
+  ];
+  const COLS = ["partido", "minuto", "periodo", "equipo", "jugador", "evento", "resultado", "x", "y", "metros", "detalle", "video_seg"];
+
+  let st = { eventos: [], k1: null, k2: null, tA: "Mi Club", tB: "Rival", partido: "", dirA: "1" };
+  let equipoSel = "A";
+  let pos = null;            // posición en la imagen {dx, dy} (0-100, 0-70)
+  let playlist = null;       // {items, i}
+
+  // ---------- persistencia ----------
+  function guardar() {
+    st.tA = $("tA").value; st.tB = $("tB").value; st.partido = $("partido").value; st.dirA = $("dirA").value;
+    try { localStorage.setItem(STORE, JSON.stringify(st)); } catch (e) { /* sin almacenamiento: seguir igual */ }
+  }
+  function cargar() {
+    try { const s = JSON.parse(localStorage.getItem(STORE) || "null"); if (s && Array.isArray(s.eventos)) st = { ...st, ...s }; } catch (e) {}
+    $("tA").value = st.tA; $("tB").value = st.tB; $("partido").value = st.partido; $("dirA").value = st.dirA;
+  }
+
+  // ---------- utilidades ----------
+  const fmt = (s) => { if (s == null || isNaN(s)) return "--:--"; s = Math.max(0, s); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = Math.floor(s % 60);
+    return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(x).padStart(2, "0"); };
+  const nombre = (k) => (k === "A" ? $("tA").value : $("tB").value) || k;
+  function toast(t) { const el = $("toast"); el.textContent = t; el.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove("show"), 1300); }
+
+  function periodoDe(t) { return st.k2 != null && t >= st.k2 ? 2 : 1; }
+  function minutoDe(t) {
+    const p = periodoDe(t);
+    if (p === 2) return 40 + (t - st.k2) / 60;
+    return st.k1 != null ? Math.max(0, (t - st.k1) / 60) : t / 60;
+  }
+  // dirección de ataque en la imagen (+1 derecha, -1 izquierda) para un equipo y período
+  function dir(eqKey, periodo) {
+    let d = parseInt($("dirA").value, 10);
+    if (eqKey === "B") d = -d;
+    if (periodo === 2) d = -d;
+    return d;
+  }
+  // imagen -> coordenadas del equipo (x desde su in-goal)
+  const aEquipo = (dx, dy, d) => d > 0 ? [dx, dy] : [100 - dx, 70 - dy];
+  // coordenadas del equipo -> imagen
+  const aImagen = (x, y, d) => d > 0 ? [x, y] : [100 - x, 70 - y];
+
+  // ---------- eventos ----------
+  function registrar(cod, res) {
+    if (!video.src) { toast("Primero abrí un video"); return; }
+    const t = video.currentTime, p = periodoDe(t), eq = equipoSel;
+    let x = "", y = "";
+    if (pos) { const c = aEquipo(pos.dx, pos.dy, dir(eq, p)); x = +c[0].toFixed(1); y = +c[1].toFixed(1); }
+    if ((cod === "try" || cod === "try_penal") && pos) x = 100;  // un try siempre se apoya en el in-goal rival
+    const ev = {
+      id: Date.now() + Math.random(), eq, partido: $("partido").value || `${$("tA").value} vs ${$("tB").value}`,
+      minuto: +minutoDe(t).toFixed(1), periodo: p, equipo: nombre(eq), jugador: $("jug").value.trim(),
+      evento: cod, resultado: res, x, y, metros: $("met").value, detalle: $("det").value.trim(), video_seg: +t.toFixed(2),
+    };
+    if (cod === "tarjeta" && !ev.detalle) ev.detalle = "amarilla";
+    st.eventos.push(ev);
+    st.eventos.sort((a, b) => a.video_seg - b.video_seg);
+    $("jug").value = ""; $("det").value = ""; $("met").value = "";
+    guardar(); render();
+    const lbl = EVENTOS.find((e) => e[0] === cod && e[2] === res);
+    toast(`${nombre(eq)} · ${lbl ? lbl[1] : cod} · ${fmt(t)}`);
+  }
+
+  function setEquipo(k) {
+    equipoSel = k;
+    $("selA").className = k === "A" ? "sel-a" : ""; $("selB").className = k === "B" ? "sel-b" : "";
+  }
+
+  // ---------- cancha ----------
+  function dibujarCancha() {
+    const L = (x1, y1, x2, y2, w = 0.4, dash = "") => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(255,255,255,.85)" stroke-width="${w}" ${dash ? `stroke-dasharray="${dash}"` : ""}/>`;
+    let s = `<rect x="-10" y="0" width="120" height="70" fill="#2e7d32"/><rect x="-10" y="0" width="10" height="70" fill="#1b5e20"/><rect x="100" y="0" width="10" height="70" fill="#1b5e20"/>`;
+    [0, 100].forEach((x) => (s += L(x, 0, x, 70, 0.7)));
+    [22, 50, 78].forEach((x) => (s += L(x, 0, x, 70, 0.45)));
+    [40, 60].forEach((x) => (s += L(x, 0, x, 70, 0.3, "1.5 1.5")));
+    [5, 15, 55, 65].forEach((y) => (s += L(0, y, 100, y, 0.2, "0.6 1.4")));
+    s += `<rect x="-10" y="0" width="120" height="70" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="0.5"/>`;
+    s += `<text x="22" y="-1" font-size="2.6" fill="currentColor" text-anchor="middle" opacity=".6">22</text><text x="50" y="-1" font-size="2.6" fill="currentColor" text-anchor="middle" opacity=".6">50</text><text x="78" y="-1" font-size="2.6" fill="currentColor" text-anchor="middle" opacity=".6">22</text>`;
+    s += `<g id="dots"></g><g id="cursor"></g>`;
+    $("pitch").innerHTML = s;
+  }
+  function dibujarPuntos(lista) {
+    const g = $("dots"); if (!g) return;
+    g.innerHTML = lista.filter((e) => e.x !== "" && e.x != null).slice(-300).map((e) => {
+      const [dx, dy] = aImagen(+e.x, +e.y, dir(e.eq || (e.equipo === $("tA").value ? "A" : "B"), +e.periodo));
+      const col = (e.eq === "A" || e.equipo === $("tA").value) ? "#1e88e5" : "#e53935";
+      const fallo = e.resultado === "fallo";
+      return `<circle cx="${dx}" cy="${dy}" r="1.2" fill="${fallo ? "#ffeb3b" : col}" stroke="#111" stroke-width="0.2" opacity=".85"><title>${fmt(e.video_seg)} ${e.equipo} ${e.evento} ${e.resultado || ""}</title></circle>`;
+    }).join("");
+  }
+  function dibujarCursor() {
+    const g = $("cursor"); if (!g) return;
+    if (!pos) { g.innerHTML = ""; $("posinfo").textContent = "Sin posición marcada"; return; }
+    g.innerHTML = `<circle cx="${pos.dx}" cy="${pos.dy}" r="2" fill="none" stroke="#fff" stroke-width="0.6"/><circle cx="${pos.dx}" cy="${pos.dy}" r="0.6" fill="#fff"/>`;
+    const p = periodoDe(video.currentTime || 0);
+    const [x] = aEquipo(pos.dx, pos.dy, dir(equipoSel, p));
+    $("posinfo").textContent = `Posición: ${x.toFixed(0)} m desde el in-goal propio de ${nombre(equipoSel)}`;
+  }
+  $("pitch").addEventListener("click", (ev) => {
+    const svg = $("pitch"), pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
+    const c = pt.matrixTransform(svg.getScreenCTM().inverse());
+    pos = { dx: Math.min(100, Math.max(0, c.x)), dy: Math.min(70, Math.max(0, c.y)) };
+    dibujarCursor();
+  });
+  $("btnNoPos").onclick = () => { pos = null; dibujarCursor(); };
+
+  // ---------- tabla y filtros ----------
+  function filtrados() {
+    const fe = $("filEv").value, fq = $("filEq").value, fr = $("filRes").value, fj = $("filJug").value.trim().toLowerCase();
+    return st.eventos.filter((e) => (!fe || e.evento === fe) && (!fq || e.equipo === fq) && (!fr || e.resultado === fr) &&
+      (!fj || String(e.jugador || "").toLowerCase().includes(fj)));
+  }
+  function render() {
+    const lista = filtrados();
+    const tA = $("tA").value;
+    $("tbody").innerHTML = lista.slice().reverse().map((e) => `
+      <tr data-id="${e.id}" class="${playlist && playlist.items[playlist.i] === e ? "playing" : ""}">
+        <td>${fmt(e.video_seg)}</td><td>${(+e.minuto).toFixed(0)}'</td>
+        <td><span class="pill" style="background:${e.equipo === tA ? "#1e88e5" : "#e53935"}"></span>${esc(e.equipo)}</td>
+        <td>${esc(e.evento)}</td><td>${e.resultado === "ok" ? "✓" : e.resultado === "fallo" ? "✗" : ""}</td>
+        <td>${esc(e.jugador || "")}</td><td>${esc(e.detalle || "")}</td>
+        <td><button data-del="${e.id}" title="Borrar">✕</button></td></tr>`).join("");
+    $("nev").textContent = `${st.eventos.length} eventos cargados`;
+    $("nfil").textContent = `${lista.length} clips`;
+    // opciones de filtros
+    const evs = [...new Set(st.eventos.map((e) => e.evento))].sort();
+    const eqs = [...new Set(st.eventos.map((e) => e.equipo))];
+    sync($("filEv"), evs, "Todos los eventos"); sync($("filEq"), eqs, "Ambos equipos");
+    $("selA").innerHTML = `A · ${esc($("tA").value)} <kbd>1</kbd>`; $("selB").innerHTML = `B · ${esc($("tB").value)} <kbd>2</kbd>`;
+    $("kinfo").textContent = `Inicio 1º T: ${st.k1 != null ? fmt(st.k1) : "sin marcar"} · Inicio 2º T: ${st.k2 != null ? fmt(st.k2) : "sin marcar"}`;
+    dibujarPuntos(lista); dibujarCursor();
+  }
+  function sync(sel, vals, todos) {
+    const cur = sel.value; sel.innerHTML = `<option value="">${todos}</option>` + vals.map((v) => `<option>${esc(v)}</option>`).join("");
+    if (vals.includes(cur)) sel.value = cur;
+  }
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  $("tbody").addEventListener("click", (ev) => {
+    const del = ev.target.closest("button[data-del]");
+    if (del) { st.eventos = st.eventos.filter((e) => String(e.id) !== del.dataset.del); guardar(); render(); return; }
+    const tr = ev.target.closest("tr"); if (!tr) return;
+    const e = st.eventos.find((x) => String(x.id) === tr.dataset.id);
+    if (e) { video.currentTime = Math.max(0, e.video_seg - (+$("pre").value || 0)); video.play(); }
+  });
+  ["filEv", "filEq", "filRes"].forEach((id) => $(id).addEventListener("change", render));
+  $("filJug").addEventListener("input", render);
+  ["tA", "tB", "partido", "dirA"].forEach((id) => $(id).addEventListener("change", () => { guardar(); render(); }));
+
+  // ---------- playlist de clips ----------
+  function playClip() {
+    if (!playlist) return;
+    if (playlist.i >= playlist.items.length) { stopPlaylist(); toast("Fin de los clips"); return; }
+    const e = playlist.items[playlist.i];
+    playlist.fin = e.video_seg + (+$("post").value || 0);
+    video.currentTime = Math.max(0, e.video_seg - (+$("pre").value || 0));
+    video.play(); render();
+    toast(`Clip ${playlist.i + 1}/${playlist.items.length}: ${e.equipo} · ${e.evento} ${e.jugador || ""}`);
+  }
+  function stopPlaylist() { playlist = null; video.pause(); render(); }
+  $("btnPlaylist").onclick = () => {
+    if (!video.src) { toast("Primero abrí el video"); return; }
+    const items = filtrados(); if (!items.length) { toast("No hay clips con ese filtro"); return; }
+    playlist = { items, i: 0 }; playClip();
+  };
+  $("btnStop").onclick = stopPlaylist;
+  video.addEventListener("timeupdate", () => {
+    $("clock").textContent = `${fmt(video.currentTime)}  ·  min ${minutoDe(video.currentTime).toFixed(0)}' (${periodoDe(video.currentTime)}º T)`;
+    if (playlist && video.currentTime >= playlist.fin) { playlist.i++; playClip(); }
+  });
+
+  // ---------- video ----------
+  $("fVideo").addEventListener("change", (ev) => {
+    const f = ev.target.files[0]; if (!f) return;
+    video.src = URL.createObjectURL(f);
+    if (!$("partido").value) $("partido").value = f.name.replace(/\.[^.]+$/, "");
+    guardar(); toast("Video cargado (no se sube a ningún lado)");
+  });
+  $("btnPlay").onclick = () => (video.paused ? video.play() : video.pause());
+  document.querySelectorAll("[data-skip]").forEach((b) => (b.onclick = () => (video.currentTime += +b.dataset.skip)));
+  $("speed").onchange = () => (video.playbackRate = +$("speed").value);
+  $("k1").onclick = () => { st.k1 = video.currentTime; recalcular(); toast(`Inicio 1º tiempo: ${fmt(st.k1)}`); };
+  $("k2").onclick = () => { st.k2 = video.currentTime; recalcular(); toast(`Inicio 2º tiempo: ${fmt(st.k2)}`); };
+  function recalcular() { st.eventos.forEach((e) => { e.periodo = periodoDe(e.video_seg); e.minuto = +minutoDe(e.video_seg).toFixed(1); }); guardar(); render(); }
+
+  // ---------- botones de eventos y ayuda ----------
+  $("botones").innerHTML = EVENTOS.map(([c, t, r, k], i) =>
+    `<button data-i="${i}" class="${r === "ok" ? "ok" : r === "fallo" ? "bad" : ""}">${t}<kbd>${k.toUpperCase()}</kbd></button>`).join("");
+  $("botones").addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b) { const e = EVENTOS[+b.dataset.i]; registrar(e[0], e[2]); } });
+  $("selA").onclick = () => setEquipo("A"); $("selB").onclick = () => setEquipo("B");
+  $("help").innerHTML = [["Espacio", "Play / pausa"], ["← / →", "-3s / +3s"], ["Shift + ← / →", "-10s / +10s"], ["1 / 2", "Equipo A / B"],
+    ["⌫", "Deshacer último"], ["Esc", "Quitar posición"], ...EVENTOS.map((e) => [e[3].toUpperCase(), e[1]])]
+    .map(([k, t]) => `<div><kbd>${k}</kbd> ${t}</div>`).join("");
+
+  document.addEventListener("keydown", (ev) => {
+    if (/^(INPUT|SELECT|TEXTAREA)$/.test(ev.target.tagName) || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    const k = ev.key.toLowerCase();
+    if (k === " ") { ev.preventDefault(); video.paused ? video.play() : video.pause(); return; }
+    if (k === "arrowleft" || k === "arrowright") { ev.preventDefault(); video.currentTime += (k === "arrowleft" ? -1 : 1) * (ev.shiftKey ? 10 : 3); return; }
+    if (k === "1") return setEquipo("A");
+    if (k === "2") return setEquipo("B");
+    if (k === "backspace") { ev.preventDefault(); $("btnUndo").click(); return; }
+    if (k === "escape") { pos = null; dibujarCursor(); return; }
+    const e = EVENTOS.find((x) => x[3] === k);
+    if (e) { ev.preventDefault(); registrar(e[0], e[2]); }
+  });
+  $("btnUndo").onclick = () => {
+    if (!st.eventos.length) return;
+    // deshace el último CARGADO (mayor id), no el último en el tiempo del video
+    const ult = st.eventos.reduce((a, b) => (a.id > b.id ? a : b));
+    st.eventos = st.eventos.filter((e) => e !== ult); guardar(); render(); toast(`Deshecho: ${ult.evento}`);
+  };
+  $("btnClear").onclick = () => { if (confirm("¿Borrar todos los eventos? Descargá el CSV antes si lo necesitás.")) { st.eventos = []; st.k1 = st.k2 = null; guardar(); render(); } };
+
+  // ---------- CSV ----------
+  function csvCampo(v) { v = v == null ? "" : String(v); return /[",\n;]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v; }
+  $("btnCsv").onclick = () => {
+    if (!st.eventos.length) { toast("No hay eventos"); return; }
+    const txt = [COLS.join(","), ...st.eventos.map((e) => COLS.map((c) => csvCampo(e[c])).join(","))].join("\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["﻿" + txt], { type: "text/csv;charset=utf-8" }));
+    a.download = `${($("partido").value || "partido").replace(/[\\/:*?"<>|]/g, "_")}.csv`; a.click();
+  };
+  function parseCSV(txt) {
+    txt = txt.replace(/^﻿/, "");
+    const sep = (txt.split("\n")[0].match(/;/g) || []).length > (txt.split("\n")[0].match(/,/g) || []).length ? ";" : ",";
+    const rows = []; let row = [], f = "", q = false;
+    for (let i = 0; i < txt.length; i++) {
+      const c = txt[i];
+      if (q) { if (c === '"' && txt[i + 1] === '"') { f += '"'; i++; } else if (c === '"') q = false; else f += c; }
+      else if (c === '"') q = true; else if (c === sep) { row.push(f); f = ""; }
+      else if (c === "\n" || c === "\r") { if (c === "\r" && txt[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; }
+      else f += c;
+    }
+    if (f || row.length) { row.push(f); rows.push(row); }
+    const head = rows.shift().map((h) => h.trim().toLowerCase());
+    return rows.filter((r) => r.some((v) => v.trim())).map((r) => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ""])));
+  }
+  $("fCsv").addEventListener("change", async (ev) => {
+    const f = ev.target.files[0]; if (!f) return;
+    const filas = parseCSV(await f.text());
+    if (!filas.length || !("evento" in filas[0])) { toast("El CSV no tiene columna 'evento'"); return; }
+    const eqs = [...new Set(filas.map((r) => r.equipo))];
+    if (eqs[0]) $("tA").value = eqs[0]; if (eqs[1]) $("tB").value = eqs[1];
+    if (filas[0].partido) $("partido").value = filas[0].partido;
+    st.eventos = filas.map((r, i) => ({
+      ...r, id: i + 1, eq: r.equipo === eqs[0] ? "A" : "B", minuto: +r.minuto || 0, periodo: +r.periodo || ((+r.minuto || 0) > 40 ? 2 : 1),
+      video_seg: r.video_seg !== "" && r.video_seg != null ? +r.video_seg : (+r.minuto || 0) * 60,
+    }));
+    guardar(); render();
+    toast(`${st.eventos.length} eventos importados` + (filas[0].video_seg ? "" : " (sin video_seg: se usa el minuto)"));
+    ev.target.value = "";
+  });
+
+  cargar(); dibujarCancha(); setEquipo("A"); render();
+})();
+</script>
+</body>
+</html>
