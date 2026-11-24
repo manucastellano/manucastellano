@@ -12,7 +12,14 @@ realidad del rugby: en vez de depender de datos de tracking (difíciles de conse
 
 ---
 
-## ⚡ Uso rápido
+## 🍎 En Mac: doble clic
+
+1. Instalá Python 3.10 o más nuevo desde [python.org](https://www.python.org/downloads/) (una sola vez).
+2. Doble clic en **`iniciar.command`**. La primera vez prepara todo (unos minutos) y después abre la app
+   en el navegador. Si macOS dice que no puede abrirlo: clic derecho → **Abrir** → **Abrir**.
+3. Para cerrar la app, cerrá la ventana de la Terminal.
+
+## ⚡ Uso rápido (cualquier sistema)
 
 ```bash
 cd rugby-analytics
