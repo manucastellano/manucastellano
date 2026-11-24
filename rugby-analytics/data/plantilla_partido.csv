@@ -1,0 +1,11 @@
+minuto,periodo,equipo,jugador,evento,resultado,x,y,metros,detalle
+1,1,Club Azul,Pérez,patada,,40,35,35.0,
+2,1,Club Rojo,Gómez,portacion,,30,20,4.0,
+2,1,Club Azul,López,tackle,ok,70,22,,
+3,1,Club Rojo,,ruck,ok,32,24,,
+5,1,Club Azul,,penal_cometido,,65,30,,offside
+6,1,Club Rojo,Díaz,penal_palos,ok,65,30,,
+9,1,Club Azul,,line,ok,80,0,,
+9,1,Club Azul,,entrada_22,,80,5,,
+10,1,Club Azul,Fernández,try,,100,10,,
+10,1,Club Azul,Pérez,conversion,fallo,100,10,,
