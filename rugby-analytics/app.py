@@ -46,7 +46,8 @@ if "etiquetado" not in st.session_state:
 
 with st.sidebar:
     st.title("🏉 Rugby Analytics")
-    fuente = st.radio("Datos", ["Partido de ejemplo", "Temporada de ejemplo", "Subir archivo(s)", "Etiquetado en vivo"],
+    fuente = st.radio("Datos", ["🤖 Analizar video con IA", "Subir archivo(s)", "Etiquetado en vivo",
+                                "Partido de ejemplo", "Temporada de ejemplo"],
                       help="Los ejemplos son datos FICTICIOS generados para probar la herramienta.")
     raw = None
     if fuente == "Partido de ejemplo":
@@ -144,6 +145,11 @@ def pantalla_etiquetado():
         st.rerun()
     st.info("Cuando tengas eventos de ambos equipos, el análisis aparece debajo automáticamente.")
 
+
+if fuente == "🤖 Analizar video con IA":
+    from rugby import pantalla_ia
+    pantalla_ia.pantalla(nivel)
+    st.stop()
 
 if fuente == "Etiquetado en vivo":
     pantalla_etiquetado()

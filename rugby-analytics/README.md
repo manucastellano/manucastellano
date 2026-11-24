@@ -24,12 +24,45 @@ Se abre en el navegador. En la barra lateral elegís:
 
 | Opción | Para qué |
 |---|---|
+| **🤖 Analizar video con IA** | Subís el MP4 y la IA te devuelve recomendaciones con los minutos del video que las respaldan |
 | **Partido de ejemplo** | Ver la herramienta funcionando (datos ficticios) |
 | **Temporada de ejemplo** | Ver la comparación entre partidos (6 fechas ficticias) |
 | **Subir archivo(s)** | Analizar tus partidos (CSV o Excel; podés subir varios a la vez) |
 | **Etiquetado en vivo** | Cargar el partido con botones mientras lo mirás y descargar el CSV |
 
-## 🎬 Flujo de trabajo con videos MP4 (recomendado)
+## 🤖 Analizar un video directamente con IA
+
+1. Conseguí una **clave de API de Anthropic** (console.anthropic.com). Es un servicio pago: se cobra por uso.
+2. `streamlit run app.py` → **🤖 Analizar video con IA**.
+3. Indicá el video (ruta del archivo o subilo), los equipos y el **color de cada camiseta** (ayuda a la IA a
+   distinguirlos), qué minutos analizar y, si querés, contexto ("revisar la defensa en nuestra 22").
+4. La app te muestra el **costo aproximado antes de empezar**. Tocás **Analizar** y esperás.
+5. Recibís:
+   - **Recomendaciones priorizadas**: problema, qué hacer, ejercicio sugerido y **minutos del video** para verificar.
+   - Fortalezas, debilidades y lista de cosas para confirmar.
+   - Los **eventos que la IA cree haber visto** (CSV): abrilo en el etiquetador junto al video y usá
+     *Revisar clips* para verificarlos uno por uno.
+   - Todo queda guardado en `resultados_ia/` para volver a verlo sin pagar de nuevo.
+
+También desde la terminal (útil para partidos completos):
+
+```bash
+export ANTHROPIC_API_KEY=...        # en Windows: set ANTHROPIC_API_KEY=...
+python -m rugby.video_ai partido.mp4 --a "Mi Club" --color-a "azul" --b "Rival" --color-b "rojo"
+```
+
+**Costo orientativo:** con un fotograma cada 2 s, unos USD 0,20 por minuto de video (un partido completo
+grabado, ~100 min, ≈ USD 15–25). Es una **estimación propia** con los precios de referencia del modelo al
+momento de escribir esto; la app muestra la estimación de cada análisis y el consumo real queda en tu consola de
+Anthropic. Para gastar menos: analizá solo una parte, o usá un fotograma cada 3–5 s.
+
+⚠️ **Qué tan confiable es:** la IA ve **imágenes sueltas** (no el video continuo), así que puede perder
+acciones rápidas, confundir equipos con camisetas parecidas o contar mal. Sirve para **encontrar patrones y
+ahorrar horas de visionado**, no para estadísticas exactas. Cada recomendación trae los segundos del video para
+que el staff la confirme. Si además cargás un CSV etiquetado del partido, las recomendaciones se apoyan en esos
+números, que son más confiables.
+
+## 🎬 Flujo de trabajo con videos MP4: etiquetado manual (máxima precisión)
 
 1. Abrí **[`etiquetador.html`](etiquetador.html)** con doble clic (Chrome, Edge o Safari). No necesita
    instalación ni internet, y **el video no se sube a ningún lado**: se reproduce desde tu computadora.
@@ -168,6 +201,8 @@ rugby-analytics/
 │   ├── metrics.py       # Métricas por equipo, jugador, período y temporada
 │   ├── insights.py      # Conclusiones automáticas (reglas + umbrales)
 │   ├── pitch.py         # Cancha de rugby y mapas (Plotly)
+│   ├── video_ai.py      # Análisis de video con IA (fotogramas → Claude → informe)
+│   ├── pantalla_ia.py   # Pantalla de la app para el análisis con IA
 │   └── demo_data.py     # Generador de partidos ficticios
 ├── data/                # Plantilla y ejemplos
 └── tests/               # python -m unittest discover -s tests
@@ -192,10 +227,8 @@ for c in insights.generar(df):
 - Importar datos de proveedores (si tenés acceso a feeds de eventos).
 - Detección automática asistida por visión por computadora (ver nota abajo).
 
-### ¿Y detectar los eventos automáticamente desde el video?
+### Sobre la detección automática
 
-Es posible en teoría, pero **no es algo que pueda prometer que funcione bien** con videos de
-transmisión: requiere detectar jugadores y pelota con cámaras que se mueven y hacen zoom,
-y luego entrenar modelos para reconocer tackles, rucks, etc. con miles de ejemplos etiquetados.
-Los CSV que generes con el etiquetador son justamente esos ejemplos: si en el futuro querés
-intentar automatizarlo, ya vas a tener los datos para entrenar.
+El análisis con IA ya propone eventos, pero como sugerencias a verificar. Cada CSV que etiquetes y
+verifiques se convierte en datos de referencia: con suficientes partidos se puede medir qué tan bien acierta la IA
+y, más adelante, mejorarla.
