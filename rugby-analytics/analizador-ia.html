@@ -1,0 +1,562 @@
+<title>Analizador de Rugby</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+  /* Layout: una columna de trabajo (video + ajustes) que se abre en dos columnas en pantallas anchas; resultados debajo. */
+  :root {
+    --bg: #f3f5f2; --panel: #ffffff; --ink: #18211b; --muted: #5d6b62; --line: #d6ddd7;
+    --pitch: #1d6b43; --pitch-ink: #ffffff; --chalk: #e9efe9; --warn: #a15c00; --bad: #b3261e; --ok: #1d6b43;
+    --chip: #e3ece5;
+    --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+    --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111613; --panel: #19201b; --ink: #e6ece7; --muted: #9aa89f; --line: #2c3630;
+      --pitch: #3f9e6b; --pitch-ink: #0d140f; --chalk: #1e2721; --warn: #e0a24a; --bad: #f07a70; --ok: #5cc18a;
+      --chip: #24302a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111613; --panel: #19201b; --ink: #e6ece7; --muted: #9aa89f; --line: #2c3630;
+    --pitch: #3f9e6b; --pitch-ink: #0d140f; --chalk: #1e2721; --warn: #e0a24a; --bad: #f07a70; --ok: #5cc18a;
+    --chip: #24302a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-block: 20px 48px;
+          padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: .01em; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 19px; }
+  .lead { color: var(--muted); max-width: 68ch; margin: 8px 0 0; }
+  .eyebrow { font: 600 12px var(--body); text-transform: uppercase; letter-spacing: .08em; color: var(--pitch); }
+  header { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; margin-bottom: 18px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0; }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+  @media (max-width: 480px) { .fields { grid-template-columns: 1fr; } }
+  label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: var(--muted); min-width: 0; }
+  input, select, textarea, button { font: inherit; color: inherit; }
+  input[type=text], input[type=number], select, textarea {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 7px; padding: 8px 10px; color: var(--ink); width: 100%; }
+  textarea { min-height: 64px; resize: vertical; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible, .chip:focus-visible {
+    outline: 2px solid var(--pitch); outline-offset: 2px; }
+  button { border-radius: 7px; border: 1px solid var(--line); background: var(--panel); padding: 9px 14px; cursor: pointer; font-weight: 600; }
+  button:hover:not(:disabled) { border-color: var(--pitch); }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  .primary { background: var(--pitch); color: var(--pitch-ink); border-color: var(--pitch); }
+  .file { display: inline-flex; align-items: center; gap: 8px; background: var(--pitch); color: var(--pitch-ink); border-radius: 7px;
+          padding: 9px 14px; font-weight: 600; cursor: pointer; }
+  .file input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .file:focus-within { outline: 2px solid var(--pitch); outline-offset: 2px; }
+  video { width: 100%; max-height: 52vh; background: #000; border-radius: 8px; display: block; }
+  .drop { border: 2px dashed var(--line); border-radius: 10px; padding: 28px 16px; text-align: center; color: var(--muted); }
+  .drop.over { border-color: var(--pitch); background: var(--chalk); }
+  .muted { color: var(--muted); font-size: 13px; }
+  .note { font-size: 13px; padding: 10px 12px; border-radius: 8px; background: var(--chalk); color: var(--ink); }
+  .note.warn { border-left: 4px solid var(--warn); }
+  .note.err { border-left: 4px solid var(--bad); }
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .stat { background: var(--chalk); border-radius: 8px; padding: 8px 10px; }
+  .stat b { display: block; font: 700 22px var(--display); font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 12px; color: var(--muted); }
+  .bar { height: 8px; background: var(--chalk); border-radius: 99px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--pitch); transition: width .3s; }
+  .thumb { width: 160px; max-width: 100%; border-radius: 6px; display: block; }
+  .results { margin-top: 20px; display: flex; flex-direction: column; gap: 16px; }
+  .reco { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--panel); display: grid;
+          grid-template-columns: 44px minmax(0, 1fr); gap: 4px 12px; }
+  .reco .n { grid-row: span 6; font: 700 34px/1 var(--display); color: var(--pitch); font-variant-numeric: tabular-nums; }
+  .reco .area { font: 600 12px var(--body); text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+  .reco p { margin: 2px 0; }
+  .conf { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 99px; margin-left: 6px; }
+  .conf.alta { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
+  .conf.media { background: color-mix(in srgb, var(--warn) 18%, transparent); color: var(--warn); }
+  .conf.baja { background: color-mix(in srgb, var(--bad) 16%, transparent); color: var(--bad); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .chip { font: 600 12.5px var(--body); font-variant-numeric: tabular-nums; background: var(--chip); border: 0; border-radius: 99px;
+          padding: 3px 10px; cursor: pointer; color: var(--ink); }
+  .chip:hover { background: var(--pitch); color: var(--pitch-ink); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 700px) { .two { grid-template-columns: 1fr; } }
+  ul.clean { margin: 6px 0 0; padding-left: 18px; }
+  ul.clean li { margin: 4px 0; }
+  .tablewrap { overflow-x: auto; max-height: 420px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { position: sticky; top: 0; background: var(--panel); font-weight: 600; color: var(--muted); }
+  td.t { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--chalk); }
+  .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+  @media (max-width: 700px) { .steps { grid-template-columns: 1fr; } }
+  .step { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 13.5px; }
+  .step b { font: 700 18px var(--display); color: var(--pitch); margin-right: 6px; }
+  @media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Rugby · análisis de video</div>
+      <h1>Analizador de Rugby</h1>
+      <p class="lead">Elegí un video del partido. La página toma imágenes cada pocos segundos, Claude las mira por tramos
+        y te devuelve recomendaciones con los minutos exactos para revisarlas.</p>
+    </div>
+    <label class="file" style="background:var(--chip);color:var(--ink)">📂 Abrir análisis guardado
+      <input type="file" id="fJson" accept=".json,application/json"></label>
+  </header>
+
+  <div class="steps" id="steps">
+    <div class="step"><b>1</b>Abrí el video (MP4). No se sube a ningún lado: se reproduce en tu navegador.</div>
+    <div class="step"><b>2</b>Completá equipos, colores de camiseta y qué minutos analizar. Empezá con 5–10 minutos.</div>
+    <div class="step"><b>3</b>Tocá <b style="font:inherit;color:inherit;margin:0">Analizar</b>. Usa tu cuenta de Claude: la primera vez te pide permiso.</div>
+  </div>
+
+  <div class="grid" style="margin-top:16px">
+    <section class="panel stack">
+      <div id="dropZone" class="drop">
+        <p style="margin:0 0 10px">Arrastrá el video acá o</p>
+        <label class="file">🎬 Elegir video<input type="file" id="fVideo" accept="video/*"></label>
+      </div>
+      <video id="video" controls playsinline hidden></video>
+      <div class="row" id="videoInfo" hidden>
+        <span class="muted" id="vName"></span>
+        <span class="muted" id="vDur"></span>
+        <button id="btnOtro" type="button" style="margin-left:auto">Cambiar video</button>
+      </div>
+      <p class="note err" id="vErr" hidden></p>
+    </section>
+
+    <section class="panel stack">
+      <h2>Ajustes</h2>
+      <div class="fields">
+        <label>Equipo A<input type="text" id="tA" value="Mi Club"></label>
+        <label>Camiseta A<input type="text" id="cA" placeholder="ej. azul con vivos blancos"></label>
+        <label>Equipo B<input type="text" id="tB" value="Rival"></label>
+        <label>Camiseta B<input type="text" id="cB" placeholder="ej. roja, short negro"></label>
+        <label>Recomendaciones para<select id="foco"><option value="A">Mi Club</option><option value="B">Rival</option></select></label>
+        <label>Una imagen cada<select id="cada">
+          <option value="2" selected>2 segundos (más detalle)</option><option value="3">3 segundos</option><option value="5">5 segundos (más rápido)</option>
+        </select></label>
+        <label>Desde (minuto del video)<input type="number" id="desde" value="0" min="0" step="0.5"></label>
+        <label>Hasta (minuto del video)<input type="number" id="hasta" value="10" min="0.5" step="0.5"></label>
+      </div>
+      <label>Qué querés revisar (opcional)
+        <textarea id="contexto" placeholder="ej. Nuestra defensa en la 22 y la salida desde el ruck. El rival patea mucho al fondo."></textarea></label>
+      <div class="stats">
+        <div class="stat"><b id="eMin">–</b><span>min de video</span></div>
+        <div class="stat"><b id="eImg">–</b><span>imágenes</span></div>
+        <div class="stat"><b id="eCalls">–</b><span>consultas a Claude</span></div>
+      </div>
+      <p class="muted" id="eNote">Cada consulta usa tu cuenta de Claude, como un mensaje en el chat. Para un partido completo conviene ir por partes.</p>
+      <div class="row">
+        <button class="primary" id="btnRun" type="button" disabled>Analizar</button>
+        <button id="btnStop" type="button" hidden>Detener</button>
+      </div>
+      <p class="note warn" id="noAI" hidden></p>
+      <div id="prog" class="stack" hidden>
+        <div class="bar"><i id="barFill"></i></div>
+        <div class="row" style="align-items:flex-start">
+          <img id="thumb" class="thumb" alt="Última imagen enviada" hidden>
+          <span class="muted" id="progTxt"></span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="results" id="results" hidden>
+    <div class="note warn" id="disclaimer"></div>
+    <div class="panel stack">
+      <div class="row" style="justify-content:space-between">
+        <h2>Resumen</h2>
+        <div class="row">
+          <button type="button" id="dlMd">Informe (.md)</button>
+          <button type="button" id="dlCsv">Eventos (.csv)</button>
+          <button type="button" id="dlJson">Guardar análisis (.json)</button>
+        </div>
+      </div>
+      <p id="resumen" style="margin:0;max-width:75ch"></p>
+      <p class="muted" id="dlMsg" hidden></p>
+    </div>
+    <div class="stack">
+      <h2 id="recoTitle">Recomendaciones</h2>
+      <p class="muted" style="margin:0">Tocá un minuto para ver esa jugada en el video.</p>
+      <div class="stack" id="recos"></div>
+    </div>
+    <div class="two">
+      <div class="panel"><h3>Fortalezas</h3><ul class="clean" id="fort"></ul></div>
+      <div class="panel"><h3>Debilidades</h3><ul class="clean" id="deb"></ul></div>
+    </div>
+    <div class="panel" id="verifBox"><h3>Para confirmar en el video</h3><ul class="clean" id="verif"></ul></div>
+    <div class="panel stack">
+      <div class="row" style="justify-content:space-between">
+        <h3>Lo que Claude vio (sin verificar)</h3>
+        <select id="filtro" style="width:auto"><option value="">Todo</option></select>
+      </div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Video</th><th>Equipo</th><th>Evento</th><th>Resultado</th><th>Confianza</th><th>Descripción</th></tr></thead>
+        <tbody id="evBody"></tbody>
+      </table></div>
+    </div>
+    <p class="muted" id="fallos" hidden></p>
+  </section>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const video = $("video");
+  const EVENTOS = ["try", "try_penal", "conversion", "penal_palos", "drop", "tackle", "portacion", "quiebre", "offload",
+    "ruck", "line", "scrum", "patada", "penal_cometido", "tarjeta", "perdida", "recuperacion", "entrada_22", "observacion"];
+  const NOMBRES = { try: "Try", try_penal: "Try penal", conversion: "Conversión", penal_palos: "Penal a los palos", drop: "Drop",
+    tackle: "Tackle", portacion: "Portación", quiebre: "Quiebre", offload: "Offload", ruck: "Ruck", line: "Line", scrum: "Scrum",
+    patada: "Patada", penal_cometido: "Penal cometido", tarjeta: "Tarjeta", perdida: "Pérdida", recuperacion: "Recuperación",
+    entrada_22: "Entrada a 22", observacion: "Observación" };
+  const STORE = "analizadorRugby.v1";
+
+  let sample = null, downloads = null, maxImgs = 20;
+  let videoName = "", duration = 0, running = null, resultado = null;
+
+  // ---------- utilidades ----------
+  const mmss = (s) => { s = Math.max(0, Math.round(+s || 0)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
+    return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(x).padStart(2, "0"); };
+  const el = (tag, props = {}, kids = []) => { const n = document.createElement(tag); Object.assign(n, props);
+    for (const k of [].concat(kids)) if (k != null) n.append(k); return n; };
+  const str = (v) => (v == null ? "" : String(v));
+  const conf = (c) => (["alta", "media", "baja"].includes(c) ? c : "baja");
+  const cfg = () => ({
+    a: $("tA").value.trim() || "Equipo A", ca: $("cA").value.trim(), b: $("tB").value.trim() || "Equipo B", cb: $("cB").value.trim(),
+    foco: $("foco").value, cada: +$("cada").value, desde: Math.max(0, +$("desde").value || 0) * 60,
+    hasta: Math.min(duration || Infinity, Math.max(0, +$("hasta").value || 0) * 60), contexto: $("contexto").value.trim(),
+  });
+  const focoNombre = (c) => (c.foco === "B" ? c.b : c.a);
+
+  // ---------- capacidades ----------
+  (async () => {
+    try {
+      sample = window.claude ? await window.claude.use("sample") : null;
+      downloads = window.claude ? await window.claude.use("downloads") : null;
+      if (sample) {
+        const lim = await sample.limits().catch(() => null);
+        if (!lim || !lim.images) { sample = null; }
+        else maxImgs = Math.max(1, Math.min(20, lim.images.maxCount || 20));
+      }
+    } catch { sample = null; }
+    if (!sample) { $("noAI").textContent = "Esta vista no puede enviar imágenes a Claude. Abrí la página en claude.ai con tu cuenta (navegador de escritorio) para usar el análisis."; $("noAI").hidden = false; }
+    estimar();
+  })();
+
+  // ---------- video ----------
+  function cargarVideo(file) {
+    if (!file) return;
+    $("vErr").hidden = true;
+    video.src = URL.createObjectURL(file);
+    videoName = file.name.replace(/\.[^.]+$/, "");
+    $("vName").textContent = file.name;
+    video.hidden = false; $("videoInfo").hidden = false; $("dropZone").hidden = true;
+  }
+  $("fVideo").addEventListener("change", (e) => cargarVideo(e.target.files[0]));
+  $("btnOtro").onclick = () => $("fVideo").click();
+  const dz = $("dropZone");
+  ["dragenter", "dragover"].forEach((t) => dz.addEventListener(t, (e) => { e.preventDefault(); dz.classList.add("over"); }));
+  ["dragleave", "drop"].forEach((t) => dz.addEventListener(t, (e) => { e.preventDefault(); dz.classList.remove("over"); }));
+  dz.addEventListener("drop", (e) => { const f = e.dataTransfer.files[0]; if (f && f.type.startsWith("video")) cargarVideo(f); });
+  video.addEventListener("loadedmetadata", () => {
+    duration = video.duration || 0;
+    $("vDur").textContent = "Duración " + mmss(duration);
+    $("hasta").value = Math.min(10, Math.round(duration / 60 * 2) / 2 || 10);
+    estimar();
+  });
+  video.addEventListener("error", () => {
+    $("vErr").textContent = "No se pudo reproducir este video aquí. Probá con un MP4 (H.264) en Chrome o Safari.";
+    $("vErr").hidden = false;
+  });
+  function irA(seg) {
+    if (!video.src) { $("dlMsg").textContent = "Abrí el video del partido para ver esa jugada."; $("dlMsg").hidden = false; return; }
+    video.currentTime = Math.max(0, seg - 4);
+    video.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+    video.play().catch(() => {});
+  }
+
+  // ---------- estimación ----------
+  function tramos(c) {
+    const tiempos = [];
+    for (let t = c.desde; t < c.hasta; t += c.cada) tiempos.push(+t.toFixed(2));
+    const out = [];
+    for (let i = 0; i < tiempos.length; i += maxImgs) out.push(tiempos.slice(i, i + maxImgs));
+    return out;
+  }
+  function estimar() {
+    $("foco").options[0].textContent = $("tA").value || "Equipo A";
+    $("foco").options[1].textContent = $("tB").value || "Equipo B";
+    const c = cfg();
+    const ok = duration > 0 && c.hasta > c.desde;
+    const tr = ok ? tramos(c) : [];
+    $("eMin").textContent = ok ? ((c.hasta - c.desde) / 60).toFixed(1) : "–";
+    $("eImg").textContent = ok ? tr.reduce((n, t) => n + t.length, 0) : "–";
+    $("eCalls").textContent = ok ? tr.length + 1 : "–";
+    const muchas = tr.length > 25;
+    $("eNote").textContent = muchas
+      ? "Son muchas consultas: puede gastar bastante de tu uso de Claude y tardar un buen rato. Probá primero con 5–10 minutos o una imagen cada 3–5 s."
+      : "Cada consulta usa tu cuenta de Claude, como un mensaje en el chat. Para un partido completo conviene ir por partes.";
+    $("btnRun").disabled = !(ok && sample) || !!running;
+  }
+  ["tA", "tB", "cA", "cB", "foco", "cada", "desde", "hasta"].forEach((id) => $(id).addEventListener("input", estimar));
+
+  // ---------- captura de imágenes ----------
+  const canvas = document.createElement("canvas");
+  function buscar(t) {
+    return new Promise((res, rej) => {
+      const fin = () => { video.removeEventListener("seeked", ok); video.removeEventListener("error", mal); };
+      const ok = () => { fin(); res(); };
+      const mal = () => { fin(); rej(new Error("seek")); };
+      video.addEventListener("seeked", ok); video.addEventListener("error", mal);
+      video.currentTime = Math.min(t, Math.max(0, duration - 0.05));
+    });
+  }
+  async function capturar(t) {
+    await buscar(t);
+    const w = Math.min(960, video.videoWidth || 960), h = Math.round(w * (video.videoHeight || 540) / (video.videoWidth || 960));
+    canvas.width = w; canvas.height = h;
+    canvas.getContext("2d").drawImage(video, 0, 0, w, h);
+    return await new Promise((r) => canvas.toBlob(r, "image/jpeg", 0.78));
+  }
+
+  // ---------- prompts ----------
+  function promptTramo(c, tiempos) {
+    const lista = tiempos.map((t, i) => `Imagen ${i + 1} = segundo ${Math.round(t)} (${mmss(t)})`).join("\n");
+    return `Sos analista de video de rugby de alto rendimiento. Te paso ${tiempos.length} imágenes consecutivas de un partido,
+tomadas cada ~${c.cada} segundos, en orden:
+${lista}
+
+Equipos:
+- "${c.a}"${c.ca ? ` (camiseta: ${c.ca})` : ""}
+- "${c.b}"${c.cb ? ` (camiseta: ${c.cb})` : ""}
+${c.contexto ? `\nFoco del staff: ${c.contexto}\n` : ""}
+Tarea:
+1. Resumí qué pasa en este tramo (fase de juego, quién tiene la pelota, zona de la cancha).
+2. Listá eventos que se vean con razonable evidencia. Códigos permitidos: ${EVENTOS.join(", ")}.
+   "observacion" sirve para notas tácticas: línea defensiva, apoyo y llegada al ruck, uso de la patada, espacios, maul, posición de los backs.
+3. Para cada evento: segundo de video (el de la imagen donde mejor se ve), equipo ("${c.a}", "${c.b}" o "desconocido"), resultado y confianza.
+
+Honestidad:
+- Ves imágenes sueltas: entre una y otra pasan cosas que no ves. No inventes.
+- Si dudás del equipo, "desconocido". Si dudás del evento, confianza "baja". No asumas resultados que la imagen no muestra.
+- Repeticiones, primeros planos, tribuna o gráficos de TV: no cuentes de nuevo lo ya visto; si todo el tramo es eso, es_juego = false.
+- x = metros desde el in-goal propio del equipo que hace la acción (0-100), solo si las líneas de la cancha lo permiten; si no, null.
+
+Respondé SOLO con este JSON:
+{"resumen": string, "es_juego": boolean, "eventos": [{"seg": number, "evento": string, "equipo": string, "resultado": "ok"|"fallo"|"desconocido", "x": number|null, "descripcion": string, "confianza": "alta"|"media"|"baja"}]}`;
+  }
+
+  function promptInforme(c, tramosOk) {
+    const obs = tramosOk.filter((t) => t.es_juego !== false).map((t) => ({
+      desde: Math.round(t.desde), hasta: Math.round(t.hasta), resumen: t.resumen,
+      eventos: (t.eventos || []).map((e) => ({ seg: e.seg, evento: e.evento, equipo: e.equipo, resultado: e.resultado, confianza: e.confianza, descripcion: e.descripcion })),
+    }));
+    let datos = JSON.stringify(obs);
+    if (datos.length > 180000) datos = datos.slice(0, 180000) + "…(recortado)";
+    return `Sos el analista principal de un staff de rugby de alto rendimiento y escribís para el head coach de "${focoNombre(c)}".
+Español rioplatense, directo y concreto.
+
+Abajo están las observaciones de un análisis por imágenes del partido ${c.a} vs ${c.b}
+(video del ${mmss(c.desde)} al ${mmss(c.hasta)}). Son imperfectas: pueden faltar acciones y haber errores de equipo o de conteo.
+${c.contexto ? `\nFoco del staff: ${c.contexto}\n` : ""}
+Observaciones por tramo (JSON):
+${datos}
+
+Escribí el informe para ${focoNombre(c)}:
+- Recomendaciones por prioridad (1 = la más importante), cada una con: área (ataque, defensa, formaciones fijas, ruck, pateo, disciplina, físico…),
+  el problema, qué conviene hacer (concreto), un ejercicio o foco de entrenamiento, y los segundos de video que la respaldan.
+- Basate en patrones que se repiten, no en una sola jugada. Si la evidencia es escasa, decilo y bajá la confianza.
+- No inventes números que no estén en los datos.
+
+Respondé SOLO con este JSON:
+{"resumen": string, "fortalezas": [string], "debilidades": [string],
+ "recomendaciones": [{"prioridad": number, "area": string, "problema": string, "accion": string, "ejercicio": string, "evidencia_seg": [number], "confianza": "alta"|"media"|"baja"}],
+ "para_verificar": [string], "limitaciones": string}`;
+  }
+
+  // ---------- ejecución ----------
+  const FATAL = new Set(["not_granted", "sampling_disabled", "not_declared", "capability_disabled", "capability_removed",
+    "images_unavailable", "rate_limited", "session_expired", "cancelled"]);
+  const MENSAJES = {
+    not_granted: "No se dio permiso para usar Claude desde esta página.",
+    sampling_disabled: "Claude no está disponible para esta cuenta u organización.",
+    rate_limited: "Se alcanzó un límite de uso de Claude. Esperá un rato y volvé a intentar con un tramo más corto.",
+    session_expired: "Tu sesión venció: volvé a iniciar sesión en claude.ai.",
+    images_unavailable: "Esta vista no puede enviar imágenes a Claude.",
+    refused: "Claude no quiso procesar estas imágenes.",
+    invalid_json: "La respuesta no vino en el formato esperado.",
+    upstream_error: "Falló la conexión con Claude.",
+  };
+  const mensaje = (e) => MENSAJES[e && e.code] || "Error inesperado" + (e && e.code ? ` (${e.code})` : "");
+
+  function progreso(p, txt) { $("barFill").style.width = Math.round(p * 100) + "%"; $("progTxt").textContent = txt; }
+
+  $("btnRun").onclick = async () => {
+    const c = cfg();
+    const lista = tramos(c);
+    if (!lista.length || !sample) return;
+    const ctl = new AbortController();
+    running = ctl; estimar();
+    $("btnStop").hidden = false; $("prog").hidden = false; $("noAI").hidden = true;
+    video.pause();
+    const hechos = [], fallos = [];
+    let fatal = null;
+    try {
+      for (let i = 0; i < lista.length && !fatal; i++) {
+        const tiempos = lista[i];
+        progreso(i / (lista.length + 1), `Tramo ${i + 1} de ${lista.length}: tomando imágenes (${mmss(tiempos[0])}–${mmss(tiempos[tiempos.length - 1])})…`);
+        const imgs = [];
+        for (const t of tiempos) {
+          if (ctl.signal.aborted) break;
+          const b = await capturar(t);
+          if (b) imgs.push(b);
+        }
+        if (ctl.signal.aborted) { fatal = { code: "cancelled" }; break; }
+        if (imgs.length) { $("thumb").src = URL.createObjectURL(imgs[imgs.length - 1]); $("thumb").hidden = false; }
+        progreso((i + 0.4) / (lista.length + 1), `Tramo ${i + 1} de ${lista.length}: Claude está mirando las imágenes…`);
+        try {
+          const r = await sample.json(promptTramo(c, tiempos), { images: imgs, signal: ctl.signal, modelTier: "default" });
+          hechos.push({ desde: tiempos[0], hasta: tiempos[tiempos.length - 1], resumen: str(r && r.resumen), es_juego: r && r.es_juego !== false,
+            eventos: Array.isArray(r && r.eventos) ? r.eventos.filter((e) => e && EVENTOS.includes(e.evento)).map((e) => ({
+              seg: +e.seg || tiempos[0], evento: e.evento, equipo: str(e.equipo) || "desconocido",
+              resultado: ["ok", "fallo"].includes(e.resultado) ? e.resultado : "desconocido",
+              x: typeof e.x === "number" ? e.x : null, descripcion: str(e.descripcion), confianza: conf(e.confianza) })) : [] });
+        } catch (e) {
+          if (FATAL.has(e && e.code)) fatal = e;
+          else fallos.push(`${mmss(tiempos[0])}–${mmss(tiempos[tiempos.length - 1])}: ${mensaje(e)}`);
+        }
+      }
+      if (fatal && fatal.code === "cancelled") throw fatal;
+      if (!hechos.length) throw fatal || { code: "upstream_error" };
+      progreso(lista.length / (lista.length + 1), fatal ? "Se cortó antes de terminar: armando el informe con lo analizado…"
+                                                         : "Redactando las recomendaciones…");
+      const inf = await sample.json(promptInforme(c, hechos), { signal: ctl.signal, modelTier: "complex" });
+      resultado = { version: 1, video: videoName, config: c, creado: new Date().toISOString(), tramos: hechos, fallos,
+        cortado: fatal ? mensaje(fatal) : null, informe: normalizarInforme(inf) };
+      guardarLocal(); mostrar(resultado);
+      progreso(1, fatal ? "Listo, con un análisis parcial." : "Listo.");
+    } catch (e) {
+      progreso(0, e && e.code === "cancelled" ? "Análisis detenido." : mensaje(e));
+      if (e && e.code !== "cancelled") { $("noAI").textContent = mensaje(e); $("noAI").hidden = false; }
+    } finally {
+      running = null; $("btnStop").hidden = true; estimar();
+    }
+  };
+  $("btnStop").onclick = () => running && running.abort();
+
+  function normalizarInforme(r) {
+    r = r || {};
+    const arr = (v) => (Array.isArray(v) ? v.map(str).filter(Boolean) : []);
+    return {
+      resumen: str(r.resumen), fortalezas: arr(r.fortalezas), debilidades: arr(r.debilidades), para_verificar: arr(r.para_verificar),
+      limitaciones: str(r.limitaciones),
+      recomendaciones: (Array.isArray(r.recomendaciones) ? r.recomendaciones : []).map((x, i) => ({
+        prioridad: +x.prioridad || i + 1, area: str(x.area), problema: str(x.problema), accion: str(x.accion), ejercicio: str(x.ejercicio),
+        evidencia_seg: Array.isArray(x.evidencia_seg) ? x.evidencia_seg.map(Number).filter((n) => isFinite(n)) : [], confianza: conf(x.confianza),
+      })).sort((a, b) => a.prioridad - b.prioridad),
+    };
+  }
+
+  // ---------- resultados ----------
+  function eventosPlanos(res) {
+    return res.tramos.flatMap((t) => t.eventos || []).sort((a, b) => a.seg - b.seg);
+  }
+  function mostrar(res) {
+    const inf = res.informe, c = res.config;
+    $("results").hidden = false;
+    $("disclaimer").textContent = "Generado por Claude a partir de imágenes sueltas del video: confirmá cada punto mirando la jugada. "
+      + (inf.limitaciones || "") + (res.cortado ? " Análisis parcial: " + res.cortado : "");
+    $("resumen").textContent = inf.resumen || "—";
+    $("recoTitle").textContent = "Recomendaciones para " + (c.foco === "B" ? c.b : c.a);
+    const recos = $("recos"); recos.replaceChildren();
+    if (!inf.recomendaciones.length) recos.append(el("p", { className: "muted", textContent: "No hubo evidencia suficiente para recomendaciones." }));
+    for (const r of inf.recomendaciones) {
+      const chips = el("div", { className: "chips" }, r.evidencia_seg.slice(0, 12).map((s) =>
+        el("button", { type: "button", className: "chip", textContent: "▶ " + mmss(s), onclick: () => irA(s) })));
+      recos.append(el("article", { className: "reco" }, [
+        el("div", { className: "n", textContent: String(r.prioridad) }),
+        el("div", { className: "area" }, [r.area || "General", el("span", { className: "conf " + r.confianza, textContent: "confianza " + r.confianza })]),
+        el("h3", { textContent: r.problema }),
+        el("p", {}, [el("strong", { textContent: "Qué hacer: " }), r.accion]),
+        el("p", {}, [el("strong", { textContent: "Ejercicio: " }), r.ejercicio]),
+        r.evidencia_seg.length ? chips : null,
+      ]));
+    }
+    const lista = (id, items) => { const ul = $(id); ul.replaceChildren(...(items.length ? items : ["—"]).map((t) => el("li", { textContent: t }))); };
+    lista("fort", inf.fortalezas); lista("deb", inf.debilidades); lista("verif", inf.para_verificar);
+    $("verifBox").hidden = !inf.para_verificar.length;
+    const evs = eventosPlanos(res);
+    const tipos = [...new Set(evs.map((e) => e.evento))];
+    $("filtro").replaceChildren(el("option", { value: "", textContent: `Todo (${evs.length})` }),
+      ...tipos.map((t) => el("option", { value: t, textContent: `${NOMBRES[t] || t} (${evs.filter((e) => e.evento === t).length})` })));
+    tabla(evs);
+    $("fallos").hidden = !res.fallos.length;
+    $("fallos").textContent = res.fallos.length ? "Tramos sin analizar: " + res.fallos.join(" · ") : "";
+    $("tA").value = c.a; $("tB").value = c.b; $("cA").value = c.ca || ""; $("cB").value = c.cb || ""; $("foco").value = c.foco;
+    estimar();
+  }
+  function tabla(evs) {
+    const f = $("filtro").value;
+    $("evBody").replaceChildren(...evs.filter((e) => !f || e.evento === f).map((e) => {
+      const tr = el("tr", {}, [el("td", { className: "t", textContent: mmss(e.seg) }), el("td", { textContent: e.equipo }),
+        el("td", { textContent: NOMBRES[e.evento] || e.evento }), el("td", { textContent: e.resultado === "desconocido" ? "—" : e.resultado }),
+        el("td", {}, el("span", { className: "conf " + e.confianza, textContent: e.confianza })), el("td", { textContent: e.descripcion })]);
+      tr.tabIndex = 0; tr.onclick = () => irA(e.seg); tr.onkeydown = (k) => { if (k.key === "Enter") irA(e.seg); };
+      return tr;
+    }));
+  }
+  $("filtro").addEventListener("change", () => resultado && tabla(eventosPlanos(resultado)));
+
+  // ---------- guardar / abrir ----------
+  function guardarLocal() { try { localStorage.setItem(STORE, JSON.stringify(resultado)); } catch {} }
+  function valido(r) { return r && r.version === 1 && r.informe && Array.isArray(r.tramos) && r.config; }
+  try { const r = JSON.parse(localStorage.getItem(STORE) || "null"); if (valido(r)) { resultado = r; resultado.informe = normalizarInforme(r.informe); mostrar(resultado); } } catch {}
+  $("fJson").addEventListener("change", async (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    try { const r = JSON.parse(await f.text()); if (!valido(r)) throw 0; r.informe = normalizarInforme(r.informe); r.fallos = r.fallos || [];
+      resultado = r; guardarLocal(); mostrar(r); $("results").scrollIntoView(); }
+    catch { $("noAI").textContent = "Ese archivo no es un análisis guardado de esta página."; $("noAI").hidden = false; }
+    e.target.value = "";
+  });
+
+  function markdown(res) {
+    const inf = res.informe, c = res.config, L = [];
+    L.push(`# Informe: ${c.a} vs ${c.b}`, "", `> Generado por Claude a partir de imágenes del video (${mmss(c.desde)}–${mmss(c.hasta)}). Verificá cada punto en el video.`,
+      inf.limitaciones ? `> ${inf.limitaciones}` : "", "", "## Resumen", inf.resumen, "", `## Recomendaciones para ${c.foco === "B" ? c.b : c.a}`);
+    for (const r of inf.recomendaciones) L.push(`### ${r.prioridad}. ${r.area} (confianza ${r.confianza})`, `- **Problema:** ${r.problema}`,
+      `- **Qué hacer:** ${r.accion}`, `- **Ejercicio:** ${r.ejercicio}`, `- **Ver en video:** ${r.evidencia_seg.map(mmss).join(", ") || "—"}`, "");
+    L.push("## Fortalezas", ...inf.fortalezas.map((x) => "- " + x), "", "## Debilidades", ...inf.debilidades.map((x) => "- " + x), "",
+      "## Para confirmar en el video", ...inf.para_verificar.map((x) => "- " + x));
+    return L.join("\n");
+  }
+  function csv(res) {
+    const q = (v) => { v = str(v); return /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v; };
+    const cols = ["partido", "minuto", "periodo", "equipo", "jugador", "evento", "resultado", "x", "y", "metros", "detalle", "video_seg"];
+    const filas = eventosPlanos(res).filter((e) => e.evento !== "observacion").map((e) => [res.video + " (IA)", (e.seg / 60).toFixed(1), "",
+      e.equipo, "", e.evento, e.resultado === "desconocido" ? "" : e.resultado, e.x ?? "", "", "", `[IA ${e.confianza}] ${e.descripcion}`, e.seg]);
+    return [cols.join(","), ...filas.map((f) => f.map(q).join(","))].join("\n");
+  }
+  async function bajar(nombre, data) {
+    const msg = $("dlMsg");
+    if (!downloads) { msg.textContent = "Las descargas no están disponibles en esta vista."; msg.hidden = false; return; }
+    try { await downloads.save({ filename: nombre, data }); msg.textContent = "Guardado: " + nombre; }
+    catch (e) { msg.textContent = e && e.code === "declined" ? "Descarga cancelada." : "No se pudo descargar (" + (e && e.code) + ")."; }
+    msg.hidden = false;
+  }
+  const base = () => (resultado && resultado.video ? resultado.video : "partido").replace(/[\\/:*?"<>|]/g, "_");
+  $("dlMd").onclick = () => resultado && bajar(base() + "_informe.md", markdown(resultado));
+  $("dlCsv").onclick = () => resultado && bajar(base() + "_ia_eventos.csv", csv(resultado));
+  $("dlJson").onclick = () => resultado && bajar(base() + "_analisis.json", JSON.stringify(resultado, null, 2));
+})();
+</script>
